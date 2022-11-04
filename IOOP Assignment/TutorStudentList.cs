@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IOOP_Assignment__Tutor_
+namespace IOOP_Assignment
 {
     public partial class TutorStudentList : Form
     {

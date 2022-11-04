@@ -1,4 +1,4 @@
-namespace IOOP_Assignment__Tutor_
+namespace IOOP_Assignment
 {
     public partial class TutorClassInfo : Form
     {
