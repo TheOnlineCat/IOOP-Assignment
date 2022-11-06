@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class Login : Form
+    public partial class frmChangeSubEnrol : Form
     {
-        public Login()
+        public frmChangeSubEnrol()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void frmChangeSubEnrol_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmChangeSubEnrol_Load_1(object sender, EventArgs e)
         {
 
         }
