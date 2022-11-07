@@ -104,6 +104,7 @@
             this.btnChangeSubEnroll.TabIndex = 1;
             this.btnChangeSubEnroll.Text = "Change Subject Enrollment";
             this.btnChangeSubEnroll.UseVisualStyleBackColor = true;
+            this.btnChangeSubEnroll.Click += new System.EventHandler(this.btnChangeSubEnroll_Click);
             // 
             // btnViewReqStatus
             // 
@@ -113,6 +114,7 @@
             this.btnViewReqStatus.TabIndex = 3;
             this.btnViewReqStatus.Text = "View Request(s) Status";
             this.btnViewReqStatus.UseVisualStyleBackColor = true;
+            this.btnViewReqStatus.Click += new System.EventHandler(this.btnViewReqStatus_Click);
             // 
             // btnViewSch
             // 

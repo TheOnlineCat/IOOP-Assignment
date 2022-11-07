@@ -24,7 +24,8 @@ namespace IOOP_Assignment
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            frmEdit obj2 = new frmEdit();
+            obj2.ShowDialog();
         }
 
         private void picStu_Click(object sender, EventArgs e)
@@ -39,7 +40,8 @@ namespace IOOP_Assignment
 
         private void btnViewSch_Click(object sender, EventArgs e)
         {
-
+            frmSchedule obj1=new frmSchedule();
+            obj1.ShowDialog();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -50,6 +52,18 @@ namespace IOOP_Assignment
         private void frmMain_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnChangeSubEnroll_Click(object sender, EventArgs e)
+        {
+            frmChangeSubEnrol obj3 = new frmChangeSubEnrol();
+            obj3.ShowDialog();
+        }
+
+        private void btnViewReqStatus_Click(object sender, EventArgs e)
+        {
+            frmViewStatus obj4 = new frmViewStatus();
+            obj4.ShowDialog();
         }
     }
 }
