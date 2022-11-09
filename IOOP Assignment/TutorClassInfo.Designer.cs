@@ -33,18 +33,18 @@
             this.lblTutor = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.btnSList = new System.Windows.Forms.Button();
-            this.gridClass = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCInfo = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.picTutor = new System.Windows.Forms.PictureBox();
             this.grpClass = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gridClass)).BeginInit();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridClass = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
             this.grpClass.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridClass)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLogo
@@ -90,43 +90,6 @@
             this.btnSList.Text = "View Student List";
             this.btnSList.UseVisualStyleBackColor = false;
             // 
-            // gridClass
-            // 
-            this.gridClass.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gridClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridClass.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.gridClass.Location = new System.Drawing.Point(0, 22);
-            this.gridClass.Name = "gridClass";
-            this.gridClass.RowTemplate.Height = 25;
-            this.gridClass.Size = new System.Drawing.Size(623, 272);
-            this.gridClass.TabIndex = 5;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tutor";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Subject";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Schedule";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 250;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Charges";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
             // btnCInfo
             // 
             this.btnCInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -166,7 +129,44 @@
             this.grpClass.TabStop = false;
             this.grpClass.Text = "Class Information";
             // 
-            // Form1
+            // Column4
+            // 
+            this.Column4.HeaderText = "Charges";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Schedule";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 250;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Subject";
+            this.Column2.Name = "Column2";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tutor";
+            this.Column1.Name = "Column1";
+            // 
+            // gridClass
+            // 
+            this.gridClass.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gridClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridClass.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.gridClass.Location = new System.Drawing.Point(0, 22);
+            this.gridClass.Name = "gridClass";
+            this.gridClass.RowTemplate.Height = 25;
+            this.gridClass.Size = new System.Drawing.Size(623, 272);
+            this.gridClass.TabIndex = 5;
+            // 
+            // TutorClassInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -180,11 +180,11 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTutor);
             this.Controls.Add(this.lblLogo);
-            this.Name = "Form1";
+            this.Name = "TutorClassInfo";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.gridClass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).EndInit();
             this.grpClass.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridClass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,14 +196,14 @@
         private Label lblTutor;
         private Label lblName;
         private Button btnSList;
-        private DataGridView gridClass;
         private Button btnCInfo;
         private Button btnUpdate;
         private PictureBox picTutor;
+        private GroupBox grpClass;
+        private DataGridView gridClass;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private GroupBox grpClass;
     }
 }

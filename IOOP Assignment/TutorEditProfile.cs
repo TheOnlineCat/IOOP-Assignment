@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class Form4 : Form
+    public partial class TutorEditProfile : Form
     {
-        public Form4()
+        public TutorEditProfile()
         {
             InitializeComponent();
         }
