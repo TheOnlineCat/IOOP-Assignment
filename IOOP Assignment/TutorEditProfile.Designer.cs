@@ -1,6 +1,6 @@
 ﻿namespace IOOP_Assignment
 {
-    partial class Form4
+    partial class TutorEditProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TutorEditProfile));
             this.picTutor = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.lblCurrent = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
             this.grpClass.SuspendLayout();
             this.SuspendLayout();
@@ -230,19 +231,30 @@
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnConfirm.Location = new System.Drawing.Point(262, 454);
+            this.btnConfirm.Location = new System.Drawing.Point(510, 471);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(133, 47);
+            this.btnConfirm.Size = new System.Drawing.Size(100, 30);
             this.btnConfirm.TabIndex = 35;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
             // 
-            // Form4
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancel.Location = new System.Drawing.Point(40, 471);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 30);
+            this.btnCancel.TabIndex = 36;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // TutorEditProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(642, 550);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblCurrent);
@@ -252,7 +264,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTutor);
             this.Controls.Add(this.lblLogo);
-            this.Name = "Form4";
+            this.Name = "TutorEditProfile";
             this.Text = "Form4";
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).EndInit();
             this.grpClass.ResumeLayout(false);
@@ -282,5 +294,6 @@
         private TextBox textBox1;
         private Button btnConfirm;
         private Button btnEdit;
+        private Button btnCancel;
     }
 }
