@@ -42,6 +42,46 @@ namespace IOOP_Assignment
             this.subject[1] = sub2;
             this.subject[2] = sub3;
         }*/
+        public void SaveData()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE [Students] set " +
+                        "Email = '" + this.email + "'," +
+                        "ContactNumber = '" + this.contact + "'," +
+                        "Level = '" + this.level + "'," +
+                        "DateEnrolled = '" + this.date.ToString("dd/MM/yyyy") + "'," +
+                        "Address = '" + this.address + "'," +
+                        "IC = '" + this.IC + "'" +
+                        "where Username = '" + StudentID() + "'";
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+        public string StudentID()
+        {
+            return studentID;
+        }
+
+        public static bool Exists(string ID)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmdTest = con.CreateCommand())
+                {
+                    cmdTest.CommandText = "Select count(*) from [User] where Username = '" + ID + "'";
+                    int count = Convert.ToInt32(cmdTest.ExecuteScalar().ToString());
+                    if (count > 0) return true;
+                    else return false;
+                }
+            }
+        }
 
         private void LoadData()
         {
@@ -51,7 +91,11 @@ namespace IOOP_Assignment
                 using (SqlCommand cmd = con.CreateCommand())
                 {
                     cmd.CommandText = "select Name from [User] where Username = '" + studentID + "' and role = 'student'";
-                    name = cmd.ExecuteScalar().ToString();
+                    try
+                    {
+                        name = cmd.ExecuteScalar().ToString();
+                    }
+                    catch(Exception ex) { return; }
                 }
 
 
@@ -87,10 +131,7 @@ namespace IOOP_Assignment
             }
         }
 
-        public string StudentID()
-        {
-            return studentID;
-        }
+        
 
     }
 }

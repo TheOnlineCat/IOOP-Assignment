@@ -19,49 +19,63 @@ namespace IOOP_Assignment
             username = a;
         }
 
-        public string login(string password)
+        public void ChangeName(string Name)
         {
-            string stat = null;
-            
-            //SqlCommand objectName = new Constructor(sqlQuery, ConnectionString);
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("SELECT count(*) FROM [User] WHERE Username = '" + username + "' and Password = '" + password + "'", con);
-            int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-
-            if (count > 0)
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
             {
-                SqlCommand cmd2 = new SqlCommand("select Role from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
-                SqlCommand cmd3 = new SqlCommand("select Name from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
-                string userRole = cmd2.ExecuteScalar().ToString();
-                string Name = cmd3.ExecuteScalar().ToString();
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE [User] set " +
+                        "[Name] = '" + Name + "'" +
+                        "where Username = '" + username + "'";
+                    cmd.ExecuteNonQuery();
 
-                if (userRole == "admin")
-                {
-                    
-                }
-                else if (userRole == "student")
-                {
-                    frmMain stu = new frmMain(Name);
-                    stu.Show();
-                }
-                else if (userRole=="reception")
-                {
-                    ReceptionHomepage recepForm = new ReceptionHomepage(Name);
-                    recepForm.Show();
-                }
-                else if (userRole=="tutor")
-                {
-                    TutorClassInfo tut = new TutorClassInfo(Name);
-                    tut.Show();
                 }
             }
-            else
-                stat= "Invalid Credentials";
-            con.Close();
+        }
+        public Form login(string password)
+        {
+            //SqlCommand objectName = new Constructor(sqlQuery, ConnectionString);
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
+            {
+                con.Open();
 
-            return stat;
+                SqlCommand cmd = new SqlCommand("SELECT count(*) FROM [User] WHERE Username = '" + username + "' and Password = '" + password + "'", con);
+                int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+
+                if (count > 0)
+                {
+                    SqlCommand cmd2 = new SqlCommand("select Role from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
+                    SqlCommand cmd3 = new SqlCommand("select Name from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
+                    string userRole = cmd2.ExecuteScalar().ToString();
+                    string Name = cmd3.ExecuteScalar().ToString();
+
+                    if (userRole == "admin")
+                    {
+
+                    }
+                    else if (userRole == "student")
+                    {
+                        frmMain stu = new frmMain(Name);
+                        stu.Show();
+                        return (stu);
+                    }
+                    else if (userRole == "reception")
+                    {
+                        ReceptionHomepage recepForm = new ReceptionHomepage(Name);
+                        recepForm.Show();
+                        return (recepForm);
+                    }
+                    else if (userRole == "tutor")
+                    {
+                        TutorClassInfo tut = new TutorClassInfo(Name);
+                        tut.Show();
+                        return (tut);
+                    }
+                }
+                return null;
+            }
         }
     }
 }
