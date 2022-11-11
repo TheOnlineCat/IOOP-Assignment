@@ -6,11 +6,6 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
-        private void btnCInfo_Click(object sender, EventArgs e)
-        {
-            TutorEditClassInfo s = new TutorEditClassInfo();
-            s.Show();
-            this.Hide();
 
         private void btnCInfo_Click(object sender, EventArgs e)
         {
@@ -18,6 +13,9 @@ namespace IOOP_Assignment
             s.Show();
             this.Hide();
         }
+
+        
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
