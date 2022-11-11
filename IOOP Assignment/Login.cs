@@ -21,5 +21,18 @@ namespace IOOP_Assignment
         {
 
         }
+
+        private void button_Login_Click(object sender, EventArgs e)
+        {
+            string stat;
+            User UserObj = new User(textBox_Username.Text, textBox_Password.Text);
+            stat = UserObj.login();
+            if (stat != null)
+            {
+                MessageBox.Show(stat);
+            }
+            textBox_Username.Text = String.Empty;
+            textBox_Password.Text = String.Empty;
+        }
     }
 }

@@ -1,0 +1,15 @@
+Student.cs (Class)
+-get and set student's name
+-get and set student's level
+-get and set student IC
+-get and set address
+-get and set email
+-get and set contact number
+-get and set level
+-get and set subs enrolled/changed
+-get reasons
+
+IOOP Assignment concerns
+-StudentID
+-Request need to have reasons?
+-Schedule how to do?
