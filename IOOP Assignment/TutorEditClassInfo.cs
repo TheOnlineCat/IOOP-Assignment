@@ -21,7 +21,7 @@ namespace IOOP_Assignment
         public TutorEditClassInfo()
         {
             InitializeComponent();
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
         }
 
         private void lblTitle_Click(object sender, EventArgs e)

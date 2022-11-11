@@ -53,7 +53,8 @@ namespace IOOP_Assignment
                 }
                 else if (userRole=="tutor")
                 {
-
+                    TutorClassInfo tut = new TutorClassInfo(username);
+                    tut.ShowDialog();
                 }
             }
             else
