@@ -23,7 +23,7 @@ namespace IOOP_Assignment
 
         public string login()
         {
-            string status = null;
+            string stat = null;
             
             //SqlCommand objectName = new Constructor(sqlQuery, ConnectionString);
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
@@ -34,8 +34,10 @@ namespace IOOP_Assignment
 
             if (count > 0)
             {
-                SqlCommand cmd2 = new SqlCommand("select role from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
+                SqlCommand cmd2 = new SqlCommand("select Role from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
+                SqlCommand cmd3 = new SqlCommand("select Name from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
                 string userRole = cmd2.ExecuteScalar().ToString();
+                string Name = cmd3.ExecuteScalar().ToString();
 
                 if (userRole == "admin")
                 {
@@ -43,12 +45,12 @@ namespace IOOP_Assignment
                 }
                 else if (userRole == "student")
                 {
-                    frmMain stu = new frmMain(username);
+                    frmMain stu = new frmMain(Name);
                     stu.ShowDialog();
                 }
                 else if (userRole=="reception")
                 {
-                    ReceptionHomepage recepForm = new ReceptionHomepage(username);
+                    ReceptionHomepage recepForm = new ReceptionHomepage(Name);
                     recepForm.ShowDialog();
                 }
                 else if (userRole=="tutor")
@@ -57,10 +59,10 @@ namespace IOOP_Assignment
                 }
             }
             else
-                status="Incorrect username/password entered.";
+                stat= null;
             con.Close();
 
-            return status;
+            return stat;
         }
     }
 }

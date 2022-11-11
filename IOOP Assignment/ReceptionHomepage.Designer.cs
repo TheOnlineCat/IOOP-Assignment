@@ -181,7 +181,7 @@
             this.button_Search.TabIndex = 5;
             this.button_Search.Text = "Search";
             this.button_Search.UseVisualStyleBackColor = true;
-            this.button_Search.Click += new System.EventHandler(this.button1_Click);
+            this.button_Search.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // textBox_Search
             // 
@@ -333,12 +333,14 @@
             // 
             // label_Username
             // 
-            this.label_Username.AutoSize = true;
-            this.label_Username.Location = new System.Drawing.Point(463, 32);
+            this.label_Username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Username.Location = new System.Drawing.Point(434, 32);
             this.label_Username.Name = "label_Username";
-            this.label_Username.Size = new System.Drawing.Size(41, 15);
+            this.label_Username.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_Username.Size = new System.Drawing.Size(92, 15);
             this.label_Username.TabIndex = 8;
             this.label_Username.Text = "NAME";
+            this.label_Username.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button_Profile
             // 
