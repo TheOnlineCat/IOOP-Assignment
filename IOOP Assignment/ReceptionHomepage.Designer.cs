@@ -133,6 +133,7 @@
             this.button_Enroll.TabIndex = 10;
             this.button_Enroll.Text = "Enroll New Student";
             this.button_Enroll.UseVisualStyleBackColor = true;
+            this.button_Enroll.Click += new System.EventHandler(this.button_Enroll_Click);
             // 
             // button_EditDetails
             // 
@@ -155,23 +156,23 @@
             // 
             // label_StudentID
             // 
-            this.label_StudentID.AutoSize = true;
             this.label_StudentID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_StudentID.Location = new System.Drawing.Point(65, 260);
+            this.label_StudentID.Location = new System.Drawing.Point(47, 260);
             this.label_StudentID.Name = "label_StudentID";
-            this.label_StudentID.Size = new System.Drawing.Size(88, 21);
+            this.label_StudentID.Size = new System.Drawing.Size(122, 21);
             this.label_StudentID.TabIndex = 7;
             this.label_StudentID.Text = "Student ID";
+            this.label_StudentID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_StudentName
             // 
-            this.label_StudentName.AutoSize = true;
             this.label_StudentName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_StudentName.Location = new System.Drawing.Point(82, 239);
+            this.label_StudentName.Location = new System.Drawing.Point(6, 239);
             this.label_StudentName.Name = "label_StudentName";
-            this.label_StudentName.Size = new System.Drawing.Size(56, 21);
+            this.label_StudentName.Size = new System.Drawing.Size(203, 21);
             this.label_StudentName.TabIndex = 6;
             this.label_StudentName.Text = "NAME";
+            this.label_StudentName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button_Search
             // 
@@ -181,7 +182,7 @@
             this.button_Search.TabIndex = 5;
             this.button_Search.Text = "Search";
             this.button_Search.UseVisualStyleBackColor = true;
-            this.button_Search.Click += new System.EventHandler(this.button1_Click);
+            this.button_Search.Click += new System.EventHandler(this.button_Search_Click);
             // 
             // textBox_Search
             // 
@@ -333,12 +334,14 @@
             // 
             // label_Username
             // 
-            this.label_Username.AutoSize = true;
-            this.label_Username.Location = new System.Drawing.Point(463, 32);
+            this.label_Username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Username.Location = new System.Drawing.Point(434, 32);
             this.label_Username.Name = "label_Username";
-            this.label_Username.Size = new System.Drawing.Size(41, 15);
+            this.label_Username.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_Username.Size = new System.Drawing.Size(92, 15);
             this.label_Username.TabIndex = 8;
             this.label_Username.Text = "NAME";
+            this.label_Username.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button_Profile
             // 
@@ -374,6 +377,7 @@
             this.Controls.Add(this.pictureBox_Account);
             this.Controls.Add(this.groupBox_Manage);
             this.Name = "ReceptionHomepage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.groupBox_Manage.ResumeLayout(false);
             this.groupBox_Manage.PerformLayout();
