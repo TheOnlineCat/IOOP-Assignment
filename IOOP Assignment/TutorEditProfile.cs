@@ -27,5 +27,10 @@ namespace IOOP_Assignment
         {
             grpPass.Visible = true;
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

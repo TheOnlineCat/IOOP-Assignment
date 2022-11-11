@@ -18,10 +18,11 @@ namespace IOOP_Assignment
         private ArrayList Data = new ArrayList();
         private SqlCommand cmd = new SqlCommand("select * from Schedule");
 
-        public TutorEditClassInfo()
+        public TutorEditClassInfo(string Name)
         {
             InitializeComponent();
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
+            lblName.Text = Name;
+
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
@@ -41,15 +42,27 @@ namespace IOOP_Assignment
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            /*
-            for (int index = 0; 0  < gridList.Rows.Count; index++) 
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
             {
-                //gridList.Rows[index].Cell
-            }    
+                connection.Open();
+                using (SqlCommand cmd = connection.CreateCommand())
+                {
+                    for (int index = 0; 0 < gridList.Rows.Count; index++)
+                    {
+                        string subject = gridList.Rows[index].Cells[1].Value.ToString();
+                        string day = gridList.Rows[index].Cells[2].Value.ToString();
+                        string startTime = gridList.Rows[index].Cells[3].Value.ToString();
+                        string endTime = gridList.Rows[index].Cells[4].Value.ToString();
+                        cmd.CommandText = "INSERT INTO Schedule(Subject, Day, StartTime, EndTime) VALUES ('" + subject + "','" + day + "','" + startTime + "','" + endTime + "')";
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+               
+            }
             SqlCommand cmd1 = new SqlCommand("INSERT INTO Schedule(Subject, Day, StartTime, EndTime) VALUES (" + ")");
             ArrayList data = new ArrayList();
             MessageBox.Show(cmd.ExecuteReader().ToString());
-            */
+            
         }
     }
 }

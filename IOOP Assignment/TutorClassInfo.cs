@@ -2,15 +2,15 @@ namespace IOOP_Assignment
 {
     public partial class TutorClassInfo : Form
     {   
-        public TutorClassInfo(string username)
+        public TutorClassInfo(string Name)
         {
             InitializeComponent();
-            lblName.Text = username;
+            lblName.Text = Name;
         }
 
         private void btnCInfo_Click(object sender, EventArgs e)
         {
-            TutorEditClassInfo s = new TutorEditClassInfo();
+            TutorEditClassInfo s = new TutorEditClassInfo(Name);
             s.Show();
             this.Hide();
         }

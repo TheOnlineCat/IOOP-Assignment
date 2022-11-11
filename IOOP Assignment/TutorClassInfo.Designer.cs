@@ -40,7 +40,9 @@
             this.gridClass = new System.Windows.Forms.DataGridView();
             this.txtTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSchedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCharges = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
             this.grpClass.SuspendLayout();
@@ -139,7 +141,9 @@
             this.gridClass.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtTutor,
             this.txtSubject,
-            this.txtSchedule,
+            this.txtDay,
+            this.StartTime,
+            this.EndTime,
             this.txtCharges});
             this.gridClass.Location = new System.Drawing.Point(0, 22);
             this.gridClass.Name = "gridClass";
@@ -153,7 +157,6 @@
             this.txtTutor.HeaderText = "Tutor";
             this.txtTutor.MinimumWidth = 6;
             this.txtTutor.Name = "txtTutor";
-            this.txtTutor.Width = 125;
             // 
             // txtSubject
             // 
@@ -162,18 +165,29 @@
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Width = 125;
             // 
-            // txtSchedule
+            // txtDay
             // 
-            this.txtSchedule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtSchedule.HeaderText = "Schedule";
-            this.txtSchedule.MinimumWidth = 6;
-            this.txtSchedule.Name = "txtSchedule";
+            this.txtDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtDay.HeaderText = "Day";
+            this.txtDay.MinimumWidth = 6;
+            this.txtDay.Name = "txtDay";
+            // 
+            // StartTime
+            // 
+            this.StartTime.HeaderText = "StartTime";
+            this.StartTime.Name = "StartTime";
+            // 
+            // EndTime
+            // 
+            this.EndTime.HeaderText = "EndTime";
+            this.EndTime.Name = "EndTime";
             // 
             // txtCharges
             // 
             this.txtCharges.HeaderText = "Charges";
             this.txtCharges.MinimumWidth = 6;
             this.txtCharges.Name = "txtCharges";
+            this.txtCharges.Width = 60;
             // 
             // TutorClassInfo
             // 
@@ -212,7 +226,9 @@
         private DataGridView gridClass;
         private DataGridViewTextBoxColumn txtTutor;
         private DataGridViewTextBoxColumn txtSubject;
-        private DataGridViewTextBoxColumn txtSchedule;
+        private DataGridViewTextBoxColumn txtDay;
+        private DataGridViewTextBoxColumn StartTime;
+        private DataGridViewTextBoxColumn EndTime;
         private DataGridViewTextBoxColumn txtCharges;
     }
 }

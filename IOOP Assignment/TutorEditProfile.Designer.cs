@@ -36,12 +36,12 @@
             this.lblLogo = new System.Windows.Forms.Label();
             this.grpClass = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.txtCPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.lblCPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblTName = new System.Windows.Forms.Label();
+            this.txtCPassword = new System.Windows.Forms.TextBox();
+            this.lblCPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblCurrent = new System.Windows.Forms.Label();
@@ -132,16 +132,6 @@
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // txtCPassword
-            // 
-            this.txtCPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtCPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtCPassword.Location = new System.Drawing.Point(98, 74);
-            this.txtCPassword.Name = "txtCPassword";
-            this.txtCPassword.Size = new System.Drawing.Size(224, 23);
-            this.txtCPassword.TabIndex = 33;
-            this.txtCPassword.Text = "Confirm Password";
-            // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
@@ -161,15 +151,7 @@
             this.txtName.Size = new System.Drawing.Size(224, 23);
             this.txtName.TabIndex = 30;
             this.txtName.Text = "$NAME$";
-            // 
-            // lblCPassword
-            // 
-            this.lblCPassword.AutoSize = true;
-            this.lblCPassword.Location = new System.Drawing.Point(21, 72);
-            this.lblCPassword.Name = "lblCPassword";
-            this.lblCPassword.Size = new System.Drawing.Size(60, 30);
-            this.lblCPassword.TabIndex = 29;
-            this.lblCPassword.Text = "Confirm\r\nPassword:";
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lblUsername
             // 
@@ -188,6 +170,25 @@
             this.lblTName.Size = new System.Drawing.Size(42, 15);
             this.lblTName.TabIndex = 26;
             this.lblTName.Text = "Name:";
+            // 
+            // txtCPassword
+            // 
+            this.txtCPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.txtCPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtCPassword.Location = new System.Drawing.Point(98, 74);
+            this.txtCPassword.Name = "txtCPassword";
+            this.txtCPassword.Size = new System.Drawing.Size(224, 23);
+            this.txtCPassword.TabIndex = 33;
+            this.txtCPassword.Text = "Confirm Password";
+            // 
+            // lblCPassword
+            // 
+            this.lblCPassword.AutoSize = true;
+            this.lblCPassword.Location = new System.Drawing.Point(21, 72);
+            this.lblCPassword.Name = "lblCPassword";
+            this.lblCPassword.Size = new System.Drawing.Size(60, 30);
+            this.lblCPassword.TabIndex = 29;
+            this.lblCPassword.Text = "Confirm\r\nPassword:";
             // 
             // txtPassword
             // 
