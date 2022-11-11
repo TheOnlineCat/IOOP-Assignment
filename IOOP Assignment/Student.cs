@@ -75,7 +75,7 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmdTest = con.CreateCommand())
                 {
-                    cmdTest.CommandText = "Select count(*) from [User] where Username = '" + ID + "'";
+                    cmdTest.CommandText = "Select count(*) from [Student] where Username = '" + ID + "'";
                     int count = Convert.ToInt32(cmdTest.ExecuteScalar().ToString());
                     if (count > 0) return true;
                     else return false;

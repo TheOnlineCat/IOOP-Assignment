@@ -47,21 +47,12 @@ namespace IOOP_Assignment
 
         private void button_Search_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
+            if (Student.Exists(textBox_Search.Text))
             {
-                con.Open();
-                using (SqlCommand cmd = con.CreateCommand())
-                {
-                    cmd.CommandText = "Select count(*) from [User] where Username = '" + textBox_Search.Text + "' and role = 'student'";
-                    int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-                    if (count > 0)
-                    {
-                        StudentID = textBox_Search.Text;
-                        loadStudent(StudentID);
-                    }
-                    else MessageBox.Show("Record does not exist.", "Null Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                StudentID = textBox_Search.Text;
+                loadStudent(StudentID);
             }
+            else MessageBox.Show("Record does not exist.", "Null Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void button_Enroll_Click(object sender, EventArgs e)
@@ -72,7 +63,7 @@ namespace IOOP_Assignment
                 using (SqlCommand cmd = con.CreateCommand())
                 {
                     cmd.CommandText = "select Username from [User] order by Username desc";
-                    int Highest = Convert.ToInt32(cmd.ExecuteScalar().ToString().Remove(0, 2));
+                    int Highest = Convert.ToInt32( cmd.ExecuteScalar().ToString().Remove(0, 2) );
                     string ID = (Highest + 1).ToString().PadLeft(3, '0');
                     string NewID = "ET" + ID;
                     ReceptionEditDetail formAddStudent = new ReceptionEditDetail(NewID);
