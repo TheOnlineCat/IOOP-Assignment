@@ -68,7 +68,7 @@ namespace IOOP_Assignment
         private void button_Enroll_Click(object sender, EventArgs e)
         {
             ReceptionEditDetail formAddStudent = new ReceptionEditDetail();
-            formAddStudent.Show()
+            formAddStudent.Show();
         }
     }
 }
