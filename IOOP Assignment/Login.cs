@@ -25,8 +25,8 @@ namespace IOOP_Assignment
         private void button_Login_Click(object sender, EventArgs e)
         {
             string stat;
-            User log = new User(textBox_Username.Text, textBox_Password.Text);
-            stat = log.login(textBox_Username.Text);
+            User UserObj = new User(textBox_Username.Text, textBox_Password.Text);
+            stat = UserObj.login();
             if (stat != null)
             {
                 MessageBox.Show(stat);
