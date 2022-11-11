@@ -10,18 +10,16 @@ using System.Threading.Tasks;
 
 namespace IOOP_Assignment
 {
-    internal class User
+    public class User
     {
         private string username;
-        private string password;
 
-        public User(string a, string b)
+        public User(string a)
         {
             username = a;
-            password = b;
         }
 
-        public string login()
+        public string login(string password)
         {
             string stat = null;
             
@@ -46,21 +44,21 @@ namespace IOOP_Assignment
                 else if (userRole == "student")
                 {
                     frmMain stu = new frmMain(Name);
-                    stu.ShowDialog();
+                    stu.Show();
                 }
                 else if (userRole=="reception")
                 {
                     ReceptionHomepage recepForm = new ReceptionHomepage(Name);
-                    recepForm.ShowDialog();
+                    recepForm.Show();
                 }
                 else if (userRole=="tutor")
                 {
                     TutorClassInfo tut = new TutorClassInfo(Name);
-                    tut.ShowDialog();
+                    tut.Show();
                 }
             }
             else
-                stat= null;
+                stat= "Invalid Credentials";
             con.Close();
 
             return stat;

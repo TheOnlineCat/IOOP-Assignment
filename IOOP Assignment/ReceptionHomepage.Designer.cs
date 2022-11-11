@@ -100,6 +100,7 @@
             // 
             // listBox_Subject
             // 
+            this.listBox_Subject.Enabled = false;
             this.listBox_Subject.FormattingEnabled = true;
             this.listBox_Subject.ItemHeight = 15;
             this.listBox_Subject.Location = new System.Drawing.Point(215, 214);
@@ -143,6 +144,7 @@
             this.button_EditDetails.TabIndex = 9;
             this.button_EditDetails.Text = "Edit Student Details";
             this.button_EditDetails.UseVisualStyleBackColor = true;
+            this.button_EditDetails.Click += new System.EventHandler(this.button_EditDetails_Click);
             // 
             // button_Delete
             // 
@@ -153,6 +155,7 @@
             this.button_Delete.TabIndex = 8;
             this.button_Delete.Text = "Delete Record";
             this.button_Delete.UseVisualStyleBackColor = true;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // label_StudentID
             // 

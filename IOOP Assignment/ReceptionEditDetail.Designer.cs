@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceptionEditDetail));
             this.label_Logo = new System.Windows.Forms.Label();
             this.button_Profile = new System.Windows.Forms.Button();
             this.label_Username = new System.Windows.Forms.Label();
             this.label_Role = new System.Windows.Forms.Label();
             this.pictureBox_Account = new System.Windows.Forms.PictureBox();
             this.groupBox_EditDetails = new System.Windows.Forms.GroupBox();
-            this.label_Name = new System.Windows.Forms.Label();
-            this.label_StudentID = new System.Windows.Forms.Label();
-            this.label_Email = new System.Windows.Forms.Label();
-            this.label_Contact = new System.Windows.Forms.Label();
-            this.label_Level = new System.Windows.Forms.Label();
-            this.label_Date = new System.Windows.Forms.Label();
-            this.label_Address = new System.Windows.Forms.Label();
-            this.label_IC = new System.Windows.Forms.Label();
-            this.textBox_Name = new System.Windows.Forms.TextBox();
-            this.textBox_StudentID = new System.Windows.Forms.TextBox();
-            this.textBox_Email = new System.Windows.Forms.TextBox();
-            this.textBox_Contact = new System.Windows.Forms.TextBox();
-            this.textBox_Day = new System.Windows.Forms.TextBox();
-            this.textBox_Address = new System.Windows.Forms.TextBox();
-            this.textBox_IC = new System.Windows.Forms.TextBox();
-            this.comboBox_Level = new System.Windows.Forms.ComboBox();
-            this.textBox_Year = new System.Windows.Forms.TextBox();
-            this.textBox_Month = new System.Windows.Forms.TextBox();
-            this.button_Cancel = new System.Windows.Forms.Button();
             this.button_Confirm = new System.Windows.Forms.Button();
+            this.button_Cancel = new System.Windows.Forms.Button();
+            this.textBox_Month = new System.Windows.Forms.TextBox();
+            this.textBox_Year = new System.Windows.Forms.TextBox();
+            this.comboBox_Level = new System.Windows.Forms.ComboBox();
+            this.textBox_IC = new System.Windows.Forms.TextBox();
+            this.textBox_Address = new System.Windows.Forms.TextBox();
+            this.textBox_Day = new System.Windows.Forms.TextBox();
+            this.textBox_Contact = new System.Windows.Forms.TextBox();
+            this.textBox_Email = new System.Windows.Forms.TextBox();
+            this.textBox_StudentID = new System.Windows.Forms.TextBox();
+            this.textBox_Name = new System.Windows.Forms.TextBox();
+            this.label_IC = new System.Windows.Forms.Label();
+            this.label_Address = new System.Windows.Forms.Label();
+            this.label_Date = new System.Windows.Forms.Label();
+            this.label_Level = new System.Windows.Forms.Label();
+            this.label_Contact = new System.Windows.Forms.Label();
+            this.label_Email = new System.Windows.Forms.Label();
+            this.label_StudentID = new System.Windows.Forms.Label();
+            this.label_Name = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Account)).BeginInit();
             this.groupBox_EditDetails.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +101,7 @@
             // 
             // pictureBox_Account
             // 
-            this.pictureBox_Account.Image = global::IOOP_Assignment.Properties.Resources.img_525162;
+            this.pictureBox_Account.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Account.Image")));
             this.pictureBox_Account.ImageLocation = "\"Resources/img_UserIcon.png\"";
             this.pictureBox_Account.Location = new System.Drawing.Point(306, 7);
             this.pictureBox_Account.Name = "pictureBox_Account";
@@ -137,131 +138,40 @@
             this.groupBox_EditDetails.TabStop = false;
             this.groupBox_EditDetails.Text = "Edit Details";
             // 
-            // label_Name
+            // button_Confirm
             // 
-            this.label_Name.AutoSize = true;
-            this.label_Name.Location = new System.Drawing.Point(6, 28);
-            this.label_Name.Name = "label_Name";
-            this.label_Name.Size = new System.Drawing.Size(42, 15);
-            this.label_Name.TabIndex = 0;
-            this.label_Name.Text = "Name:";
+            this.button_Confirm.Location = new System.Drawing.Point(207, 270);
+            this.button_Confirm.Name = "button_Confirm";
+            this.button_Confirm.Size = new System.Drawing.Size(111, 23);
+            this.button_Confirm.TabIndex = 21;
+            this.button_Confirm.Text = "Confirm Changes";
+            this.button_Confirm.UseVisualStyleBackColor = true;
+            this.button_Confirm.Click += new System.EventHandler(this.button_Confirm_Click);
             // 
-            // label_StudentID
+            // button_Cancel
             // 
-            this.label_StudentID.AutoSize = true;
-            this.label_StudentID.Location = new System.Drawing.Point(6, 52);
-            this.label_StudentID.Name = "label_StudentID";
-            this.label_StudentID.Size = new System.Drawing.Size(62, 15);
-            this.label_StudentID.TabIndex = 1;
-            this.label_StudentID.Text = "StudentID:";
+            this.button_Cancel.Location = new System.Drawing.Point(29, 270);
+            this.button_Cancel.Name = "button_Cancel";
+            this.button_Cancel.Size = new System.Drawing.Size(111, 23);
+            this.button_Cancel.TabIndex = 20;
+            this.button_Cancel.Text = "Cancel";
+            this.button_Cancel.UseVisualStyleBackColor = true;
             // 
-            // label_Email
+            // textBox_Month
             // 
-            this.label_Email.AutoSize = true;
-            this.label_Email.Location = new System.Drawing.Point(6, 77);
-            this.label_Email.Name = "label_Email";
-            this.label_Email.Size = new System.Drawing.Size(44, 15);
-            this.label_Email.TabIndex = 2;
-            this.label_Email.Text = "E-mail:";
+            this.textBox_Month.Location = new System.Drawing.Point(117, 177);
+            this.textBox_Month.Name = "textBox_Month";
+            this.textBox_Month.PlaceholderText = "Month";
+            this.textBox_Month.Size = new System.Drawing.Size(37, 23);
+            this.textBox_Month.TabIndex = 19;
             // 
-            // label_Contact
+            // textBox_Year
             // 
-            this.label_Contact.Location = new System.Drawing.Point(6, 101);
-            this.label_Contact.Name = "label_Contact";
-            this.label_Contact.Size = new System.Drawing.Size(56, 32);
-            this.label_Contact.TabIndex = 3;
-            this.label_Contact.Text = "Contact Number:";
-            // 
-            // label_Level
-            // 
-            this.label_Level.AutoSize = true;
-            this.label_Level.Location = new System.Drawing.Point(6, 143);
-            this.label_Level.Name = "label_Level";
-            this.label_Level.Size = new System.Drawing.Size(37, 15);
-            this.label_Level.TabIndex = 4;
-            this.label_Level.Text = "Level:";
-            // 
-            // label_Date
-            // 
-            this.label_Date.Location = new System.Drawing.Point(6, 168);
-            this.label_Date.Name = "label_Date";
-            this.label_Date.Size = new System.Drawing.Size(56, 32);
-            this.label_Date.TabIndex = 5;
-            this.label_Date.Text = "Date Enrolled:";
-            // 
-            // label_Address
-            // 
-            this.label_Address.AutoSize = true;
-            this.label_Address.Location = new System.Drawing.Point(6, 209);
-            this.label_Address.Name = "label_Address";
-            this.label_Address.Size = new System.Drawing.Size(52, 15);
-            this.label_Address.TabIndex = 6;
-            this.label_Address.Text = "Address:";
-            // 
-            // label_IC
-            // 
-            this.label_IC.AutoSize = true;
-            this.label_IC.Location = new System.Drawing.Point(6, 234);
-            this.label_IC.Name = "label_IC";
-            this.label_IC.Size = new System.Drawing.Size(68, 15);
-            this.label_IC.TabIndex = 7;
-            this.label_IC.Text = "IC Number:";
-            // 
-            // textBox_Name
-            // 
-            this.textBox_Name.Location = new System.Drawing.Point(74, 25);
-            this.textBox_Name.Name = "textBox_Name";
-            this.textBox_Name.PlaceholderText = "Name";
-            this.textBox_Name.Size = new System.Drawing.Size(264, 23);
-            this.textBox_Name.TabIndex = 8;
-            // 
-            // textBox_StudentID
-            // 
-            this.textBox_StudentID.Location = new System.Drawing.Point(74, 49);
-            this.textBox_StudentID.Name = "textBox_StudentID";
-            this.textBox_StudentID.PlaceholderText = "StudentID";
-            this.textBox_StudentID.Size = new System.Drawing.Size(264, 23);
-            this.textBox_StudentID.TabIndex = 9;
-            // 
-            // textBox_Email
-            // 
-            this.textBox_Email.Location = new System.Drawing.Point(74, 74);
-            this.textBox_Email.Name = "textBox_Email";
-            this.textBox_Email.PlaceholderText = "Email";
-            this.textBox_Email.Size = new System.Drawing.Size(264, 23);
-            this.textBox_Email.TabIndex = 10;
-            // 
-            // textBox_Contact
-            // 
-            this.textBox_Contact.Location = new System.Drawing.Point(74, 110);
-            this.textBox_Contact.Name = "textBox_Contact";
-            this.textBox_Contact.PlaceholderText = "Contact Number";
-            this.textBox_Contact.Size = new System.Drawing.Size(264, 23);
-            this.textBox_Contact.TabIndex = 11;
-            // 
-            // textBox_Day
-            // 
-            this.textBox_Day.Location = new System.Drawing.Point(74, 177);
-            this.textBox_Day.Name = "textBox_Day";
-            this.textBox_Day.PlaceholderText = "Day";
-            this.textBox_Day.Size = new System.Drawing.Size(37, 23);
-            this.textBox_Day.TabIndex = 13;
-            // 
-            // textBox_Address
-            // 
-            this.textBox_Address.Location = new System.Drawing.Point(74, 206);
-            this.textBox_Address.Name = "textBox_Address";
-            this.textBox_Address.PlaceholderText = "Address";
-            this.textBox_Address.Size = new System.Drawing.Size(264, 23);
-            this.textBox_Address.TabIndex = 14;
-            // 
-            // textBox_IC
-            // 
-            this.textBox_IC.Location = new System.Drawing.Point(74, 231);
-            this.textBox_IC.Name = "textBox_IC";
-            this.textBox_IC.PlaceholderText = "IC Number";
-            this.textBox_IC.Size = new System.Drawing.Size(264, 23);
-            this.textBox_IC.TabIndex = 15;
+            this.textBox_Year.Location = new System.Drawing.Point(160, 177);
+            this.textBox_Year.Name = "textBox_Year";
+            this.textBox_Year.PlaceholderText = "Year";
+            this.textBox_Year.Size = new System.Drawing.Size(75, 23);
+            this.textBox_Year.TabIndex = 18;
             // 
             // comboBox_Level
             // 
@@ -283,39 +193,133 @@
             this.comboBox_Level.Size = new System.Drawing.Size(55, 23);
             this.comboBox_Level.TabIndex = 16;
             // 
-            // textBox_Year
+            // textBox_IC
             // 
-            this.textBox_Year.Location = new System.Drawing.Point(160, 177);
-            this.textBox_Year.Name = "textBox_Year";
-            this.textBox_Year.PlaceholderText = "Year";
-            this.textBox_Year.Size = new System.Drawing.Size(75, 23);
-            this.textBox_Year.TabIndex = 18;
+            this.textBox_IC.Location = new System.Drawing.Point(74, 231);
+            this.textBox_IC.Name = "textBox_IC";
+            this.textBox_IC.PlaceholderText = "IC Number";
+            this.textBox_IC.Size = new System.Drawing.Size(264, 23);
+            this.textBox_IC.TabIndex = 15;
             // 
-            // textBox_Month
+            // textBox_Address
             // 
-            this.textBox_Month.Location = new System.Drawing.Point(117, 177);
-            this.textBox_Month.Name = "textBox_Month";
-            this.textBox_Month.PlaceholderText = "Month";
-            this.textBox_Month.Size = new System.Drawing.Size(37, 23);
-            this.textBox_Month.TabIndex = 19;
+            this.textBox_Address.Location = new System.Drawing.Point(74, 206);
+            this.textBox_Address.Name = "textBox_Address";
+            this.textBox_Address.PlaceholderText = "Address";
+            this.textBox_Address.Size = new System.Drawing.Size(264, 23);
+            this.textBox_Address.TabIndex = 14;
             // 
-            // button_Cancel
+            // textBox_Day
             // 
-            this.button_Cancel.Location = new System.Drawing.Point(29, 270);
-            this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(111, 23);
-            this.button_Cancel.TabIndex = 20;
-            this.button_Cancel.Text = "Cancel";
-            this.button_Cancel.UseVisualStyleBackColor = true;
+            this.textBox_Day.Location = new System.Drawing.Point(74, 177);
+            this.textBox_Day.Name = "textBox_Day";
+            this.textBox_Day.PlaceholderText = "Day";
+            this.textBox_Day.Size = new System.Drawing.Size(37, 23);
+            this.textBox_Day.TabIndex = 13;
             // 
-            // button_Confirm
+            // textBox_Contact
             // 
-            this.button_Confirm.Location = new System.Drawing.Point(207, 270);
-            this.button_Confirm.Name = "button_Confirm";
-            this.button_Confirm.Size = new System.Drawing.Size(111, 23);
-            this.button_Confirm.TabIndex = 21;
-            this.button_Confirm.Text = "Confirm Changes";
-            this.button_Confirm.UseVisualStyleBackColor = true;
+            this.textBox_Contact.Location = new System.Drawing.Point(74, 110);
+            this.textBox_Contact.Name = "textBox_Contact";
+            this.textBox_Contact.PlaceholderText = "Contact Number";
+            this.textBox_Contact.Size = new System.Drawing.Size(264, 23);
+            this.textBox_Contact.TabIndex = 11;
+            // 
+            // textBox_Email
+            // 
+            this.textBox_Email.Location = new System.Drawing.Point(74, 74);
+            this.textBox_Email.Name = "textBox_Email";
+            this.textBox_Email.PlaceholderText = "Email";
+            this.textBox_Email.Size = new System.Drawing.Size(264, 23);
+            this.textBox_Email.TabIndex = 10;
+            // 
+            // textBox_StudentID
+            // 
+            this.textBox_StudentID.Enabled = false;
+            this.textBox_StudentID.Location = new System.Drawing.Point(74, 49);
+            this.textBox_StudentID.Name = "textBox_StudentID";
+            this.textBox_StudentID.PlaceholderText = "StudentID";
+            this.textBox_StudentID.ReadOnly = true;
+            this.textBox_StudentID.Size = new System.Drawing.Size(264, 23);
+            this.textBox_StudentID.TabIndex = 9;
+            // 
+            // textBox_Name
+            // 
+            this.textBox_Name.Location = new System.Drawing.Point(74, 25);
+            this.textBox_Name.Name = "textBox_Name";
+            this.textBox_Name.PlaceholderText = "Name";
+            this.textBox_Name.Size = new System.Drawing.Size(264, 23);
+            this.textBox_Name.TabIndex = 8;
+            // 
+            // label_IC
+            // 
+            this.label_IC.AutoSize = true;
+            this.label_IC.Location = new System.Drawing.Point(6, 234);
+            this.label_IC.Name = "label_IC";
+            this.label_IC.Size = new System.Drawing.Size(68, 15);
+            this.label_IC.TabIndex = 7;
+            this.label_IC.Text = "IC Number:";
+            // 
+            // label_Address
+            // 
+            this.label_Address.AutoSize = true;
+            this.label_Address.Location = new System.Drawing.Point(6, 209);
+            this.label_Address.Name = "label_Address";
+            this.label_Address.Size = new System.Drawing.Size(52, 15);
+            this.label_Address.TabIndex = 6;
+            this.label_Address.Text = "Address:";
+            // 
+            // label_Date
+            // 
+            this.label_Date.Location = new System.Drawing.Point(6, 168);
+            this.label_Date.Name = "label_Date";
+            this.label_Date.Size = new System.Drawing.Size(56, 32);
+            this.label_Date.TabIndex = 5;
+            this.label_Date.Text = "Date Enrolled:";
+            // 
+            // label_Level
+            // 
+            this.label_Level.AutoSize = true;
+            this.label_Level.Location = new System.Drawing.Point(6, 143);
+            this.label_Level.Name = "label_Level";
+            this.label_Level.Size = new System.Drawing.Size(37, 15);
+            this.label_Level.TabIndex = 4;
+            this.label_Level.Text = "Level:";
+            // 
+            // label_Contact
+            // 
+            this.label_Contact.Location = new System.Drawing.Point(6, 101);
+            this.label_Contact.Name = "label_Contact";
+            this.label_Contact.Size = new System.Drawing.Size(56, 32);
+            this.label_Contact.TabIndex = 3;
+            this.label_Contact.Text = "Contact Number:";
+            // 
+            // label_Email
+            // 
+            this.label_Email.AutoSize = true;
+            this.label_Email.Location = new System.Drawing.Point(6, 77);
+            this.label_Email.Name = "label_Email";
+            this.label_Email.Size = new System.Drawing.Size(44, 15);
+            this.label_Email.TabIndex = 2;
+            this.label_Email.Text = "E-mail:";
+            // 
+            // label_StudentID
+            // 
+            this.label_StudentID.AutoSize = true;
+            this.label_StudentID.Location = new System.Drawing.Point(6, 52);
+            this.label_StudentID.Name = "label_StudentID";
+            this.label_StudentID.Size = new System.Drawing.Size(62, 15);
+            this.label_StudentID.TabIndex = 1;
+            this.label_StudentID.Text = "StudentID:";
+            // 
+            // label_Name
+            // 
+            this.label_Name.AutoSize = true;
+            this.label_Name.Location = new System.Drawing.Point(6, 28);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(42, 15);
+            this.label_Name.TabIndex = 0;
+            this.label_Name.Text = "Name:";
             // 
             // ReceptionEditDetail
             // 

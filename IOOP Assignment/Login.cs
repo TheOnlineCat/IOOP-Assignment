@@ -25,14 +25,18 @@ namespace IOOP_Assignment
         private void button_Login_Click(object sender, EventArgs e)
         {
             string stat;
-            User UserObj = new User(textBox_Username.Text, textBox_Password.Text);
-            stat = UserObj.login();
+            User UserObj = new User(textBox_Username.Text);
+            stat = UserObj.login(textBox_Password.Text);
             if (stat != null)
             {
                 MessageBox.Show(stat);
+                textBox_Username.Text = String.Empty;
+                textBox_Password.Text = String.Empty;
             }
-            textBox_Username.Text = String.Empty;
-            textBox_Password.Text = String.Empty;
+            else
+            {
+                Hide();
+            }
         }
     }
 }
