@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,17 +24,17 @@ namespace IOOP_Assignment
         public string login()
         {
             string status = null;
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+            
+            //SqlCommand objectName = new Constructor(sqlQuery, ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
             con.Open();
 
-            //SqlCommand objectName = new Constructor(sqlQuery, ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT count(*) FROM User WHERE Username = '" + username + "'and Password = '" + password + "'", con);
-
+            SqlCommand cmd = new SqlCommand("SELECT count(*) FROM [User] WHERE Username = '" + username + "' and Password = '" + password + "'", con);
             int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
             if (count > 0)
             {
-                SqlCommand cmd2 = new SqlCommand("select role from User where Username ='" + username + "' and Password ='" + password + "'", con);
+                SqlCommand cmd2 = new SqlCommand("select role from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
                 string userRole = cmd2.ExecuteScalar().ToString();
 
                 if (userRole == "admin")
