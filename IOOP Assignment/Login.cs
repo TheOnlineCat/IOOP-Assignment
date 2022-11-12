@@ -17,22 +17,26 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_Login_Click(object sender, EventArgs e)
         {
-            string stat;
-            User UserObj = new User(textBox_Username.Text, textBox_Password.Text);
-            stat = UserObj.login();
-            if (stat != null)
+            User UserObj = new User(textBox_Username.Text);
+            Form form = UserObj.login(textBox_Password.Text);
+            if (form == null)
             {
-                MessageBox.Show(stat);
+                MessageBox.Show("Invalid Username or Password");
+                textBox_Username.Text = String.Empty;
+                textBox_Password.Text = String.Empty;
             }
-            textBox_Username.Text = String.Empty;
-            textBox_Password.Text = String.Empty;
+            else
+            {
+                Hide();
+                form.FormClosed += childForm_Closed;
+            }
+        }
+
+        private void childForm_Closed(object? sender, FormClosedEventArgs e)
+        {
+            Show();
         }
     }
 }
