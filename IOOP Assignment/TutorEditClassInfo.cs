@@ -18,10 +18,9 @@ namespace IOOP_Assignment
         private ArrayList Data = new ArrayList();
         private SqlCommand cmd = new SqlCommand("select * from Schedule");
 
-        public TutorEditClassInfo(string Name)
+        public TutorEditClassInfo()
         {
             InitializeComponent();
-            lblName.Text = Name;
 
         }
 

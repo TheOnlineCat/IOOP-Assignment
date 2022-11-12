@@ -14,7 +14,7 @@ namespace IOOP_Assignment
     {
         public TutorStudentList()
         {
-            InitializeComponent();
+            InitializeComponent();   
         }
 
     }

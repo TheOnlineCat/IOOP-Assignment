@@ -8,15 +8,13 @@ namespace IOOP_Assignment
             lblName.Text = Name;
         }
 
+
         private void btnCInfo_Click(object sender, EventArgs e)
         {
-            TutorEditClassInfo s = new TutorEditClassInfo(Name);
+            TutorEditClassInfo s = new TutorEditClassInfo();
             s.Show();
             this.Hide();
         }
-
-        
-
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {

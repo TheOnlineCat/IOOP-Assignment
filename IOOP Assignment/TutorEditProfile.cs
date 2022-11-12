@@ -16,6 +16,7 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             grpPass.Visible = false;
+            
         }
 
         private void lblPassword_Click(object sender, EventArgs e)

@@ -34,7 +34,7 @@ namespace IOOP_Assignment
                 {
                     cmd.CommandText = "select * from Students where Username = '" + StuID + "'";
                     SqlDataReader data = cmd.ExecuteReader();
-                    while (data.Read())
+                    while (data.Read())  
                     {
                         label_Email.Text = "E-mail: " + data["Email"].ToString();
                         label_Contact.Text = "Contact Number: " + data["ContactNumber"].ToString();
