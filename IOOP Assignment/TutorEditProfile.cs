@@ -15,6 +15,22 @@ namespace IOOP_Assignment
         public TutorEditProfile()
         {
             InitializeComponent();
+            grpPass.Visible = false;
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            grpPass.Visible = true;
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
