@@ -164,6 +164,7 @@
             this.textBox_Month.PlaceholderText = "Month";
             this.textBox_Month.Size = new System.Drawing.Size(37, 23);
             this.textBox_Month.TabIndex = 19;
+            this.textBox_Month.TextChanged += new System.EventHandler(this.textBox_Date_TextChanged);
             // 
             // textBox_Year
             // 
@@ -172,9 +173,11 @@
             this.textBox_Year.PlaceholderText = "Year";
             this.textBox_Year.Size = new System.Drawing.Size(75, 23);
             this.textBox_Year.TabIndex = 18;
+            this.textBox_Year.TextChanged += new System.EventHandler(this.textBox_Date_TextChanged);
             // 
             // comboBox_Level
             // 
+            this.comboBox_Level.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Level.FormattingEnabled = true;
             this.comboBox_Level.Items.AddRange(new object[] {
             "1",
@@ -216,6 +219,7 @@
             this.textBox_Day.PlaceholderText = "Day";
             this.textBox_Day.Size = new System.Drawing.Size(37, 23);
             this.textBox_Day.TabIndex = 13;
+            this.textBox_Day.TextChanged += new System.EventHandler(this.textBox_Date_TextChanged);
             // 
             // textBox_Contact
             // 

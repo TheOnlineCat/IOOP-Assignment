@@ -17,27 +17,27 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        public ReceptionHomepage(string Username)
+        public ReceptionHomepage(string Name)
         {
             InitializeComponent();
-            label_Username.Text = Username;
+            label_Username.Text = Name;
         }
 
         private void loadStudent(string StuID)
         {
             student = new Student(StuID);
-            label_StudentName.Text = student.name;
+            label_StudentName.Text = student.Name;
             label_StudentID.Text = student.StudentID();
-            label_Email.Text = "E-mail: " + student.email;
-            label_Contact.Text = "Contact Number: " + student.contact;
-            label_Level.Text = "Level: " + student.level;
-            label_Date.Text = "Date Enrolled: " + student.date.ToString("dd/MM/yyyy");
-            label_Address.Text = "Address: " + student.address;
+            label_Email.Text = "E-mail: " + student.Email;
+            label_Contact.Text = "Contact Number: " + student.Contact;
+            label_Level.Text = "Level: " + student.Level;
+            label_Date.Text = "Date Enrolled: " + student.Date.ToString("dd/MM/yyyy");
+            label_Address.Text = "Address: " + student.Address;
             label_IC.Text = "IC Number: " + student.IC;
             listBox_Subject.Items.Clear();
-            if (student.subject != null) 
+            if (student.GetSubjects() != null) 
             {
-                foreach (string subj in student.subject)
+                foreach (string subj in student.GetSubjects())
                 {
                     if (subj != null) listBox_Subject.Items.Add(subj);
                 }
@@ -114,6 +114,7 @@ namespace IOOP_Assignment
                     } finally { cmd.Dispose(); }
                 }
             }
+            MessageBox.Show("Record Successfully Deleted", "Deleted", MessageBoxButtons.OK);
             label_StudentName.Text = "Student Name";
             label_StudentID.Text = "Student ID";
             label_Email.Text = "E-mail: ";
@@ -123,6 +124,7 @@ namespace IOOP_Assignment
             label_Address.Text = "Address: ";
             label_IC.Text = "IC Number: ";
             listBox_Subject.Items.Clear();
+
         }
 
         private void EditFormClosing(object sender, FormClosingEventArgs e)

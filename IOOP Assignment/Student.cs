@@ -11,24 +11,82 @@ namespace IOOP_Assignment
 {
     public class Student:User
     {
-        private string studentID;
-        public string name;
-        public string level;
-        public string IC;
-        public string address;
-        public string email;
-        public string contact;
-        public DateTime date;
-        public List<string> subject;
-        public string feeTotal;
-        public string feePaid;
-        public string feeOutstand;
-
+        private string _studentID;
+        private string _name;
+        private string _level;
+        private string _ic;
+        private string _address;
+        private string _email;
+        private string _contact;
+        private DateTime _date;
+        private List<string> _subject;
+        private string _feeTotal;
+        private string _feePaid;
+        private string _feeOutstand;
 
         public Student(string studentID) : base(studentID)
         {
-            this.studentID = studentID;
+            this._studentID = studentID;
             LoadData();
+        }
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        public string Level
+        {
+            get { return _level; }
+            set { _level = value; }
+        }
+
+        public string IC
+        {
+            get { return _ic; }
+            set { _ic = value; }
+        }
+
+        public string Address
+        {
+            get { return _address; }
+            set { _address = value; }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+
+        public string Contact
+        {
+            get { return _contact; }
+            set { _contact = value; }
+        }
+
+        public DateTime Date
+        {
+            get { return _date; }
+            set { _date = value; }
+        }
+
+        public List<string> GetSubjects()
+        {
+            return _subject;
+        }
+
+        public string SetSubject(string replace, string insert)
+        {
+            for (int i = 0; i < _subject.Count(); i++)
+            {
+                if (_subject[i] == replace)
+                {
+                    _subject[i] = insert;
+                    return(replace);
+                }
+            }
+            return null;
         }
 
 /*        public Student(string name, string studentID, string level, string iC, string address, string email, string contactNum, string sub1, string sub2, string sub3) : this(name, studentID)
@@ -50,12 +108,12 @@ namespace IOOP_Assignment
                 using (SqlCommand cmd = con.CreateCommand())
                 {
                     cmd.CommandText = "UPDATE [Students] set " +
-                        "Email = '" + this.email + "'," +
-                        "ContactNumber = '" + this.contact + "'," +
-                        "Level = '" + this.level + "'," +
-                        "DateEnrolled = '" + this.date.ToString("dd/MM/yyyy") + "'," +
-                        "Address = '" + this.address + "'," +
-                        "IC = '" + this.IC + "'" +
+                        "Email = '" + this._email + "'," +
+                        "ContactNumber = '" + this._contact + "'," +
+                        "Level = '" + this._level + "'," +
+                        "DateEnrolled = '" + this._date.ToString("MM/dd/yyyy") + "'," +
+                        "Address = '" + this._address + "'," +
+                        "IC = '" + this._ic + "'" +
                         "where Username = '" + StudentID() + "'";
                     cmd.ExecuteNonQuery();
 
@@ -65,7 +123,7 @@ namespace IOOP_Assignment
 
         public string StudentID()
         {
-            return studentID;
+            return _studentID;
         }
 
         public static bool Exists(string ID)
@@ -75,7 +133,7 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmdTest = con.CreateCommand())
                 {
-                    cmdTest.CommandText = "Select count(*) from [Student] where Username = '" + ID + "'";
+                    cmdTest.CommandText = "Select count(*) from [Students] where Username = '" + ID + "'";
                     int count = Convert.ToInt32(cmdTest.ExecuteScalar().ToString());
                     if (count > 0) return true;
                     else return false;
@@ -90,10 +148,10 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    cmd.CommandText = "select Name from [User] where Username = '" + studentID + "' and role = 'student'";
+                    cmd.CommandText = "select Name from [User] where Username = '" + _studentID + "' and role = 'student'";
                     try
                     {
-                        name = cmd.ExecuteScalar().ToString();
+                        _name = cmd.ExecuteScalar().ToString();
                     }
                     catch(Exception ex) { return; }
                 }
@@ -101,30 +159,30 @@ namespace IOOP_Assignment
 
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    cmd.CommandText = "select * from Students where Username = '" + studentID + "'";
+                    cmd.CommandText = "select * from Students where Username = '" + _studentID + "'";
                     SqlDataReader data = cmd.ExecuteReader();
                     while (data.Read())
                     {
-                        level = data["Level"].ToString();
-                        IC = data["IC"].ToString();
-                        address = data["Address"].ToString();
-                        email = data["Email"].ToString();
-                        contact = data["ContactNumber"].ToString();
-                        date = Convert.ToDateTime(data["DateEnrolled"]);
-                        subject = new List<string> { data["Subject1"].ToString(), data["Subject2"].ToString(), data["Subject3"].ToString() };
+                        _level = data["Level"].ToString();
+                        _ic = data["IC"].ToString();
+                        _address = data["Address"].ToString();
+                        _email = data["Email"].ToString();
+                        _contact = data["ContactNumber"].ToString();
+                        _date = Convert.ToDateTime(data["DateEnrolled"]);
+                        _subject = new List<string> { data["Subject1"].ToString(), data["Subject2"].ToString(), data["Subject3"].ToString() };
                     }
                     data.Close();
                 }
 
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    cmd.CommandText = "select * from PaymentInfo where Username = '" + studentID + "'";
+                    cmd.CommandText = "select * from PaymentInfo where Username = '" + _studentID + "'";
                     SqlDataReader data = cmd.ExecuteReader();
                     while (data.Read())
                     {
-                        feeTotal = data["Amount"].ToString();
-                        feePaid = data["PaidAmount"].ToString();
-                        feeOutstand = data["Outstanding"].ToString();
+                        _feeTotal = data["Amount"].ToString();
+                        _feePaid = data["PaidAmount"].ToString();
+                        _feeOutstand = data["Outstanding"].ToString();
                     }
                     data.Close();
                 }

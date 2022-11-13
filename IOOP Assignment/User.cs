@@ -34,6 +34,7 @@ namespace IOOP_Assignment
                 }
             }
         }
+
         public Form login(string password)
         {
             //SqlCommand objectName = new Constructor(sqlQuery, ConnectionString);

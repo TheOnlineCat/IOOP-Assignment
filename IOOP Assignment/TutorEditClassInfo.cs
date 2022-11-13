@@ -47,7 +47,7 @@ namespace IOOP_Assignment
                 connection.Open();
                 using (SqlCommand cmd = connection.CreateCommand())
                 {
-                    for (int index = 0; 0 < gridList.Rows.Count; index++)
+                    for (int index = 0; index < gridList.Rows.Count; index++)
                     {
                         string subject = gridList.Rows[index].Cells[1].Value.ToString();
                         string day = gridList.Rows[index].Cells[2].Value.ToString();
