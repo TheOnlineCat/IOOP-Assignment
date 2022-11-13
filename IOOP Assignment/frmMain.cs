@@ -13,25 +13,26 @@ namespace IOOP_Assignment
     public partial class frmMain : Form
     {
         string username;
-        string stuID;
+        string name;
         public frmMain()
         {
             InitializeComponent();
         }
 
-        public frmMain(string n)
+        public frmMain(string m)
         {
-            stuID = n;
+            username = m;
         }
 
         public frmMain(string m, string n)
         {
             username = m;
-            stuID = n;
+            name = n;
         }
         private void label3_Click(object sender, EventArgs e)
         {
-            lblName_StuID.Text = stuID + "|" + username;
+            
+            lblName_StuID.Text = name + "|" + username;
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace IOOP_Assignment
 {
@@ -92,7 +93,7 @@ namespace IOOP_Assignment
 /*        public Student(string name, string studentID, string level, string iC, string address, string email, string contactNum, string sub1, string sub2, string sub3) : this(name, studentID)
         {
             this.level = level;
-            IC = iC;
+            this.IC = IC;
             this.address = address;
             this.email = email;
             this.contact = contactNum;

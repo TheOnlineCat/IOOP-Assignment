@@ -12,9 +12,21 @@ namespace IOOP_Assignment
 {
     public partial class frmEdit : Form
     {
+        string name;
+        string IC;
+        string address;
+        string email;
+        string contactNum;
+        string level;
+        string 
         public frmEdit()
         {
             InitializeComponent();
+        }
+
+        public frmEdit()
+        {
+
         }
 
         private void lblIC_Click(object sender, EventArgs e)
@@ -29,7 +41,7 @@ namespace IOOP_Assignment
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void frmEdit_Load(object sender, EventArgs e)
