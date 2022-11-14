@@ -34,9 +34,9 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
             this.student = student;
-            this.CurrentID = student.StudentID();
+            this.CurrentID = student.StudentID;
             textBox_Name.Text = student.Name;
-            textBox_StudentID.Text = student.StudentID();
+            textBox_StudentID.Text = student.StudentID;
             textBox_Email.Text = student.Email;
             textBox_Contact.Text = student.Contact;
             comboBox_Level.Text = student.Level;
@@ -88,6 +88,8 @@ namespace IOOP_Assignment
                             textBox_Address.Text.ToString(),
                             textBox_IC.Text.ToString()
                         });
+
+
                         using (SqlCommand cmd = con.CreateCommand())
                         {
                             cmd.CommandText = "INSERT INTO [User](Username, Name, Role, Password) values('" +
@@ -98,6 +100,15 @@ namespace IOOP_Assignment
                             cmd.ExecuteNonQuery();
 
                         }
+
+                        using (SqlCommand cmd = con.CreateCommand())
+                        {
+                            cmd.CommandText = "INSERT INTO [PaymentInfo](Username, Amount, PaidAmount, Outstanding) " +
+                                "values('" + textBox_StudentID.Text.ToString() + "', 0, 0, 0)";
+                            cmd.ExecuteNonQuery();
+
+                        }
+
                         using (SqlCommand cmd = con.CreateCommand())
                         {
                             cmd.CommandText = "INSERT INTO [Students](Username, Email, ContactNumber, Level, DateEnrolled, Address, IC) values('" + newdata + "')";

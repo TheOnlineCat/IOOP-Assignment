@@ -15,12 +15,12 @@ namespace IOOP_Assignment
         private int checkCounter;
         private Student student;
 
-        public ReceptionEditSubjects(string name, string studentId)
+        public ReceptionEditSubjects(string name, Student student)
         {
             InitializeComponent();
             label_Username.Text = name;
-            student = new Student(studentId);
-            label_Student.Text = student.Name + "\n" + studentId;
+            this.student = student;
+            label_Student.Text = student.Name + "\n" + student.StudentID;
             LoadSubjectList();
             
         }
@@ -77,7 +77,7 @@ namespace IOOP_Assignment
                     }
                 }
             }
-            MessageBox.Show(String.Join(",", subjects));
+            //MessageBox.Show(String.Join(",", subjects));
             student.SetSubjects(subjects);
             student.SaveData();
             Close();

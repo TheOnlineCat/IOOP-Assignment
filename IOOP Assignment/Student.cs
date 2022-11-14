@@ -21,13 +21,18 @@ namespace IOOP_Assignment
         private string _contact;
         private DateTime _date;
         private List<Subject> _subject;
-        private string _feeTotal;
-        private string _feePaid;
-        private string _feeOutstand;
+        private decimal _feeTotal;
+        private decimal _feePaid;
+        private decimal _feeOutstand;
         public Student(string studentID) : base(studentID)
         {
             this._studentID = studentID;
             LoadData();
+        }
+
+        public string StudentID
+        {
+            get { return _studentID; }
         }
 
         public string Name
@@ -71,6 +76,21 @@ namespace IOOP_Assignment
             set { _date = value; }
         }
 
+        public decimal FeeTotal
+        {
+            get { return _feeTotal; }
+            set { _feeTotal = value; }
+        }
+        public decimal FeePaid
+        {
+            get { return _feePaid; }
+            set { _feePaid = value; }
+        }
+        public decimal FeeOutstand
+        {
+            get { return _feeOutstand; }
+        }
+
         public List<string> GetSubjects()
         {
             List<string> subjectNames = new List<string>();
@@ -100,9 +120,15 @@ namespace IOOP_Assignment
         public void SetSubjects(List<string> subjects)
         {
             _subject.Clear();
+            _feeTotal = 0;
             foreach (string name in subjects)
             {
                 _subject.Add(new Subject(name));
+            }
+            foreach (Subject subject in _subject)
+            {
+                _feeTotal += subject.ChargeRate;
+                //MessageBox.Show(_feeTotal.ToString());
             }
             
         }
@@ -132,7 +158,7 @@ namespace IOOP_Assignment
                         "DateEnrolled = '" + this._date.ToString("MM/dd/yyyy") + "'," +
                         "Address = '" + this._address + "'," +
                         "IC = '" + this._ic + "'" +
-                        "where [Username] = '" + this.StudentID() + "'";
+                        "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
 
                     /*                    cmd.CommandText = "DELETE FROM [Students].[Subject1], [Students].[Subject2], [Students].[Subject3]" +
@@ -143,41 +169,48 @@ namespace IOOP_Assignment
                     if (_subject.Count >= 1)
                     {
                         cmd.CommandText = "UPDATE [Students] set " + "Subject1 = '" + this._subject[0].Name + "'" +
-                            "where [Username] = '" + this.StudentID() + "'";
+                            "where [Username] = '" + this._studentID + "'";
                         
                     } else cmd.CommandText = "UPDATE [Students] set Subject1 = NULL " +
-                            "where [Username] = '" + this.StudentID() + "'";
+                            "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
 
                     if (_subject.Count >= 2)
                     {
                         cmd.CommandText = "UPDATE [Students] set " + "Subject2 = '" + this._subject[1].Name + "'" +
-                            "where [Username] = '" + this.StudentID() + "'";
+                            "where [Username] = '" + this._studentID + "'";
                         cmd.ExecuteNonQuery();
                     }
                     else cmd.CommandText = "UPDATE [Students] set Subject2 = NULL " +
-                            "where [Username] = '" + this.StudentID() + "'";
+                            "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
 
                     if (_subject.Count >= 3)
                     {
                         cmd.CommandText = "UPDATE [Students] set " + "Subject3 = '" + this._subject[2].Name + "'" +
-                            "where [Username] = '" + this.StudentID() + "'";
+                            "where [Username] = '" + this._studentID + "'";
                     }
                     else cmd.CommandText = "UPDATE [Students] set Subject3 = NULL " +
-                            "where [Username] = '" + this.StudentID() + "'";
+                            "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
 
 
 
                 }
+
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE [PaymentInfo] set " +
+                        "Amount = '" + this._feeTotal + "'," +
+                        "PaidAmount = '" + this._feePaid + "'" +
+                        "where [Username] = '" + this._studentID + "'";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show(_feeTotal.ToString());
                 }
+            }
         }
 
-        public string StudentID()
-        {
-            return _studentID;
-        }
+        
 
         public static bool Exists(string ID)
         {
@@ -237,9 +270,9 @@ namespace IOOP_Assignment
                     SqlDataReader data = cmd.ExecuteReader();
                     while (data.Read())
                     {
-                        _feeTotal = data["Amount"].ToString();
-                        _feePaid = data["PaidAmount"].ToString();
-                        _feeOutstand = data["Outstanding"].ToString();
+                        _feeTotal = Convert.ToDecimal(data["Amount"].ToString());
+                        _feePaid = Convert.ToDecimal(data["PaidAmount"].ToString());
+                        _feeOutstand = Convert.ToDecimal(data["Outstanding"].ToString());
                     }
                     data.Close();
                 }

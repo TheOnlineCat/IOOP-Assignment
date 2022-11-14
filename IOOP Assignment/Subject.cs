@@ -90,9 +90,10 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    cmd.CommandText = "Select StudentNumber from Subjects where Subject = '" + subject + "'";
+                    cmd.CommandText = "Select ChargeRate from Subjects where Subject = '" + subject + "'";
                     return (Convert.ToDecimal(cmd.ExecuteScalar().ToString()));
                 }
+                
             }
         }
 

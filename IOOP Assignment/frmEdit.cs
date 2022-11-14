@@ -18,11 +18,6 @@ namespace IOOP_Assignment
         string email;
         string contactNum;
         string level;
-        string 
-        public frmEdit()
-        {
-            InitializeComponent();
-        }
 
         public frmEdit(Student student)
         {
