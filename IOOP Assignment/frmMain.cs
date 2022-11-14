@@ -31,8 +31,8 @@ namespace IOOP_Assignment
         }
         private void label3_Click(object sender, EventArgs e)
         {
-            
-            lblName_StuID.Text = name + "|" + username;
+            User obj = new User(null);
+            lblName_StuID.Text = obj.ShowUsername_Name(null);
         }
 
         private void button3_Click(object sender, EventArgs e)

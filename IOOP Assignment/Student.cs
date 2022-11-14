@@ -24,7 +24,6 @@ namespace IOOP_Assignment
         private string _feeTotal;
         private string _feePaid;
         private string _feeOutstand;
-
         public Student(string studentID) : base(studentID)
         {
             this._studentID = studentID;
