@@ -17,27 +17,30 @@ namespace IOOP_Assignment
             InitializeComponent();
         }
 
-        public ReceptionHomepage(string Username)
+        public ReceptionHomepage(string Name)
         {
             InitializeComponent();
-            label_Username.Text = Username;
+            label_Username.Text = Name;
         }
 
         private void loadStudent(string StuID)
         {
             student = new Student(StuID);
-            label_StudentName.Text = student.name;
-            label_StudentID.Text = student.StudentID();
-            label_Email.Text = "E-mail: " + student.email;
-            label_Contact.Text = "Contact Number: " + student.contact;
-            label_Level.Text = "Level: " + student.level;
-            label_Date.Text = "Date Enrolled: " + student.date.ToString("dd/MM/yyyy");
-            label_Address.Text = "Address: " + student.address;
+            label_StudentName.Text = student.Name;
+            label_StudentID.Text = student.StudentID;
+            label_Email.Text = "E-mail: " + student.Email;
+            label_Contact.Text = "Contact Number: " + student.Contact;
+            label_Level.Text = "Level: " + student.Level;
+            label_Date.Text = "Date Enrolled: " + student.Date.ToString("dd/MM/yyyy");
+            label_Address.Text = "Address: " + student.Address;
             label_IC.Text = "IC Number: " + student.IC;
+            label_FeeDue.Text = "Total Due: RM" + student.FeeTotal.ToString();
+            label_FeePaid.Text = "Total Paid: RM" + student.FeePaid.ToString();
+            label_FeeOutstand.Text = "Total Outstanding: RM" + (student.FeeTotal - student.FeePaid).ToString();
             listBox_Subject.Items.Clear();
-            if (student.subject != null) 
+            if (student.GetSubjects() != null) 
             {
-                foreach (string subj in student.subject)
+                foreach (string subj in student.GetSubjects())
                 {
                     if (subj != null) listBox_Subject.Items.Add(subj);
                 }
@@ -97,7 +100,7 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    try
+                    /*try
                     {
                         cmd.CommandText = "DELETE FROM [Students] where Username = '" + label_StudentID.Text.ToString() + "'";
                         cmd.ExecuteNonQuery();
@@ -106,7 +109,7 @@ namespace IOOP_Assignment
                     {
                         cmd.CommandText = "DELETE FROM [PaymentInfo] where Username = '" + label_StudentID.Text.ToString() + "'";
                         cmd.ExecuteNonQuery();
-                    } finally { cmd.Dispose(); }
+                    } finally { cmd.Dispose(); }*/
                     try
                     {
                         cmd.CommandText = "DELETE FROM [User] where Username = '" + label_StudentID.Text.ToString() + "'";
@@ -114,6 +117,7 @@ namespace IOOP_Assignment
                     } finally { cmd.Dispose(); }
                 }
             }
+            MessageBox.Show("Record Successfully Deleted", "Deleted", MessageBoxButtons.OK);
             label_StudentName.Text = "Student Name";
             label_StudentID.Text = "Student ID";
             label_Email.Text = "E-mail: ";
@@ -123,11 +127,35 @@ namespace IOOP_Assignment
             label_Address.Text = "Address: ";
             label_IC.Text = "IC Number: ";
             listBox_Subject.Items.Clear();
+
+        }
+
+
+        private void button_EditSubject_Click(object sender, EventArgs e)
+        {
+            if (Student.Exists(textBox_Search.Text))
+            {
+                ReceptionEditSubjects formSubject = new ReceptionEditSubjects(label_Username.Text, student);
+                formSubject.FormClosing += EditFormClosing;
+                formSubject.ShowDialog();
+            }
+            else MessageBox.Show("Record does not exist.", "Null Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
+        private void button_Receipt_Click(object sender, EventArgs e)
+        {
+            ReceptionReceipt formReceipt = new ReceptionReceipt(label_Username.Text, student);
+            formReceipt.ShowDialog();
         }
 
         private void EditFormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Student.Exists(StudentID)) loadStudent(StudentID);
-        }
+            if (Student.Exists(StudentID))
+            {
+                loadStudent(StudentID);
+                textBox_Search.Text = StudentID;
+            }
+        }               
     }
 }

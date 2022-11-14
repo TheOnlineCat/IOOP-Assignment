@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceptionEditSubjects));
             this.label_Logo = new System.Windows.Forms.Label();
-            this.button_Profile = new System.Windows.Forms.Button();
             this.label_Username = new System.Windows.Forms.Label();
             this.label_Role = new System.Windows.Forms.Label();
             this.pictureBox_Account = new System.Windows.Forms.PictureBox();
             this.groupBox_EditSubject = new System.Windows.Forms.GroupBox();
-            this.label_Student = new System.Windows.Forms.Label();
-            this.groupBox_CheckBox = new System.Windows.Forms.GroupBox();
-            this.checkBox_Science = new System.Windows.Forms.CheckBox();
-            this.checkBox_Math = new System.Windows.Forms.CheckBox();
-            this.checkBox_English = new System.Windows.Forms.CheckBox();
-            this.checkBox_History = new System.Windows.Forms.CheckBox();
-            this.checkBox_Geography = new System.Windows.Forms.CheckBox();
-            this.label_Enrolled = new System.Windows.Forms.Label();
-            this.listBox_Subjects = new System.Windows.Forms.ListBox();
             this.button_Confirm = new System.Windows.Forms.Button();
             this.button_Cancel = new System.Windows.Forms.Button();
+            this.listBox_Subjects = new System.Windows.Forms.ListBox();
+            this.label_Enrolled = new System.Windows.Forms.Label();
+            this.groupBox_CheckBox = new System.Windows.Forms.GroupBox();
+            this.checkBox_Geography = new System.Windows.Forms.CheckBox();
+            this.checkBox_History = new System.Windows.Forms.CheckBox();
+            this.checkBox_English = new System.Windows.Forms.CheckBox();
+            this.checkBox_Math = new System.Windows.Forms.CheckBox();
+            this.checkBox_Science = new System.Windows.Forms.CheckBox();
+            this.label_Student = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Account)).BeginInit();
             this.groupBox_EditSubject.SuspendLayout();
             this.groupBox_CheckBox.SuspendLayout();
@@ -60,16 +60,6 @@
             this.label_Logo.Size = new System.Drawing.Size(62, 37);
             this.label_Logo.TabIndex = 21;
             this.label_Logo.Text = "ETC";
-            // 
-            // button_Profile
-            // 
-            this.button_Profile.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Profile.Location = new System.Drawing.Point(140, 23);
-            this.button_Profile.Name = "button_Profile";
-            this.button_Profile.Size = new System.Drawing.Size(73, 19);
-            this.button_Profile.TabIndex = 22;
-            this.button_Profile.Text = "Edit Profile";
-            this.button_Profile.UseVisualStyleBackColor = true;
             // 
             // label_Username
             // 
@@ -92,7 +82,7 @@
             // 
             // pictureBox_Account
             // 
-            this.pictureBox_Account.Image = global::IOOP_Assignment.Properties.Resources.img_525162;
+            this.pictureBox_Account.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Account.Image")));
             this.pictureBox_Account.ImageLocation = "\"Resources/img_UserIcon.png\"";
             this.pictureBox_Account.Location = new System.Drawing.Point(310, 9);
             this.pictureBox_Account.Name = "pictureBox_Account";
@@ -115,15 +105,42 @@
             this.groupBox_EditSubject.TabStop = false;
             this.groupBox_EditSubject.Text = "Edit Student Subjects";
             // 
-            // label_Student
+            // button_Confirm
             // 
-            this.label_Student.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_Student.Location = new System.Drawing.Point(127, 19);
-            this.label_Student.Name = "label_Student";
-            this.label_Student.Size = new System.Drawing.Size(100, 35);
-            this.label_Student.TabIndex = 0;
-            this.label_Student.Text = "Name StudentID";
-            this.label_Student.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_Confirm.Location = new System.Drawing.Point(206, 263);
+            this.button_Confirm.Name = "button_Confirm";
+            this.button_Confirm.Size = new System.Drawing.Size(111, 23);
+            this.button_Confirm.TabIndex = 29;
+            this.button_Confirm.Text = "Confirm Changes";
+            this.button_Confirm.UseVisualStyleBackColor = true;
+            this.button_Confirm.Click += new System.EventHandler(this.button_Confirm_Click);
+            // 
+            // button_Cancel
+            // 
+            this.button_Cancel.Location = new System.Drawing.Point(28, 263);
+            this.button_Cancel.Name = "button_Cancel";
+            this.button_Cancel.Size = new System.Drawing.Size(111, 23);
+            this.button_Cancel.TabIndex = 28;
+            this.button_Cancel.Text = "Cancel";
+            this.button_Cancel.UseVisualStyleBackColor = true;
+            // 
+            // listBox_Subjects
+            // 
+            this.listBox_Subjects.FormattingEnabled = true;
+            this.listBox_Subjects.ItemHeight = 15;
+            this.listBox_Subjects.Location = new System.Drawing.Point(173, 75);
+            this.listBox_Subjects.Name = "listBox_Subjects";
+            this.listBox_Subjects.Size = new System.Drawing.Size(163, 154);
+            this.listBox_Subjects.TabIndex = 27;
+            // 
+            // label_Enrolled
+            // 
+            this.label_Enrolled.AutoSize = true;
+            this.label_Enrolled.Location = new System.Drawing.Point(173, 57);
+            this.label_Enrolled.Name = "label_Enrolled";
+            this.label_Enrolled.Size = new System.Drawing.Size(97, 15);
+            this.label_Enrolled.TabIndex = 26;
+            this.label_Enrolled.Text = "Enrolled Subjects";
             // 
             // groupBox_CheckBox
             // 
@@ -139,35 +156,16 @@
             this.groupBox_CheckBox.TabStop = false;
             this.groupBox_CheckBox.Text = "Subjects";
             // 
-            // checkBox_Science
+            // checkBox_Geography
             // 
-            this.checkBox_Science.AutoSize = true;
-            this.checkBox_Science.Location = new System.Drawing.Point(6, 22);
-            this.checkBox_Science.Name = "checkBox_Science";
-            this.checkBox_Science.Size = new System.Drawing.Size(66, 19);
-            this.checkBox_Science.TabIndex = 0;
-            this.checkBox_Science.Text = "Science";
-            this.checkBox_Science.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Math
-            // 
-            this.checkBox_Math.AutoSize = true;
-            this.checkBox_Math.Location = new System.Drawing.Point(6, 47);
-            this.checkBox_Math.Name = "checkBox_Math";
-            this.checkBox_Math.Size = new System.Drawing.Size(54, 19);
-            this.checkBox_Math.TabIndex = 1;
-            this.checkBox_Math.Text = "Math";
-            this.checkBox_Math.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_English
-            // 
-            this.checkBox_English.AutoSize = true;
-            this.checkBox_English.Location = new System.Drawing.Point(6, 72);
-            this.checkBox_English.Name = "checkBox_English";
-            this.checkBox_English.Size = new System.Drawing.Size(64, 19);
-            this.checkBox_English.TabIndex = 2;
-            this.checkBox_English.Text = "English";
-            this.checkBox_English.UseVisualStyleBackColor = true;
+            this.checkBox_Geography.AutoSize = true;
+            this.checkBox_Geography.Location = new System.Drawing.Point(6, 122);
+            this.checkBox_Geography.Name = "checkBox_Geography";
+            this.checkBox_Geography.Size = new System.Drawing.Size(84, 19);
+            this.checkBox_Geography.TabIndex = 4;
+            this.checkBox_Geography.Text = "Geography";
+            this.checkBox_Geography.UseVisualStyleBackColor = true;
+            this.checkBox_Geography.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
             // 
             // checkBox_History
             // 
@@ -178,52 +176,50 @@
             this.checkBox_History.TabIndex = 3;
             this.checkBox_History.Text = "History";
             this.checkBox_History.UseVisualStyleBackColor = true;
+            this.checkBox_History.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
             // 
-            // checkBox_Geography
+            // checkBox_English
             // 
-            this.checkBox_Geography.AutoSize = true;
-            this.checkBox_Geography.Location = new System.Drawing.Point(6, 122);
-            this.checkBox_Geography.Name = "checkBox_Geography";
-            this.checkBox_Geography.Size = new System.Drawing.Size(84, 19);
-            this.checkBox_Geography.TabIndex = 4;
-            this.checkBox_Geography.Text = "Geography";
-            this.checkBox_Geography.UseVisualStyleBackColor = true;
+            this.checkBox_English.AutoSize = true;
+            this.checkBox_English.Location = new System.Drawing.Point(6, 72);
+            this.checkBox_English.Name = "checkBox_English";
+            this.checkBox_English.Size = new System.Drawing.Size(64, 19);
+            this.checkBox_English.TabIndex = 2;
+            this.checkBox_English.Text = "English";
+            this.checkBox_English.UseVisualStyleBackColor = true;
+            this.checkBox_English.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
             // 
-            // label_Enrolled
+            // checkBox_Math
             // 
-            this.label_Enrolled.AutoSize = true;
-            this.label_Enrolled.Location = new System.Drawing.Point(173, 57);
-            this.label_Enrolled.Name = "label_Enrolled";
-            this.label_Enrolled.Size = new System.Drawing.Size(97, 15);
-            this.label_Enrolled.TabIndex = 26;
-            this.label_Enrolled.Text = "Enrolled Subjects";
+            this.checkBox_Math.AutoSize = true;
+            this.checkBox_Math.Location = new System.Drawing.Point(6, 47);
+            this.checkBox_Math.Name = "checkBox_Math";
+            this.checkBox_Math.Size = new System.Drawing.Size(54, 19);
+            this.checkBox_Math.TabIndex = 1;
+            this.checkBox_Math.Text = "Math";
+            this.checkBox_Math.UseVisualStyleBackColor = true;
+            this.checkBox_Math.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
             // 
-            // listBox_Subjects
+            // checkBox_Science
             // 
-            this.listBox_Subjects.FormattingEnabled = true;
-            this.listBox_Subjects.ItemHeight = 15;
-            this.listBox_Subjects.Location = new System.Drawing.Point(173, 75);
-            this.listBox_Subjects.Name = "listBox_Subjects";
-            this.listBox_Subjects.Size = new System.Drawing.Size(163, 154);
-            this.listBox_Subjects.TabIndex = 27;
+            this.checkBox_Science.AutoSize = true;
+            this.checkBox_Science.Location = new System.Drawing.Point(6, 22);
+            this.checkBox_Science.Name = "checkBox_Science";
+            this.checkBox_Science.Size = new System.Drawing.Size(66, 19);
+            this.checkBox_Science.TabIndex = 0;
+            this.checkBox_Science.Text = "Science";
+            this.checkBox_Science.UseVisualStyleBackColor = true;
+            this.checkBox_Science.CheckedChanged += new System.EventHandler(this.OnCheckedChanged);
             // 
-            // button_Confirm
+            // label_Student
             // 
-            this.button_Confirm.Location = new System.Drawing.Point(206, 263);
-            this.button_Confirm.Name = "button_Confirm";
-            this.button_Confirm.Size = new System.Drawing.Size(111, 23);
-            this.button_Confirm.TabIndex = 29;
-            this.button_Confirm.Text = "Confirm Changes";
-            this.button_Confirm.UseVisualStyleBackColor = true;
-            // 
-            // button_Cancel
-            // 
-            this.button_Cancel.Location = new System.Drawing.Point(28, 263);
-            this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(111, 23);
-            this.button_Cancel.TabIndex = 28;
-            this.button_Cancel.Text = "Cancel";
-            this.button_Cancel.UseVisualStyleBackColor = true;
+            this.label_Student.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_Student.Location = new System.Drawing.Point(127, 19);
+            this.label_Student.Name = "label_Student";
+            this.label_Student.Size = new System.Drawing.Size(100, 35);
+            this.label_Student.TabIndex = 0;
+            this.label_Student.Text = "Name StudentID";
+            this.label_Student.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ReceptionEditSubjects
             // 
@@ -233,7 +229,6 @@
             this.ClientSize = new System.Drawing.Size(365, 364);
             this.Controls.Add(this.groupBox_EditSubject);
             this.Controls.Add(this.label_Logo);
-            this.Controls.Add(this.button_Profile);
             this.Controls.Add(this.label_Username);
             this.Controls.Add(this.label_Role);
             this.Controls.Add(this.pictureBox_Account);
@@ -252,7 +247,6 @@
         #endregion
 
         private Label label_Logo;
-        private Button button_Profile;
         private Label label_Username;
         private Label label_Role;
         private PictureBox pictureBox_Account;
