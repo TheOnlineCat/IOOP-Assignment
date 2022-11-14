@@ -24,7 +24,6 @@ namespace IOOP_Assignment
         private string _feeTotal;
         private string _feePaid;
         private string _feeOutstand;
-
         public Student(string studentID) : base(studentID)
         {
             this._studentID = studentID;
@@ -84,23 +83,12 @@ namespace IOOP_Assignment
                 if (_subject[i] == replace)
                 {
                     _subject[i] = insert;
-                    return(replace);
+                    return (replace);
                 }
             }
             return null;
         }
 
-/*        public Student(string name, string studentID, string level, string iC, string address, string email, string contactNum, string sub1, string sub2, string sub3) : this(name, studentID)
-        {
-            this.level = level;
-            this.IC = IC;
-            this.address = address;
-            this.email = email;
-            this.contact = contactNum;
-            this.subject[0] = sub1;
-            this.subject[1] = sub2;
-            this.subject[2] = sub3;
-        }*/
         public void SaveData()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))

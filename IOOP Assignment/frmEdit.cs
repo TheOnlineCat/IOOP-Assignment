@@ -12,22 +12,23 @@ namespace IOOP_Assignment
 {
     public partial class frmEdit : Form
     {
-        string name;
-        string IC;
-        string address;
-        string email;
-        string contactNum;
-        string level;
-        string 
+        Student student;
         public frmEdit()
         {
             InitializeComponent();
         }
 
-        public frmEdit()
+        public frmEdit(Student student)
         {
-
+            InitializeComponent();
+            student.Name=lblOutputName.ToString();
+            student.IC=lblIC.ToString();
+            student.Address=txtAdd.ToString();
+            student.Email=txtEmail.ToString();
+            student.Contact=txtContact.ToString();
+            student.Level=lblLvl.ToString();
         }
+
 
         private void lblIC_Click(object sender, EventArgs e)
         {
@@ -46,10 +47,16 @@ namespace IOOP_Assignment
 
         private void frmEdit_Load(object sender, EventArgs e)
         {
+            
 
         }
 
         private void frmEdit_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
         {
 
         }
