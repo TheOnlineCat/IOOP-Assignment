@@ -20,7 +20,7 @@ namespace IOOP_Assignment
         private string _email;
         private string _contact;
         private DateTime _date;
-        private List<string> _subject;
+        private List<Subject> _subject;
         private string _feeTotal;
         private string _feePaid;
         private string _feeOutstand;
@@ -74,20 +74,38 @@ namespace IOOP_Assignment
 
         public List<string> GetSubjects()
         {
-            return _subject;
+            List<string> subjectNames = new List<string>();
+            foreach (Subject subject in _subject)
+            {
+                subjectNames.Add(subject.Name);
+            }
+            return subjectNames;
         }
 
-        public string SetSubject(string replace, string insert)
+        public string ReplaceSubject(string replace, string insert) //returns replaced subject
         {
-            for (int i = 0; i < _subject.Count(); i++)
+            if (GetSubjects().Contains(replace) && Subject.GetExistingSubjects().Contains(insert))
             {
-                if (_subject[i] == replace)
+                for (int i = 0; i < _subject.Count(); i++)
                 {
-                    _subject[i] = insert;
-                    return(replace);
+                    if (_subject[i].Name == replace)
+                    {
+                        _subject[i] = new Subject(insert);
+                        return (replace);
+                    }
                 }
             }
             return null;
+        }
+
+        public void SetSubjects(List<string> subjects)
+        {
+            _subject.Clear();
+            foreach (string name in subjects)
+            {
+                _subject.Add(new Subject(name));
+            }
+            
         }
 
 /*        public Student(string name, string studentID, string level, string iC, string address, string email, string contactNum, string sub1, string sub2, string sub3) : this(name, studentID)
@@ -115,11 +133,46 @@ namespace IOOP_Assignment
                         "DateEnrolled = '" + this._date.ToString("MM/dd/yyyy") + "'," +
                         "Address = '" + this._address + "'," +
                         "IC = '" + this._ic + "'" +
-                        "where Username = '" + StudentID() + "'";
+                        "where [Username] = '" + this.StudentID() + "'";
                     cmd.ExecuteNonQuery();
 
+                    /*                    cmd.CommandText = "DELETE FROM [Students].[Subject1], [Students].[Subject2], [Students].[Subject3]" +
+                                                "where Username = '" + this.StudentID() + "'";
+                                        cmd.ExecuteNonQuery();*/
+
+
+                    if (_subject.Count >= 1)
+                    {
+                        cmd.CommandText = "UPDATE [Students] set " + "Subject1 = '" + this._subject[0].Name + "'" +
+                            "where [Username] = '" + this.StudentID() + "'";
+                        
+                    } else cmd.CommandText = "UPDATE [Students] set Subject1 = NULL " +
+                            "where [Username] = '" + this.StudentID() + "'";
+                    cmd.ExecuteNonQuery();
+
+                    if (_subject.Count >= 2)
+                    {
+                        cmd.CommandText = "UPDATE [Students] set " + "Subject2 = '" + this._subject[1].Name + "'" +
+                            "where [Username] = '" + this.StudentID() + "'";
+                        cmd.ExecuteNonQuery();
+                    }
+                    else cmd.CommandText = "UPDATE [Students] set Subject2 = NULL " +
+                            "where [Username] = '" + this.StudentID() + "'";
+                    cmd.ExecuteNonQuery();
+
+                    if (_subject.Count >= 3)
+                    {
+                        cmd.CommandText = "UPDATE [Students] set " + "Subject3 = '" + this._subject[2].Name + "'" +
+                            "where [Username] = '" + this.StudentID() + "'";
+                    }
+                    else cmd.CommandText = "UPDATE [Students] set Subject3 = NULL " +
+                            "where [Username] = '" + this.StudentID() + "'";
+                    cmd.ExecuteNonQuery();
+
+
+
                 }
-            }
+                }
         }
 
         public string StudentID()
@@ -170,7 +223,11 @@ namespace IOOP_Assignment
                         _email = data["Email"].ToString();
                         _contact = data["ContactNumber"].ToString();
                         _date = Convert.ToDateTime(data["DateEnrolled"]);
-                        _subject = new List<string> { data["Subject1"].ToString(), data["Subject2"].ToString(), data["Subject3"].ToString() };
+                        _subject = new List<Subject> { 
+                            new Subject(data["Subject1"].ToString()),
+                            new Subject(data["Subject2"].ToString()),
+                            new Subject(data["Subject3"].ToString()) 
+                        };
                     }
                     data.Close();
                 }

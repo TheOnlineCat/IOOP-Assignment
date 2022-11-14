@@ -18,15 +18,9 @@ namespace IOOP_Assignment
         string email;
         string contactNum;
         string level;
-        string 
         public frmEdit()
         {
             InitializeComponent();
-        }
-
-        public frmEdit()
-        {
-
         }
 
         private void lblIC_Click(object sender, EventArgs e)

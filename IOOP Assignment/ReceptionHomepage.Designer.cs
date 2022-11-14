@@ -125,6 +125,7 @@
             this.button_EditSubject.TabIndex = 11;
             this.button_EditSubject.Text = "Edit Subjects";
             this.button_EditSubject.UseVisualStyleBackColor = true;
+            this.button_EditSubject.Click += new System.EventHandler(this.button_EditSubject_Click);
             // 
             // button_Enroll
             // 

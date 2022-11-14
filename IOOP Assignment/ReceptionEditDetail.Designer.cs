@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceptionEditDetail));
             this.label_Logo = new System.Windows.Forms.Label();
-            this.button_Profile = new System.Windows.Forms.Button();
             this.label_Username = new System.Windows.Forms.Label();
             this.label_Role = new System.Windows.Forms.Label();
             this.pictureBox_Account = new System.Windows.Forms.PictureBox();
@@ -69,16 +68,6 @@
             this.label_Logo.Size = new System.Drawing.Size(62, 37);
             this.label_Logo.TabIndex = 16;
             this.label_Logo.Text = "ETC";
-            // 
-            // button_Profile
-            // 
-            this.button_Profile.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Profile.Location = new System.Drawing.Point(136, 23);
-            this.button_Profile.Name = "button_Profile";
-            this.button_Profile.Size = new System.Drawing.Size(73, 19);
-            this.button_Profile.TabIndex = 17;
-            this.button_Profile.Text = "Edit Profile";
-            this.button_Profile.UseVisualStyleBackColor = true;
             // 
             // label_Username
             // 
@@ -333,7 +322,6 @@
             this.ClientSize = new System.Drawing.Size(362, 360);
             this.Controls.Add(this.groupBox_EditDetails);
             this.Controls.Add(this.label_Logo);
-            this.Controls.Add(this.button_Profile);
             this.Controls.Add(this.label_Username);
             this.Controls.Add(this.label_Role);
             this.Controls.Add(this.pictureBox_Account);
@@ -350,7 +338,6 @@
         #endregion
 
         private Label label_Logo;
-        private Button button_Profile;
         private Label label_Username;
         private Label label_Role;
         private PictureBox pictureBox_Account;

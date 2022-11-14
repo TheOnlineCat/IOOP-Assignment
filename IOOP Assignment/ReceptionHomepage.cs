@@ -97,7 +97,7 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    try
+                    /*try
                     {
                         cmd.CommandText = "DELETE FROM [Students] where Username = '" + label_StudentID.Text.ToString() + "'";
                         cmd.ExecuteNonQuery();
@@ -106,7 +106,7 @@ namespace IOOP_Assignment
                     {
                         cmd.CommandText = "DELETE FROM [PaymentInfo] where Username = '" + label_StudentID.Text.ToString() + "'";
                         cmd.ExecuteNonQuery();
-                    } finally { cmd.Dispose(); }
+                    } finally { cmd.Dispose(); }*/
                     try
                     {
                         cmd.CommandText = "DELETE FROM [User] where Username = '" + label_StudentID.Text.ToString() + "'";
@@ -127,9 +127,26 @@ namespace IOOP_Assignment
 
         }
 
+
+        private void button_EditSubject_Click(object sender, EventArgs e)
+        {
+            if (Student.Exists(textBox_Search.Text))
+            {
+                ReceptionEditSubjects formSubject = new ReceptionEditSubjects(label_Username.Text, StudentID);
+                formSubject.FormClosing += EditFormClosing;
+                formSubject.ShowDialog();
+            }
+            else MessageBox.Show("Record does not exist.", "Null Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
         private void EditFormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Student.Exists(StudentID)) loadStudent(StudentID);
+            if (Student.Exists(StudentID))
+            {
+                loadStudent(StudentID);
+                textBox_Search.Text = StudentID;
+            }
         }
     }
 }
