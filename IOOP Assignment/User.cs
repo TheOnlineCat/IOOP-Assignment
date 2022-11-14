@@ -49,27 +49,27 @@ namespace IOOP_Assignment
                     SqlCommand cmd2 = new SqlCommand("select Role from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
                     SqlCommand cmd3 = new SqlCommand("select Name from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
                     string userRole = cmd2.ExecuteScalar().ToString();
-                    string Name = cmd3.ExecuteScalar().ToString();
-
+                    string name = cmd3.ExecuteScalar().ToString();
+                    //I FUCKING LOVE DICKS
                     if (userRole == "admin")
                     {
 
                     }
                     else if (userRole == "student")
                     {
-                        frmMain stu = new frmMain(Name);
+                        frmMain stu = new frmMain(name);
                         stu.Show();
                         return (stu);
                     }
                     else if (userRole == "reception")
                     {
-                        ReceptionHomepage recepForm = new ReceptionHomepage(Name);
+                        ReceptionHomepage recepForm = new ReceptionHomepage(name);
                         recepForm.Show();
                         return (recepForm);
                     }
                     else if (userRole == "tutor")
                     {
-                        TutorClassInfo tut = new TutorClassInfo(Name);
+                        TutorClassInfo tut = new TutorClassInfo(name, username);
                         tut.Show();
                         return (tut);
                     }
