@@ -27,13 +27,16 @@ namespace IOOP_Assignment
         {
             student = new Student(StuID);
             label_StudentName.Text = student.Name;
-            label_StudentID.Text = student.StudentID();
+            label_StudentID.Text = student.StudentID;
             label_Email.Text = "E-mail: " + student.Email;
             label_Contact.Text = "Contact Number: " + student.Contact;
             label_Level.Text = "Level: " + student.Level;
             label_Date.Text = "Date Enrolled: " + student.Date.ToString("dd/MM/yyyy");
             label_Address.Text = "Address: " + student.Address;
             label_IC.Text = "IC Number: " + student.IC;
+            label_FeeDue.Text = "Total Due: RM" + student.FeeTotal.ToString();
+            label_FeePaid.Text = "Total Paid: RM" + student.FeePaid.ToString();
+            label_FeeOutstand.Text = "Total Outstanding: RM" + (student.FeeTotal - student.FeePaid).ToString();
             listBox_Subject.Items.Clear();
             if (student.GetSubjects() != null) 
             {
@@ -132,13 +135,19 @@ namespace IOOP_Assignment
         {
             if (Student.Exists(textBox_Search.Text))
             {
-                ReceptionEditSubjects formSubject = new ReceptionEditSubjects(label_Username.Text, StudentID);
+                ReceptionEditSubjects formSubject = new ReceptionEditSubjects(label_Username.Text, student);
                 formSubject.FormClosing += EditFormClosing;
                 formSubject.ShowDialog();
             }
             else MessageBox.Show("Record does not exist.", "Null Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+
+        private void button_Receipt_Click(object sender, EventArgs e)
+        {
+            ReceptionReceipt formReceipt = new ReceptionReceipt(label_Username.Text, student);
+            formReceipt.ShowDialog();
+        }
 
         private void EditFormClosing(object sender, FormClosingEventArgs e)
         {
@@ -147,6 +156,6 @@ namespace IOOP_Assignment
                 loadStudent(StudentID);
                 textBox_Search.Text = StudentID;
             }
-        }
+        }               
     }
 }

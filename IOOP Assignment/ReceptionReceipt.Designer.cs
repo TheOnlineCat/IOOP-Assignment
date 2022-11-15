@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceptionReceipt));
             this.label_Logo = new System.Windows.Forms.Label();
-            this.button_Profile = new System.Windows.Forms.Button();
             this.label_Username = new System.Windows.Forms.Label();
             this.label_Role = new System.Windows.Forms.Label();
             this.pictureBox_Account = new System.Windows.Forms.PictureBox();
             this.groupBox_Receipt = new System.Windows.Forms.GroupBox();
+            this.label_Paid = new System.Windows.Forms.Label();
+            this.label_Due = new System.Windows.Forms.Label();
+            this.label_ETC = new System.Windows.Forms.Label();
+            this.label_Name = new System.Windows.Forms.Label();
+            this.label_Sign = new System.Windows.Forms.Label();
             this.label_Received = new System.Windows.Forms.Label();
             this.label_ToReceive = new System.Windows.Forms.Label();
             this.label_PaidTo = new System.Windows.Forms.Label();
             this.label_PaidBy = new System.Windows.Forms.Label();
-            this.label_Sign = new System.Windows.Forms.Label();
             this.button_Print = new System.Windows.Forms.Button();
             this.button_Back = new System.Windows.Forms.Button();
-            this.label_Name = new System.Windows.Forms.Label();
-            this.label_ETC = new System.Windows.Forms.Label();
-            this.label_Due = new System.Windows.Forms.Label();
-            this.label_Paid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Account)).BeginInit();
             this.groupBox_Receipt.SuspendLayout();
             this.SuspendLayout();
@@ -59,16 +59,6 @@
             this.label_Logo.Size = new System.Drawing.Size(62, 37);
             this.label_Logo.TabIndex = 26;
             this.label_Logo.Text = "ETC";
-            // 
-            // button_Profile
-            // 
-            this.button_Profile.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Profile.Location = new System.Drawing.Point(140, 23);
-            this.button_Profile.Name = "button_Profile";
-            this.button_Profile.Size = new System.Drawing.Size(73, 19);
-            this.button_Profile.TabIndex = 27;
-            this.button_Profile.Text = "Edit Profile";
-            this.button_Profile.UseVisualStyleBackColor = true;
             // 
             // label_Username
             // 
@@ -91,7 +81,7 @@
             // 
             // pictureBox_Account
             // 
-            this.pictureBox_Account.Image = global::IOOP_Assignment.Properties.Resources.img_525162;
+            this.pictureBox_Account.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Account.Image")));
             this.pictureBox_Account.ImageLocation = "\"Resources/img_UserIcon.png\"";
             this.pictureBox_Account.Location = new System.Drawing.Point(310, 9);
             this.pictureBox_Account.Name = "pictureBox_Account";
@@ -116,6 +106,60 @@
             this.groupBox_Receipt.TabIndex = 29;
             this.groupBox_Receipt.TabStop = false;
             this.groupBox_Receipt.Text = "Receipt";
+            // 
+            // label_Paid
+            // 
+            this.label_Paid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Paid.Location = new System.Drawing.Point(173, 109);
+            this.label_Paid.Name = "label_Paid";
+            this.label_Paid.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_Paid.Size = new System.Drawing.Size(163, 15);
+            this.label_Paid.TabIndex = 8;
+            this.label_Paid.Text = "$88888";
+            this.label_Paid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label_Due
+            // 
+            this.label_Due.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Due.Location = new System.Drawing.Point(191, 81);
+            this.label_Due.Name = "label_Due";
+            this.label_Due.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_Due.Size = new System.Drawing.Size(145, 15);
+            this.label_Due.TabIndex = 7;
+            this.label_Due.Text = "$88888";
+            this.label_Due.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label_ETC
+            // 
+            this.label_ETC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_ETC.AutoSize = true;
+            this.label_ETC.Location = new System.Drawing.Point(204, 56);
+            this.label_ETC.Name = "label_ETC";
+            this.label_ETC.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_ETC.Size = new System.Drawing.Size(132, 15);
+            this.label_ETC.TabIndex = 6;
+            this.label_ETC.Text = "Excellent Tuition Centre";
+            this.label_ETC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label_Name
+            // 
+            this.label_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Name.Location = new System.Drawing.Point(154, 29);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_Name.Size = new System.Drawing.Size(182, 15);
+            this.label_Name.TabIndex = 5;
+            this.label_Name.Text = "Student Name";
+            this.label_Name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label_Sign
+            // 
+            this.label_Sign.AutoSize = true;
+            this.label_Sign.Location = new System.Drawing.Point(7, 136);
+            this.label_Sign.Name = "label_Sign";
+            this.label_Sign.Size = new System.Drawing.Size(60, 15);
+            this.label_Sign.TabIndex = 4;
+            this.label_Sign.Text = "Signature:";
             // 
             // label_Received
             // 
@@ -153,15 +197,6 @@
             this.label_PaidBy.TabIndex = 0;
             this.label_PaidBy.Text = "Paid By:";
             // 
-            // label_Sign
-            // 
-            this.label_Sign.AutoSize = true;
-            this.label_Sign.Location = new System.Drawing.Point(7, 136);
-            this.label_Sign.Name = "label_Sign";
-            this.label_Sign.Size = new System.Drawing.Size(60, 15);
-            this.label_Sign.TabIndex = 4;
-            this.label_Sign.Text = "Signature:";
-            // 
             // button_Print
             // 
             this.button_Print.Location = new System.Drawing.Point(216, 300);
@@ -170,6 +205,7 @@
             this.button_Print.TabIndex = 31;
             this.button_Print.Text = "Print";
             this.button_Print.UseVisualStyleBackColor = true;
+            this.button_Print.Click += new System.EventHandler(this.button_Print_Click);
             // 
             // button_Back
             // 
@@ -179,54 +215,7 @@
             this.button_Back.TabIndex = 30;
             this.button_Back.Text = "Back";
             this.button_Back.UseVisualStyleBackColor = true;
-            // 
-            // label_Name
-            // 
-            this.label_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_Name.AutoSize = true;
-            this.label_Name.Location = new System.Drawing.Point(253, 29);
-            this.label_Name.Name = "label_Name";
-            this.label_Name.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label_Name.Size = new System.Drawing.Size(83, 15);
-            this.label_Name.TabIndex = 5;
-            this.label_Name.Text = "Student Name";
-            this.label_Name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_ETC
-            // 
-            this.label_ETC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_ETC.AutoSize = true;
-            this.label_ETC.Location = new System.Drawing.Point(204, 56);
-            this.label_ETC.Name = "label_ETC";
-            this.label_ETC.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label_ETC.Size = new System.Drawing.Size(132, 15);
-            this.label_ETC.TabIndex = 6;
-            this.label_ETC.Text = "Excellent Tuition Centre";
-            this.label_ETC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_Due
-            // 
-            this.label_Due.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_Due.AutoSize = true;
-            this.label_Due.Location = new System.Drawing.Point(293, 81);
-            this.label_Due.Name = "label_Due";
-            this.label_Due.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label_Due.Size = new System.Drawing.Size(43, 15);
-            this.label_Due.TabIndex = 7;
-            this.label_Due.Text = "$88888";
-            this.label_Due.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_Paid
-            // 
-            this.label_Paid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_Paid.AutoSize = true;
-            this.label_Paid.Location = new System.Drawing.Point(293, 109);
-            this.label_Paid.Name = "label_Paid";
-            this.label_Paid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label_Paid.Size = new System.Drawing.Size(43, 15);
-            this.label_Paid.TabIndex = 8;
-            this.label_Paid.Text = "$88888";
-            this.label_Paid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Back.Click += new System.EventHandler(this.button_Back_Click);
             // 
             // ReceptionReceipt
             // 
@@ -238,7 +227,6 @@
             this.Controls.Add(this.groupBox_Receipt);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.label_Logo);
-            this.Controls.Add(this.button_Profile);
             this.Controls.Add(this.label_Username);
             this.Controls.Add(this.label_Role);
             this.Controls.Add(this.pictureBox_Account);
@@ -255,7 +243,6 @@
         #endregion
 
         private Label label_Logo;
-        private Button button_Profile;
         private Label label_Username;
         private Label label_Role;
         private PictureBox pictureBox_Account;

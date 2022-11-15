@@ -195,6 +195,7 @@
             this.txtTutor.HeaderText = "Tutor";
             this.txtTutor.MinimumWidth = 6;
             this.txtTutor.Name = "txtTutor";
+            this.txtTutor.ReadOnly = true;
             // 
             // txtSubject
             // 

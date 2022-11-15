@@ -12,9 +12,10 @@ namespace IOOP_Assignment
 {
     public partial class TutorStudentList : Form
     {
-        public TutorStudentList()
+        public TutorStudentList(string username)
         {
-            InitializeComponent();
+            InitializeComponent();   
+            lblName.Text = username;
         }
 
     }

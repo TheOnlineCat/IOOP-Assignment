@@ -116,6 +116,7 @@
             this.button_Receipt.TabIndex = 12;
             this.button_Receipt.Text = "Generate Receipt";
             this.button_Receipt.UseVisualStyleBackColor = true;
+            this.button_Receipt.Click += new System.EventHandler(this.button_Receipt_Click);
             // 
             // button_EditSubject
             // 
