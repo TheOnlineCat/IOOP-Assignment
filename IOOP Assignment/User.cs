@@ -13,19 +13,11 @@ namespace IOOP_Assignment
     public class User
     {
         private string username;
+        private string name;
 
         public User(string a)
         {
             username = a;
-        }
-
-        public string ShowUsername_Name(string username)
-        {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("select name from [User] where username='" + username + "'", con);
-            return (cmd + "|" + username);
         }
 
         public void ChangeName(string Name)
@@ -67,7 +59,7 @@ namespace IOOP_Assignment
                     }
                     else if (userRole == "student")
                     {
-                        frmMain stu = new frmMain(name);
+                        frmMain stu = new frmMain();
                         stu.Show();
                         return (stu);
                     }

@@ -20,8 +20,8 @@ namespace IOOP_Assignment
         private void button_Login_Click(object sender, EventArgs e)
         {
             User UserObj = new User(textBox_Username.Text);
+            Requests ReqObj = new Requests(textBox_Username.Text);
             Form form = UserObj.login(textBox_Password.Text);
-            UserObj.ShowUsername_Name(textBox_Username.Text);
             if (form == null)
             {
                 MessageBox.Show("Invalid Username or Password");

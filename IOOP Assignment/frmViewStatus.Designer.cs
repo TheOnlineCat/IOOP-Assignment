@@ -90,6 +90,7 @@
             this.lstDetail.Name = "lstDetail";
             this.lstDetail.Size = new System.Drawing.Size(184, 244);
             this.lstDetail.TabIndex = 4;
+            this.lstDetail.SelectedIndexChanged += new System.EventHandler(this.lstDetail_SelectedIndexChanged);
             // 
             // lstStatus
             // 

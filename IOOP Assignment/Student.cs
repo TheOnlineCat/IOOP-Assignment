@@ -128,7 +128,7 @@ namespace IOOP_Assignment
             foreach (Subject subject in _subject)
             {
                 _feeTotal += subject.ChargeRate;
-                //MessageBox.Show(_feeTotal.ToString());
+                MessageBox.Show(_feeTotal.ToString());
             }
             
         }
@@ -149,7 +149,7 @@ namespace IOOP_Assignment
                         "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = "DELETE FROM [Students].[Subject1], [Students].[Subject2], [Students].[Subject3]" +"where Username = '" + this.StudentID() + "'";
+                    cmd.CommandText = "DELETE FROM [Students].[Subject1], [Students].[Subject2], [Students].[Subject3]" +"where Username = '" + this.StudentID + "'";
                     cmd.ExecuteNonQuery();
 
 
@@ -265,8 +265,5 @@ namespace IOOP_Assignment
                 }
             }
         }
-
-        
-
     }
 }

@@ -12,6 +12,7 @@ namespace IOOP_Assignment
 {
     public partial class frmViewStatus : Form
     {
+        Student student;
         public frmViewStatus()
         {
             InitializeComponent();
@@ -28,6 +29,11 @@ namespace IOOP_Assignment
         }
 
          private void frmViewStatus_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstDetail_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
