@@ -18,6 +18,11 @@ namespace IOOP_Assignment
         string email;
         string contactNum;
         string level;
+        string subjects; 
+        public frmEdit()
+        {
+            InitializeComponent();
+        }
 
         public frmEdit(Student student)
         {
@@ -28,6 +33,7 @@ namespace IOOP_Assignment
             student.Email=txtEmail.ToString();
             student.Contact=txtContact.ToString();
             student.Level=lblLvl.ToString();
+            student.GetSubjects();
         }
 
 
