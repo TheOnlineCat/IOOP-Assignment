@@ -35,18 +35,18 @@
             this.lblLogo = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gridList = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDeleteRow = new System.Windows.Forms.Button();
-            this.btnAddRow = new System.Windows.Forms.Button();
-            this.picTutor = new System.Windows.Forms.PictureBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.txtTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCharges = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDeleteRow = new System.Windows.Forms.Button();
+            this.btnAddRow = new System.Windows.Forms.Button();
+            this.picTutor = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
@@ -125,6 +125,44 @@
             this.gridList.Size = new System.Drawing.Size(618, 290);
             this.gridList.TabIndex = 12;
             // 
+            // txtTutor
+            // 
+            this.txtTutor.HeaderText = "Tutor";
+            this.txtTutor.MinimumWidth = 6;
+            this.txtTutor.Name = "txtTutor";
+            this.txtTutor.ReadOnly = true;
+            // 
+            // txtSubject
+            // 
+            this.txtSubject.HeaderText = "Subject";
+            this.txtSubject.MinimumWidth = 6;
+            this.txtSubject.Name = "txtSubject";
+            this.txtSubject.Width = 125;
+            // 
+            // txtDay
+            // 
+            this.txtDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtDay.HeaderText = "Day";
+            this.txtDay.MinimumWidth = 6;
+            this.txtDay.Name = "txtDay";
+            // 
+            // StartTime
+            // 
+            this.StartTime.HeaderText = "StartTime";
+            this.StartTime.Name = "StartTime";
+            // 
+            // EndTime
+            // 
+            this.EndTime.HeaderText = "EndTime";
+            this.EndTime.Name = "EndTime";
+            // 
+            // txtCharges
+            // 
+            this.txtCharges.HeaderText = "Charges";
+            this.txtCharges.MinimumWidth = 6;
+            this.txtCharges.Name = "txtCharges";
+            this.txtCharges.Width = 60;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -178,6 +216,7 @@
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnConfirm
             // 
@@ -189,44 +228,6 @@
             this.btnConfirm.Text = "Confirm Changes";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // txtTutor
-            // 
-            this.txtTutor.HeaderText = "Tutor";
-            this.txtTutor.MinimumWidth = 6;
-            this.txtTutor.Name = "txtTutor";
-            this.txtTutor.ReadOnly = true;
-            // 
-            // txtSubject
-            // 
-            this.txtSubject.HeaderText = "Subject";
-            this.txtSubject.MinimumWidth = 6;
-            this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Width = 125;
-            // 
-            // txtDay
-            // 
-            this.txtDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtDay.HeaderText = "Day";
-            this.txtDay.MinimumWidth = 6;
-            this.txtDay.Name = "txtDay";
-            // 
-            // StartTime
-            // 
-            this.StartTime.HeaderText = "StartTime";
-            this.StartTime.Name = "StartTime";
-            // 
-            // EndTime
-            // 
-            this.EndTime.HeaderText = "EndTime";
-            this.EndTime.Name = "EndTime";
-            // 
-            // txtCharges
-            // 
-            this.txtCharges.HeaderText = "Charges";
-            this.txtCharges.MinimumWidth = 6;
-            this.txtCharges.Name = "txtCharges";
-            this.txtCharges.Width = 60;
             // 
             // TutorEditClassInfo
             // 

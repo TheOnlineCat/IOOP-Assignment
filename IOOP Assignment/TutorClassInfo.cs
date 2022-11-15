@@ -4,14 +4,14 @@ namespace IOOP_Assignment
     {
         private string name;
         private string username;
-        private Subjects subjects;
+        private Schedule subjects;
         public TutorClassInfo(string name, string username)
         {
             InitializeComponent();
             lblName.Text = name;
             this.name = lblName.Text;
             this.username = username;
-            subjects = new Subjects(username);
+            subjects = new Schedule(username);
             loadTable();
         }
 
@@ -41,7 +41,7 @@ namespace IOOP_Assignment
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            TutorEditProfile s = new TutorEditProfile(username);
+            EditProfile s = new EditProfile(username);
             s.Show();
             this.Hide();
             s.FormClosed += child_FormClosed;

@@ -12,13 +12,14 @@ using System.Windows.Forms;
 
 namespace IOOP_Assignment
 {
-    public partial class TutorEditProfile : Form
+    public partial class EditProfile : Form
     {
-        public TutorEditProfile(string username)
+        public EditProfile(string name, string username)
         {
             InitializeComponent();
             grpPass.Visible = false;
-            lblName.Text = username;    
+            lblName.Text = name;    
+
         }
 
         private void lblPassword_Click(object sender, EventArgs e)
@@ -38,12 +39,21 @@ namespace IOOP_Assignment
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
             {
                 con.Open();
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-
+                    if (txtPassword.Text == txtCPassword.Text && txtCurrPassword.Text == txtCPassword.Text )
+                    {
+                        cmd.CommandText = "UPDATE [User] SET ('" + txtUsername.Text.ToString() + "', '" + txtName.Text.ToString() + "', 'tutor','" + txtCPassword.Text.ToString() + "')";
+                        cmd.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password do not match");
+                    }
                 }
 
 

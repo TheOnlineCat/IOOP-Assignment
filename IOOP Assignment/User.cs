@@ -60,7 +60,6 @@ namespace IOOP_Assignment
                     SqlCommand cmd3 = new SqlCommand("select Name from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
                     string userRole = cmd2.ExecuteScalar().ToString();
                     string name = cmd3.ExecuteScalar().ToString();
-                    //I FUCKING LOVE DICKS
                     if (userRole == "admin")
                     {
 

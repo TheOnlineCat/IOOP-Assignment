@@ -17,14 +17,15 @@ namespace IOOP_Assignment
     {
         private string username;
         private string name;
-        private Subjects subjects;
+        private Schedule subjects;
+
         public TutorEditClassInfo(string name, string username)
         {
             InitializeComponent();
             lblName.Text = name;
             this.username = username;
             this.name = name;
-            subjects = new Subjects(username);
+            subjects = new Schedule(username);
             loadTable();
         }
 
@@ -68,11 +69,14 @@ namespace IOOP_Assignment
                         cmd.CommandText = "INSERT INTO Schedule(Username, Subject, Day, StartTime, EndTime) VALUES ('"+ username +"','" + subject + "','" + day + "','" + startTime + "','" + endTime + "')";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Schedule updated successfully");
-                    }
+                    }  
                 }
-               
             }
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

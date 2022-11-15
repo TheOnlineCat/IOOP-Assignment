@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IOOP_Assignment
 {
-    internal class Subjects
+    internal class Schedule
     {
         private string username;
         public List<string> subject = new List<string>();
@@ -17,7 +17,7 @@ namespace IOOP_Assignment
         public List<TimeOnly> endTime = new List<TimeOnly>();
         public List<decimal> charges = new List<decimal>();
 
-        public Subjects(string username)
+        public Schedule(string username)
         {
             this.username = username;
             loadTable();    

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -133,6 +134,18 @@ namespace IOOP_Assignment
             
         }
 
+        public static ArrayList viewAll()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
+
+            {
+                ArrayList list = new ArrayList();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Subject1, Subject2, Subject3 FROM Subjects WHERE Subject1")
+
+            }
+        }
+        
 /*        public Student(string name, string studentID, string level, string iC, string address, string email, string contactNum, string sub1, string sub2, string sub3) : this(name, studentID)
         {
             this.level = level;
