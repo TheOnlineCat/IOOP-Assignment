@@ -17,9 +17,14 @@ namespace IOOP_Assignment
         {
             InitializeComponent();
         }
-        private void label3_Click(object sender, EventArgs e)
+
+        public frmMain(Student student)
         {
             lblName_StuID.Text = student.Name + "|" + student.StudentID;
+        }
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void button3_Click(object sender, EventArgs e)

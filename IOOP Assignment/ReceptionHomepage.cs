@@ -156,6 +156,11 @@ namespace IOOP_Assignment
                 loadStudent(StudentID);
                 textBox_Search.Text = StudentID;
             }
-        }               
+        }
+
+        private void ReceptionHomepage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
