@@ -4,14 +4,14 @@ namespace IOOP_Assignment
     {
         private string name;
         private string username;
-        private Subjects subjects;
+        private Schedule subjects;
         public TutorClassInfo(string name, string username)
         {
             InitializeComponent();
             lblName.Text = name;
             this.name = lblName.Text;
             this.username = username;
-            subjects = new Subjects(username);
+            subjects = new Schedule(username);
             loadTable();
         }
 
@@ -19,9 +19,7 @@ namespace IOOP_Assignment
         {
             for (int i = 0; i < subjects.subject.Count; i++)
             {
-                gridClass.Rows.Add(name, subjects.subject[i], subjects.day[i], subjects.startTime[i], subjects.endTime[i], ""); 
-                 
-                //subjects.subject[i]
+                gridClass.Rows.Add(name, subjects.subject[i], subjects.day[i], subjects.startTime[i], subjects.endTime[i], (new Subject(subjects.subject[i])).ChargeRate); 
             }
         }
 
@@ -41,7 +39,7 @@ namespace IOOP_Assignment
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            TutorEditProfile s = new TutorEditProfile(username);
+            EditProfile s = new EditProfile(name, username);
             s.Show();
             this.Hide();
             s.FormClosed += child_FormClosed;

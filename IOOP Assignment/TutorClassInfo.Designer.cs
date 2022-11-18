@@ -44,7 +44,6 @@
             this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCharges = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
             this.grpClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridClass)).BeginInit();
@@ -108,9 +107,9 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Location = new System.Drawing.Point(529, 57);
+            this.btnUpdate.Location = new System.Drawing.Point(509, 57);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(81, 24);
+            this.btnUpdate.Size = new System.Drawing.Size(114, 25);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Update Profile";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -197,20 +196,12 @@
             this.txtCharges.ReadOnly = true;
             this.txtCharges.Width = 60;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(221, 50);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 6;
-            // 
             // TutorClassInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(642, 454);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.grpClass);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCInfo);
@@ -246,6 +237,5 @@
         private DataGridViewTextBoxColumn StartTime;
         private DataGridViewTextBoxColumn EndTime;
         private DataGridViewTextBoxColumn txtCharges;
-        private DateTimePicker dateTimePicker1;
     }
 }
