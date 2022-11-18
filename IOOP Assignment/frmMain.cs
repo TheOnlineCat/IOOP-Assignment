@@ -13,13 +13,11 @@ namespace IOOP_Assignment
     public partial class frmMain : Form
     {
         Student student;
-        public frmMain()
-        {
-            InitializeComponent();
-        }
 
-        public frmMain(Student student)
+        public frmMain(string name,string username)
         {
+            student = new Student(username);
+            InitializeComponent();
             lblName_StuID.Text = student.Name + "|" + student.StudentID;
         }
         private void label3_Click(object sender, EventArgs e)
@@ -29,7 +27,7 @@ namespace IOOP_Assignment
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmEdit obj2 = new frmEdit();
+            frmEdit obj2 = new frmEdit(student);
             obj2.ShowDialog();
         }
 
@@ -45,7 +43,7 @@ namespace IOOP_Assignment
 
         private void btnViewSch_Click(object sender, EventArgs e)
         {
-            frmSchedule obj1=new frmSchedule();
+            frmSchedule obj1=new frmSchedule(student);
             obj1.ShowDialog();
         }
 
@@ -61,13 +59,13 @@ namespace IOOP_Assignment
 
         private void btnChangeSubEnroll_Click(object sender, EventArgs e)
         {
-            frmChangeSubEnrol obj3 = new frmChangeSubEnrol();
+            frmChangeSubEnrol obj3 = new frmChangeSubEnrol(student);
             obj3.ShowDialog();
         }
 
         private void btnViewReqStatus_Click(object sender, EventArgs e)
         {
-            frmViewStatus obj4 = new frmViewStatus();
+            frmViewStatus obj4 = new frmViewStatus(student);
             obj4.ShowDialog();
         }
     }
