@@ -34,9 +34,9 @@ namespace IOOP_Assignment
 
         private void loadTable()
         {
-            for (int i = 0; i < subjects.subject.Count; i++)
+            for (int i = 0; i < subjects.Subject.Count; i++)
             {
-                gridList.Rows.Add(name, subjects.subject[i], subjects.day[i], subjects.startTime[i], subjects.endTime[i], ( new Subject(subjects.subject[i]) ).ChargeRate);
+                gridList.Rows.Add(name, subjects.SubjectName[i], subjects.Day[i], subjects.StartTime[i], subjects.EndTime[i], (new Subject(subjects.Subject[i])).ChargeRate);
             }
         }
         private void lblTitle_Click(object sender, EventArgs e)
@@ -59,6 +59,7 @@ namespace IOOP_Assignment
             decimal charges;
             if ( decimal.TryParse(txtCRate.Text.ToString(), out charges) == false)
             {
+                MessageBox.Show("Enter a Valid Price for Charge Rate", "Price Error", MessageBoxButtons.OK);
                 return;
             }
 
