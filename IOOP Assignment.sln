@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOOP Assignment", "IOOP Assignment\IOOP Assignment.csproj", "{79B7D7EB-43CA-47E4-826A-7A002E02D6F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOOP Assignment", "IOOP Assignment\IOOP Assignment.csproj", "{79B7D7EB-43CA-47E4-826A-7A002E02D6F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "D:\Downloads\IOOP\WinFormsApp1\WinFormsApp1\WinFormsApp1.csproj", "{21CCF0A8-A6DC-4D56-8004-469A286A7504}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{79B7D7EB-43CA-47E4-826A-7A002E02D6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79B7D7EB-43CA-47E4-826A-7A002E02D6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79B7D7EB-43CA-47E4-826A-7A002E02D6F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21CCF0A8-A6DC-4D56-8004-469A286A7504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21CCF0A8-A6DC-4D56-8004-469A286A7504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21CCF0A8-A6DC-4D56-8004-469A286A7504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21CCF0A8-A6DC-4D56-8004-469A286A7504}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
