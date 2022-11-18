@@ -13,20 +13,11 @@ namespace IOOP_Assignment
     public class User
     {
         private string username;
+        private string name;
 
         public User(string a)
         {
             username = a;
-        }
-
-        public string ShowUsername_Name(string username)
-        {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("select name from [User] where username='" + username + "'", con);
-            con.Close();
-            return (cmd + "|" + username);
         }
 
         public void ChangeName(string Name)
@@ -60,27 +51,27 @@ namespace IOOP_Assignment
                     SqlCommand cmd2 = new SqlCommand("select Role from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
                     SqlCommand cmd3 = new SqlCommand("select Name from [User] where Username ='" + username + "' and Password ='" + password + "'", con);
                     string userRole = cmd2.ExecuteScalar().ToString();
-                    string Name = cmd3.ExecuteScalar().ToString();
-
+                    string name = cmd3.ExecuteScalar().ToString();
+                    //I FUCKING LOVE DICKS
                     if (userRole == "admin")
                     {
 
                     }
                     else if (userRole == "student")
                     {
-                        frmMain stu = new frmMain(Name);
+                        frmMain stu = new frmMain();
                         stu.Show();
                         return (stu);
                     }
                     else if (userRole == "reception")
                     {
-                        ReceptionHomepage recepForm = new ReceptionHomepage(Name);
+                        ReceptionHomepage recepForm = new ReceptionHomepage(name);
                         recepForm.Show();
                         return (recepForm);
                     }
                     else if (userRole == "tutor")
                     {
-                        TutorClassInfo tut = new TutorClassInfo(Name);
+                        TutorClassInfo tut = new TutorClassInfo(name, username);
                         tut.Show();
                         return (tut);
                     }

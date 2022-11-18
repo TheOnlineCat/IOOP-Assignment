@@ -74,6 +74,7 @@
             this.lblName_StuID.Size = new System.Drawing.Size(133, 17);
             this.lblName_StuID.TabIndex = 2;
             this.lblName_StuID.Text = "$NAME$ | StudentID";
+            this.lblName_StuID.Click += new System.EventHandler(this.lblName_StuID_Click);
             // 
             // picStu
             // 
@@ -115,6 +116,7 @@
             this.btnConfirm.TabIndex = 7;
             this.btnConfirm.Text = "Confirm Changes";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -170,6 +172,7 @@
             this.cmbSubToChange.Name = "cmbSubToChange";
             this.cmbSubToChange.Size = new System.Drawing.Size(209, 28);
             this.cmbSubToChange.TabIndex = 1;
+            this.cmbSubToChange.SelectedIndexChanged += new System.EventHandler(this.cmbSubToChange_SelectedIndexChanged);
             // 
             // lblSubToChange
             // 

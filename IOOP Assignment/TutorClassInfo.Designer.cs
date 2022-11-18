@@ -44,6 +44,7 @@
             this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCharges = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
             this.grpClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridClass)).BeginInit();
@@ -147,6 +148,7 @@
             this.txtCharges});
             this.gridClass.Location = new System.Drawing.Point(0, 22);
             this.gridClass.Name = "gridClass";
+            this.gridClass.ReadOnly = true;
             this.gridClass.RowHeadersWidth = 51;
             this.gridClass.RowTemplate.Height = 25;
             this.gridClass.Size = new System.Drawing.Size(620, 280);
@@ -157,12 +159,14 @@
             this.txtTutor.HeaderText = "Tutor";
             this.txtTutor.MinimumWidth = 6;
             this.txtTutor.Name = "txtTutor";
+            this.txtTutor.ReadOnly = true;
             // 
             // txtSubject
             // 
             this.txtSubject.HeaderText = "Subject";
             this.txtSubject.MinimumWidth = 6;
             this.txtSubject.Name = "txtSubject";
+            this.txtSubject.ReadOnly = true;
             this.txtSubject.Width = 125;
             // 
             // txtDay
@@ -171,23 +175,34 @@
             this.txtDay.HeaderText = "Day";
             this.txtDay.MinimumWidth = 6;
             this.txtDay.Name = "txtDay";
+            this.txtDay.ReadOnly = true;
             // 
             // StartTime
             // 
             this.StartTime.HeaderText = "StartTime";
             this.StartTime.Name = "StartTime";
+            this.StartTime.ReadOnly = true;
             // 
             // EndTime
             // 
             this.EndTime.HeaderText = "EndTime";
             this.EndTime.Name = "EndTime";
+            this.EndTime.ReadOnly = true;
             // 
             // txtCharges
             // 
             this.txtCharges.HeaderText = "Charges";
             this.txtCharges.MinimumWidth = 6;
             this.txtCharges.Name = "txtCharges";
+            this.txtCharges.ReadOnly = true;
             this.txtCharges.Width = 60;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(221, 50);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // TutorClassInfo
             // 
@@ -195,6 +210,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(642, 454);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.grpClass);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCInfo);
@@ -230,5 +246,6 @@
         private DataGridViewTextBoxColumn StartTime;
         private DataGridViewTextBoxColumn EndTime;
         private DataGridViewTextBoxColumn txtCharges;
+        private DateTimePicker dateTimePicker1;
     }
 }

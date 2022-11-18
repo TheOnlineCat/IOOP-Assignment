@@ -21,7 +21,6 @@ namespace IOOP_Assignment
         {
             User UserObj = new User(textBox_Username.Text);
             Form form = UserObj.login(textBox_Password.Text);
-            UserObj.ShowUsername_Name(textBox_Username.Text);
             if (form == null)
             {
                 MessageBox.Show("Invalid Username or Password");
