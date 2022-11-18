@@ -9,17 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace IOOP_Assignment
 {
     public partial class EditProfile : Form
     {
+        private User user;
+
         public EditProfile(string name, string username)
         {
             InitializeComponent();
             grpPass.Visible = false;
-            lblName.Text = name;    
-
+            txtName.Text = name;
+            user = new User(username);
+            txtUsername.Text = username;
+            lblName.Text = name;
+            lblRole.Text = user.Role;
+         
         }
 
         private void lblPassword_Click(object sender, EventArgs e)
@@ -39,28 +46,36 @@ namespace IOOP_Assignment
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
             {
                 con.Open();
+                if (txtCurrPassword.Text != user.getPassword())
+                {
+                    MessageBox.Show("Passwords do not match, please check again.");
+                    return;
+                }
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    if (txtPassword.Text == txtCPassword.Text && txtCurrPassword.Text == txtCPassword.Text )
+                    if (txtPassword.Text == txtCPassword.Text)
                     {
-                        cmd.CommandText = "UPDATE [User] SET ('" + txtUsername.Text.ToString() + "', '" + txtName.Text.ToString() + "', 'tutor','" + txtCPassword.Text.ToString() + "')";
+                        user.ChangeName(txtName.Text);
+                        cmd.CommandText = "UPDATE [User] set " +
+                        "Password = '" + txtCPassword.Text + "'" +
+                        "where Username = '" + user.Username + "'";
                         cmd.ExecuteNonQuery();
                     }
                     else
                     {
                         MessageBox.Show("Password do not match");
+                        return;
                     }
                 }
-
-
-
             }
-                
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

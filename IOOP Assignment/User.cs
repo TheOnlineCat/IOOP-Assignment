@@ -13,11 +13,25 @@ namespace IOOP_Assignment
     public class User
     {
         private string username;
+        private string role;
+        protected string password;    
+        public string Role
+        {
+            get { return role; }
+        }
+
+        public string Username
+        {
+            get { return username; }
+        }
 
         public User(string a)
         {
             username = a;
+            getPassword();
         }
+
+
 
         public string ShowUsername_Name(string username)
         {
@@ -43,6 +57,21 @@ namespace IOOP_Assignment
                 }
             }
         }
+
+        public string getPassword()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                { 
+                    cmd.CommandText = "SELECT Password FROM [User] WHERE Username = '"+ username +"'";
+                    password = cmd.ExecuteScalar().ToString();
+                    return password;
+                }
+            }
+        }
+
 
         public Form login(string password)
         {

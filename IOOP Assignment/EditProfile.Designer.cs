@@ -119,7 +119,7 @@
             this.grpClass.Size = new System.Drawing.Size(357, 146);
             this.grpClass.TabIndex = 25;
             this.grpClass.TabStop = false;
-            this.grpClass.Text = "Tutor";
+            this.grpClass.Text = "User Profile";
             // 
             // btnEdit
             // 
@@ -138,6 +138,7 @@
             this.txtUsername.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtUsername.Location = new System.Drawing.Point(98, 77);
             this.txtUsername.Name = "txtUsername";
+            this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(224, 23);
             this.txtUsername.TabIndex = 31;
             this.txtUsername.Text = "$USERNAME$";
@@ -249,6 +250,7 @@
             this.btnCancel.TabIndex = 36;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // grpPass
             // 

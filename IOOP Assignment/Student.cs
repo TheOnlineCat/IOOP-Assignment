@@ -133,6 +133,7 @@ namespace IOOP_Assignment
             }
             
         }
+
         
 /*        public Student(string name, string studentID, string level, string iC, string address, string email, string contactNum, string sub1, string sub2, string sub3) : this(name, studentID)
         {
@@ -162,7 +163,7 @@ namespace IOOP_Assignment
                         "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = "DELETE FROM [Students].[Subject1], [Students].[Subject2], [Students].[Subject3]" +"where Username = '" + this.StudentID() + "'";
+                    cmd.CommandText = "DELETE FROM [Students].[Subject1], [Students].[Subject2], [Students].[Subject3]" +"where Username = '" + _studentID + "'";
                     cmd.ExecuteNonQuery();
 
 

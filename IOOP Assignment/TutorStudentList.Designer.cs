@@ -36,8 +36,8 @@
             this.lblLogo = new System.Windows.Forms.Label();
             this.picTutor = new System.Windows.Forms.PictureBox();
             this.gridList = new System.Windows.Forms.DataGridView();
-            this.btnBack = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).BeginInit();
             this.SuspendLayout();
@@ -113,9 +113,17 @@
             this.Column1});
             this.gridList.Location = new System.Drawing.Point(115, 111);
             this.gridList.Name = "gridList";
+            this.gridList.ReadOnly = true;
             this.gridList.RowTemplate.Height = 25;
             this.gridList.Size = new System.Drawing.Size(432, 339);
             this.gridList.TabIndex = 19;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Students enrolled in your class";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 400;
             // 
             // btnBack
             // 
@@ -126,14 +134,9 @@
             this.btnBack.TabIndex = 20;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Students enrolled in your class";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 400;
-            // 
-            // Form3
+            // TutorStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,7 +150,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTutor);
             this.Controls.Add(this.lblLogo);
-            this.Name = "Form3";
+            this.Name = "TutorStudentList";
             this.Text = "Form3";
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).EndInit();

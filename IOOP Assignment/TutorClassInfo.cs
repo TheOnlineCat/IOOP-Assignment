@@ -19,9 +19,7 @@ namespace IOOP_Assignment
         {
             for (int i = 0; i < subjects.subject.Count; i++)
             {
-                gridClass.Rows.Add(name, subjects.subject[i], subjects.day[i], subjects.startTime[i], subjects.endTime[i], ""); 
-                 
-                //subjects.subject[i]
+                gridClass.Rows.Add(name, subjects.subject[i], subjects.day[i], subjects.startTime[i], subjects.endTime[i], (new Subject(subjects.subject[i])).ChargeRate); 
             }
         }
 
@@ -41,7 +39,7 @@ namespace IOOP_Assignment
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            EditProfile s = new EditProfile(username);
+            EditProfile s = new EditProfile(name, username);
             s.Show();
             this.Hide();
             s.FormClosed += child_FormClosed;

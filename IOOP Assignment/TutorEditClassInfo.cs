@@ -33,9 +33,7 @@ namespace IOOP_Assignment
         {
             for (int i = 0; i < subjects.subject.Count; i++)
             {
-                gridList.Rows.Add(name, subjects.subject[i], subjects.day[i], subjects.startTime[i], subjects.endTime[i], "");
-
-                //subjects.subject[i]
+                gridList.Rows.Add(name, subjects.subject[i], subjects.day[i], subjects.startTime[i], subjects.endTime[i], ( new Subject(subjects.subject[i]) ).ChargeRate);
             }
         }
         private void lblTitle_Click(object sender, EventArgs e)
@@ -66,6 +64,8 @@ namespace IOOP_Assignment
                         string day = gridList.Rows[index].Cells[2].Value.ToString();
                         string startTime = gridList.Rows[index].Cells[3].Value.ToString();
                         string endTime = gridList.Rows[index].Cells[4].Value.ToString();
+                        decimal.TryParse(gridList.Rows[index].Cells[5].Value.ToString(),out decimal charges);
+                        
                         cmd.CommandText = "INSERT INTO Schedule(Username, Subject, Day, StartTime, EndTime) VALUES ('"+ username +"','" + subject + "','" + day + "','" + startTime + "','" + endTime + "')";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Schedule updated successfully");
@@ -76,7 +76,7 @@ namespace IOOP_Assignment
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

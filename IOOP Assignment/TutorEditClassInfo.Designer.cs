@@ -35,18 +35,19 @@
             this.lblLogo = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gridList = new System.Windows.Forms.DataGridView();
-            this.txtTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCharges = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDeleteRow = new System.Windows.Forms.Button();
             this.btnAddRow = new System.Windows.Forms.Button();
             this.picTutor = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.txtTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCRate = new System.Windows.Forms.TextBox();
+            this.lblCRate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
@@ -55,9 +56,9 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Location = new System.Drawing.Point(519, 67);
+            this.btnUpdate.Location = new System.Drawing.Point(524, 71);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(93, 22);
+            this.btnUpdate.Size = new System.Drawing.Size(106, 25);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update Profile";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -116,8 +117,7 @@
             this.txtSubject,
             this.txtDay,
             this.StartTime,
-            this.EndTime,
-            this.txtCharges});
+            this.EndTime});
             this.gridList.Location = new System.Drawing.Point(0, 22);
             this.gridList.Name = "gridList";
             this.gridList.RowHeadersWidth = 51;
@@ -125,47 +125,11 @@
             this.gridList.Size = new System.Drawing.Size(618, 290);
             this.gridList.TabIndex = 12;
             // 
-            // txtTutor
-            // 
-            this.txtTutor.HeaderText = "Tutor";
-            this.txtTutor.MinimumWidth = 6;
-            this.txtTutor.Name = "txtTutor";
-            this.txtTutor.ReadOnly = true;
-            // 
-            // txtSubject
-            // 
-            this.txtSubject.HeaderText = "Subject";
-            this.txtSubject.MinimumWidth = 6;
-            this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Width = 125;
-            // 
-            // txtDay
-            // 
-            this.txtDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtDay.HeaderText = "Day";
-            this.txtDay.MinimumWidth = 6;
-            this.txtDay.Name = "txtDay";
-            // 
-            // StartTime
-            // 
-            this.StartTime.HeaderText = "StartTime";
-            this.StartTime.Name = "StartTime";
-            // 
-            // EndTime
-            // 
-            this.EndTime.HeaderText = "EndTime";
-            this.EndTime.Name = "EndTime";
-            // 
-            // txtCharges
-            // 
-            this.txtCharges.HeaderText = "Charges";
-            this.txtCharges.MinimumWidth = 6;
-            this.txtCharges.Name = "txtCharges";
-            this.txtCharges.Width = 60;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Controls.Add(this.lblCRate);
+            this.groupBox1.Controls.Add(this.txtCRate);
             this.groupBox1.Controls.Add(this.btnDeleteRow);
             this.groupBox1.Controls.Add(this.btnAddRow);
             this.groupBox1.Controls.Add(this.gridList);
@@ -229,6 +193,53 @@
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
+            // txtTutor
+            // 
+            this.txtTutor.HeaderText = "Tutor";
+            this.txtTutor.MinimumWidth = 6;
+            this.txtTutor.Name = "txtTutor";
+            this.txtTutor.ReadOnly = true;
+            // 
+            // txtSubject
+            // 
+            this.txtSubject.HeaderText = "Subject";
+            this.txtSubject.MinimumWidth = 6;
+            this.txtSubject.Name = "txtSubject";
+            this.txtSubject.Width = 125;
+            // 
+            // txtDay
+            // 
+            this.txtDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtDay.HeaderText = "Day";
+            this.txtDay.MinimumWidth = 6;
+            this.txtDay.Name = "txtDay";
+            // 
+            // StartTime
+            // 
+            this.StartTime.HeaderText = "StartTime";
+            this.StartTime.Name = "StartTime";
+            // 
+            // EndTime
+            // 
+            this.EndTime.HeaderText = "EndTime";
+            this.EndTime.Name = "EndTime";
+            // 
+            // txtCRate
+            // 
+            this.txtCRate.Location = new System.Drawing.Point(506, 326);
+            this.txtCRate.Name = "txtCRate";
+            this.txtCRate.Size = new System.Drawing.Size(100, 23);
+            this.txtCRate.TabIndex = 19;
+            // 
+            // lblCRate
+            // 
+            this.lblCRate.AutoSize = true;
+            this.lblCRate.Location = new System.Drawing.Point(429, 329);
+            this.lblCRate.Name = "lblCRate";
+            this.lblCRate.Size = new System.Drawing.Size(71, 15);
+            this.lblCRate.TabIndex = 20;
+            this.lblCRate.Text = "Charge Rate";
+            // 
             // TutorEditClassInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -248,6 +259,7 @@
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -273,6 +285,7 @@
         private DataGridViewTextBoxColumn txtDay;
         private DataGridViewTextBoxColumn StartTime;
         private DataGridViewTextBoxColumn EndTime;
-        private DataGridViewTextBoxColumn txtCharges;
+        private Label lblCRate;
+        private TextBox txtCRate;
     }
 }
