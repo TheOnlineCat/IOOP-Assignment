@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -132,6 +133,19 @@ namespace IOOP_Assignment
             }
             
         }
+
+        
+/*        public Student(string name, string studentID, string level, string iC, string address, string email, string contactNum, string sub1, string sub2, string sub3) : this(name, studentID)
+        {
+            this.level = level;
+            this.IC = IC;
+            this.address = address;
+            this.email = email;
+            this.contact = contactNum;
+            this.subject[0] = sub1;
+            this.subject[1] = sub2;
+            this.subject[2] = sub3;
+        }*/
         public void SaveData()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))

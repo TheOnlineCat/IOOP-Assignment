@@ -46,7 +46,8 @@
             this.txtDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCharges = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCRate = new System.Windows.Forms.TextBox();
+            this.lblCRate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
@@ -55,9 +56,9 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Location = new System.Drawing.Point(519, 67);
+            this.btnUpdate.Location = new System.Drawing.Point(524, 71);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(93, 22);
+            this.btnUpdate.Size = new System.Drawing.Size(106, 25);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update Profile";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -116,8 +117,7 @@
             this.txtSubject,
             this.txtDay,
             this.StartTime,
-            this.EndTime,
-            this.txtCharges});
+            this.EndTime});
             this.gridList.Location = new System.Drawing.Point(0, 22);
             this.gridList.Name = "gridList";
             this.gridList.RowHeadersWidth = 51;
@@ -128,6 +128,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Controls.Add(this.lblCRate);
+            this.groupBox1.Controls.Add(this.txtCRate);
             this.groupBox1.Controls.Add(this.btnDeleteRow);
             this.groupBox1.Controls.Add(this.btnAddRow);
             this.groupBox1.Controls.Add(this.gridList);
@@ -178,6 +180,7 @@
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnConfirm
             // 
@@ -221,12 +224,21 @@
             this.EndTime.HeaderText = "EndTime";
             this.EndTime.Name = "EndTime";
             // 
-            // txtCharges
+            // txtCRate
             // 
-            this.txtCharges.HeaderText = "Charges";
-            this.txtCharges.MinimumWidth = 6;
-            this.txtCharges.Name = "txtCharges";
-            this.txtCharges.Width = 60;
+            this.txtCRate.Location = new System.Drawing.Point(506, 326);
+            this.txtCRate.Name = "txtCRate";
+            this.txtCRate.Size = new System.Drawing.Size(100, 23);
+            this.txtCRate.TabIndex = 19;
+            // 
+            // lblCRate
+            // 
+            this.lblCRate.AutoSize = true;
+            this.lblCRate.Location = new System.Drawing.Point(429, 329);
+            this.lblCRate.Name = "lblCRate";
+            this.lblCRate.Size = new System.Drawing.Size(71, 15);
+            this.lblCRate.TabIndex = 20;
+            this.lblCRate.Text = "Charge Rate";
             // 
             // TutorEditClassInfo
             // 
@@ -247,6 +259,7 @@
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -272,6 +285,7 @@
         private DataGridViewTextBoxColumn txtDay;
         private DataGridViewTextBoxColumn StartTime;
         private DataGridViewTextBoxColumn EndTime;
-        private DataGridViewTextBoxColumn txtCharges;
+        private Label lblCRate;
+        private TextBox txtCRate;
     }
 }
