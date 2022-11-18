@@ -57,7 +57,7 @@
             // picTutor
             // 
             this.picTutor.Image = ((System.Drawing.Image)(resources.GetObject("picTutor.Image")));
-            this.picTutor.Location = new System.Drawing.Point(575, 5);
+            this.picTutor.Location = new System.Drawing.Point(444, 5);
             this.picTutor.Name = "picTutor";
             this.picTutor.Size = new System.Drawing.Size(62, 56);
             this.picTutor.TabIndex = 24;
@@ -68,7 +68,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(218, 9);
+            this.lblTitle.Location = new System.Drawing.Point(145, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(201, 37);
             this.lblTitle.TabIndex = 23;
@@ -79,7 +79,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblName.ForeColor = System.Drawing.Color.Black;
-            this.lblName.Location = new System.Drawing.Point(510, 46);
+            this.lblName.Location = new System.Drawing.Point(379, 46);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(54, 15);
             this.lblName.TabIndex = 21;
@@ -90,7 +90,7 @@
             this.lblTutor.AutoSize = true;
             this.lblTutor.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTutor.ForeColor = System.Drawing.Color.Black;
-            this.lblTutor.Location = new System.Drawing.Point(498, 9);
+            this.lblTutor.Location = new System.Drawing.Point(352, 9);
             this.lblTutor.Name = "lblTutor";
             this.lblTutor.Size = new System.Drawing.Size(86, 37);
             this.lblTutor.TabIndex = 20;
@@ -114,7 +114,7 @@
             this.grpClass.Controls.Add(this.txtName);
             this.grpClass.Controls.Add(this.lblUsername);
             this.grpClass.Controls.Add(this.lblTName);
-            this.grpClass.Location = new System.Drawing.Point(145, 120);
+            this.grpClass.Location = new System.Drawing.Point(76, 75);
             this.grpClass.Name = "grpClass";
             this.grpClass.Size = new System.Drawing.Size(357, 146);
             this.grpClass.TabIndex = 25;
@@ -232,7 +232,7 @@
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnConfirm.Location = new System.Drawing.Point(510, 471);
+            this.btnConfirm.Location = new System.Drawing.Point(379, 444);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(100, 30);
             this.btnConfirm.TabIndex = 35;
@@ -242,7 +242,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(40, 471);
+            this.btnCancel.Location = new System.Drawing.Point(23, 444);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 30);
             this.btnCancel.TabIndex = 36;
@@ -257,7 +257,7 @@
             this.grpPass.Controls.Add(this.textBox1);
             this.grpPass.Controls.Add(this.lblCPassword);
             this.grpPass.Controls.Add(this.lblCurrent);
-            this.grpPass.Location = new System.Drawing.Point(145, 272);
+            this.grpPass.Location = new System.Drawing.Point(76, 236);
             this.grpPass.Name = "grpPass";
             this.grpPass.Size = new System.Drawing.Size(357, 193);
             this.grpPass.TabIndex = 37;
@@ -269,7 +269,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(642, 550);
+            this.ClientSize = new System.Drawing.Size(510, 485);
             this.Controls.Add(this.grpPass);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);

@@ -25,6 +25,7 @@ namespace IOOP_Assignment
             con.Open();
 
             SqlCommand cmd = new SqlCommand("select name from [User] where username='" + username + "'", con);
+            con.Close();
             return (cmd + "|" + username);
         }
 
