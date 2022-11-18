@@ -24,15 +24,7 @@ namespace IOOP_Assignment
         {
             groupBoxStaff.Show();
             groupBoxReport.Hide();
-
-            //arraylist allows you to create dynamic size array
-            ArrayList name = new ArrayList();
-            //call static method--> className.method(..)
-            name = staff.ViewAll();
-            foreach (var item in name)
-            {
-                listBoxStaff.Items.Add(item);
-            }
+         
         }
 
         private void btnViewReport_Click(object sender, EventArgs e)
