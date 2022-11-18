@@ -24,7 +24,7 @@ namespace IOOP_Assignment
         {
             groupBoxStaff.Show();
             groupBoxReport.Hide();
-         
+
         }
 
         private void btnViewReport_Click(object sender, EventArgs e)
