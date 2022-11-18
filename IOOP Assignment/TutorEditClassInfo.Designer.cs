@@ -140,8 +140,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Information";
             // 
-<<<<<<< HEAD
-=======
             // lblCRate
             // 
             this.lblCRate.AutoSize = true;
@@ -158,7 +156,6 @@
             this.txtCRate.Size = new System.Drawing.Size(100, 23);
             this.txtCRate.TabIndex = 19;
             // 
->>>>>>> 85c2d9637cebf398ab1d66c68c06c631c3a45526
             // btnDeleteRow
             // 
             this.btnDeleteRow.Location = new System.Drawing.Point(109, 326);
