@@ -28,7 +28,6 @@ namespace IOOP_Assignment
         public User(string a)
         {
             username = a;
-            getPassword();
         }
 
         public string ShowUsername_Name(string username)
@@ -93,7 +92,7 @@ namespace IOOP_Assignment
                     }
                     else if (userRole == "student")
                     {
-                        frmMain stu = new frmMain(name, username);
+                        frmMain stu = new frmMain();
                         stu.Show();
                         return (stu);
                     }
