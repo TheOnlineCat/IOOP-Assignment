@@ -32,9 +32,13 @@
             this.lblStu = new System.Windows.Forms.Label();
             this.lblName_StuID = new System.Windows.Forms.Label();
             this.picStu = new System.Windows.Forms.PictureBox();
+            this.lstDetail = new System.Windows.Forms.ListBox();
+            this.lstStatus = new System.Windows.Forms.ListBox();
             this.lblReq = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.btnDel = new System.Windows.Forms.Button();
-            this.lstRequest = new System.Windows.Forms.ListBox();
+            this.lblDelReq = new System.Windows.Forms.Label();
+            this.cmbReq = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picStu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +83,25 @@
             this.picStu.TabIndex = 3;
             this.picStu.TabStop = false;
             // 
+            // lstDetail
+            // 
+            this.lstDetail.FormattingEnabled = true;
+            this.lstDetail.ItemHeight = 20;
+            this.lstDetail.Location = new System.Drawing.Point(12, 118);
+            this.lstDetail.Name = "lstDetail";
+            this.lstDetail.Size = new System.Drawing.Size(184, 244);
+            this.lstDetail.TabIndex = 4;
+            this.lstDetail.SelectedIndexChanged += new System.EventHandler(this.lstDetail_SelectedIndexChanged);
+            // 
+            // lstStatus
+            // 
+            this.lstStatus.FormattingEnabled = true;
+            this.lstStatus.ItemHeight = 20;
+            this.lstStatus.Location = new System.Drawing.Point(216, 118);
+            this.lstStatus.Name = "lstStatus";
+            this.lstStatus.Size = new System.Drawing.Size(184, 244);
+            this.lstStatus.TabIndex = 5;
+            // 
             // lblReq
             // 
             this.lblReq.AutoSize = true;
@@ -89,26 +112,44 @@
             this.lblReq.TabIndex = 6;
             this.lblReq.Text = "Request:";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblStatus.Location = new System.Drawing.Point(216, 95);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(54, 20);
+            this.lblStatus.TabIndex = 7;
+            this.lblStatus.Text = "Status:";
+            // 
             // btnDel
             // 
             this.btnDel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDel.Location = new System.Drawing.Point(12, 428);
+            this.btnDel.Location = new System.Drawing.Point(12, 421);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(191, 29);
+            this.btnDel.Size = new System.Drawing.Size(94, 29);
             this.btnDel.TabIndex = 8;
-            this.btnDel.Text = "Delete Selected";
+            this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // lstRequest
+            // lblDelReq
             // 
-            this.lstRequest.FormattingEnabled = true;
-            this.lstRequest.ItemHeight = 20;
-            this.lstRequest.Location = new System.Drawing.Point(12, 118);
-            this.lstRequest.Name = "lstRequest";
-            this.lstRequest.Size = new System.Drawing.Size(388, 304);
-            this.lstRequest.TabIndex = 11;
-            this.lstRequest.SelectedIndexChanged += new System.EventHandler(this.lstRequest_SelectedIndexChanged);
+            this.lblDelReq.AutoSize = true;
+            this.lblDelReq.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDelReq.Location = new System.Drawing.Point(12, 382);
+            this.lblDelReq.Name = "lblDelReq";
+            this.lblDelReq.Size = new System.Drawing.Size(115, 20);
+            this.lblDelReq.TabIndex = 9;
+            this.lblDelReq.Text = "Delete Request:";
+            // 
+            // cmbReq
+            // 
+            this.cmbReq.FormattingEnabled = true;
+            this.cmbReq.Location = new System.Drawing.Point(131, 379);
+            this.cmbReq.Name = "cmbReq";
+            this.cmbReq.Size = new System.Drawing.Size(151, 28);
+            this.cmbReq.TabIndex = 10;
+            this.cmbReq.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmViewStatus
             // 
@@ -116,9 +157,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(412, 500);
-            this.Controls.Add(this.lstRequest);
+            this.Controls.Add(this.cmbReq);
+            this.Controls.Add(this.lblDelReq);
             this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblReq);
+            this.Controls.Add(this.lstStatus);
+            this.Controls.Add(this.lstDetail);
             this.Controls.Add(this.picStu);
             this.Controls.Add(this.lblName_StuID);
             this.Controls.Add(this.lblStu);
@@ -138,8 +183,12 @@
         private Label lblStu;
         private Label lblName_StuID;
         private PictureBox picStu;
+        private ListBox lstDetail;
+        private ListBox lstStatus;
         private Label lblReq;
+        private Label lblStatus;
         private Button btnDel;
-        private ListBox lstRequest;
+        private Label lblDelReq;
+        private ComboBox cmbReq;
     }
 }
