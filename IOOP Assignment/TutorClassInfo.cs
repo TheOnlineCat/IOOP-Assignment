@@ -17,9 +17,9 @@ namespace IOOP_Assignment
 
         private void loadTable()
         {
-            for (int i = 0; i < subjects.subject.Count; i++)
+            for (int i = 0; i < subjects.Subject.Count; i++)
             {
-                gridClass.Rows.Add(name, subjects.subject[i], subjects.day[i], subjects.startTime[i], subjects.endTime[i], (new Subject(subjects.subject[i])).ChargeRate); 
+                gridClass.Rows.Add(name, subjects.SubjectName[i], subjects.Day[i], subjects.StartTime[i], subjects.EndTime[i], (new Subject(subjects.Subject[i])).ChargeRate); 
             }
         }
 

@@ -35,19 +35,19 @@
             this.lblLogo = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gridList = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDeleteRow = new System.Windows.Forms.Button();
-            this.btnAddRow = new System.Windows.Forms.Button();
-            this.picTutor = new System.Windows.Forms.PictureBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.txtTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCRate = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCRate = new System.Windows.Forms.Label();
+            this.txtCRate = new System.Windows.Forms.TextBox();
+            this.btnDeleteRow = new System.Windows.Forms.Button();
+            this.btnAddRow = new System.Windows.Forms.Button();
+            this.picTutor = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
@@ -140,6 +140,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Information";
             // 
+
+            // lblCRate
+            // 
+            this.lblCRate.AutoSize = true;
+            this.lblCRate.Location = new System.Drawing.Point(371, 330);
+            this.lblCRate.Name = "lblCRate";
+            this.lblCRate.Size = new System.Drawing.Size(132, 15);
+            this.lblCRate.TabIndex = 20;
+            this.lblCRate.Text = "Charge Rate Of Subject:";
+            // 
+            // txtCRate
+            // 
+            this.txtCRate.Location = new System.Drawing.Point(506, 326);
+            this.txtCRate.Name = "txtCRate";
+            this.txtCRate.Size = new System.Drawing.Size(100, 23);
+            this.txtCRate.TabIndex = 19;
+            // 
+
             // btnDeleteRow
             // 
             this.btnDeleteRow.Location = new System.Drawing.Point(109, 326);
@@ -202,7 +220,7 @@
             // 
             // txtSubject
             // 
-            this.txtSubject.HeaderText = "Subject";
+            this.txtSubject.HeaderText = "Subject Name";
             this.txtSubject.MinimumWidth = 6;
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Width = 125;
@@ -223,22 +241,6 @@
             // 
             this.EndTime.HeaderText = "EndTime";
             this.EndTime.Name = "EndTime";
-            // 
-            // txtCRate
-            // 
-            this.txtCRate.Location = new System.Drawing.Point(506, 326);
-            this.txtCRate.Name = "txtCRate";
-            this.txtCRate.Size = new System.Drawing.Size(100, 23);
-            this.txtCRate.TabIndex = 19;
-            // 
-            // lblCRate
-            // 
-            this.lblCRate.AutoSize = true;
-            this.lblCRate.Location = new System.Drawing.Point(429, 329);
-            this.lblCRate.Name = "lblCRate";
-            this.lblCRate.Size = new System.Drawing.Size(71, 15);
-            this.lblCRate.TabIndex = 20;
-            this.lblCRate.Text = "Charge Rate";
             // 
             // TutorEditClassInfo
             // 
@@ -280,12 +282,12 @@
         private Button btnConfirm;
         private Button btnDeleteRow;
         private Button btnAddRow;
+        private Label lblCRate;
+        private TextBox txtCRate;
         private DataGridViewTextBoxColumn txtTutor;
         private DataGridViewTextBoxColumn txtSubject;
         private DataGridViewTextBoxColumn txtDay;
         private DataGridViewTextBoxColumn StartTime;
         private DataGridViewTextBoxColumn EndTime;
-        private Label lblCRate;
-        private TextBox txtCRate;
     }
 }

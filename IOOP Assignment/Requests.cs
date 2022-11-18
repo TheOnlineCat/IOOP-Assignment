@@ -17,7 +17,8 @@ namespace IOOP_Assignment
         string subToChoose;
         string reason;
         Student student;
-        
+        string ShowReq;
+        string ShowStatus;
         
         public Requests()
         {
@@ -45,43 +46,26 @@ namespace IOOP_Assignment
             con.Close();
         }
 
-        public List<List<string>> ViewReq_Status()
+        public string ViewReq_Status()
         {
-            string ShowReq;
-            string ShowStatus;
-            List<List<string>> Req_Status= new List<List<string>>();
-            
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Select Subject To Change,Subject To Choose,Status from [Requests] where Recipient = '" + stuID + "'", con);
+            SqlCommand cmd = new SqlCommand("Select Subject To Change,Subject To Choose,Status from [Requests] where Username = '" + stuID + "'", con);
             SqlDataReader reader = cmd.ExecuteReader();
-            
             while (reader.Read())
             {
-                
-                ShowReq = reader[0].ToString()+" "+"To"+" "+reader[1].ToString();
+                ShowReq = reader[0].ToString()+" "+"To"+reader[1].ToString();
                 ShowStatus = reader[2].ToString();
-                Req_Status.Add(new List<string> { ShowReq, ShowStatus});    
             }
-            return Req_Status;
+            return ShowReq;
+            return ShowStatus;
         }
 
-        public void DelReq(string request)
+        public void DelReq()
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
-            con.Open();
 
-            string subjectToChange;
-            string subjectToChoose;
-            subjectToChange = request.Split(" To ")[0];
-            subjectToChoose=request.Split(" To ")[1];
-            SqlCommand cmd = new SqlCommand("Delete Subject To Change,Subject To Choose,Status from [Requests] where Recipient = '" + stuID + " and Subject To Change = '" + subjectToChange + "' and Subject To Choose = '" + subjectToChoose + "'", con);
-            cmd.ExecuteNonQuery();
-            con.Close();
         }
-
-        
 
         
     }

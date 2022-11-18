@@ -11,12 +11,18 @@ namespace IOOP_Assignment
     internal class Schedule
     {
         private string username;
-        public List<string> subject = new List<string>();
-        public List<string> day = new List<string>();
-        public List<TimeOnly> startTime = new List<TimeOnly>();
-        public List<TimeOnly> endTime = new List<TimeOnly>();
-        public List<decimal> charges = new List<decimal>();
+        private List<string> subjectName = new List<string>();
+        private List<string> day = new List<string>();
+        private List<TimeOnly> startTime = new List<TimeOnly>();
+        private List<TimeOnly> endTime = new List<TimeOnly>();
+        private List<string> subject = new List<string>();
+        //public List<decimal> charges = new List<decimal>();
 
+        public List<string> SubjectName { get { return subjectName; } }
+        public List<string> Day { get { return day; } }
+        public List<TimeOnly> StartTime { get { return startTime; } }
+        public List<TimeOnly> EndTime { get { return endTime; } }
+        public List<string> Subject { get { return subject; } }
         public Schedule(string username)
         {
             this.username = username;
@@ -39,6 +45,7 @@ namespace IOOP_Assignment
                         day.Add(data["Day"].ToString());
                         startTime.Add(TimeOnly.FromDateTime(Convert.ToDateTime(data["StartTime"].ToString())));
                         endTime.Add(TimeOnly.FromDateTime(Convert.ToDateTime(data["EndTime"].ToString())));
+                        subjectName.Add(data["SubjectName"].ToString());
                         //charges.Add(Convert.ToDecimal(data["Charges"]));
                     }
                     data.Close();

@@ -261,6 +261,11 @@ UpgradeLog*.htm
 ServiceFabricBackup/
 *.rptproj.bak
 
+#SQL Server files
+*.mdf
+*.1df
+*.ndf
+
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout
@@ -356,5 +361,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/IOOP Assignment/ETCDatabase.mdf
-/IOOP Assignment/ETCDatabase_log.ldf

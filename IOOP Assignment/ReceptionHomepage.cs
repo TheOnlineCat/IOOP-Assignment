@@ -157,10 +157,5 @@ namespace IOOP_Assignment
                 textBox_Search.Text = StudentID;
             }
         }
-
-        private void ReceptionHomepage_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
