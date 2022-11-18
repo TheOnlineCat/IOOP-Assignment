@@ -402,7 +402,7 @@
             this.Name = "ReceptionHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.ReceptionHomepage_Load);
+            //this.Load += new System.EventHandler(this.ReceptionHomepage_Load);
             this.groupBox_Manage.ResumeLayout(false);
             this.groupBox_Manage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Student)).EndInit();

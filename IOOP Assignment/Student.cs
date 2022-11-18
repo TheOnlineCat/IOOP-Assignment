@@ -149,16 +149,34 @@ namespace IOOP_Assignment
                         "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = "DELETE FROM [Students].[Subject1], [Students].[Subject2], [Students].[Subject3]" +"where Username = '" + this.StudentID + "'";
+                }
+
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE [PaymentInfo] set " +
+                        "Amount = '" + this._feeTotal + "'," +
+                        "PaidAmount = '" + this._feePaid + "'" +
+                        "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
+                    //MessageBox.Show(_feeTotal.ToString());
+                }
+            }
+        }
 
-
+        public void SaveSubject()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                {
                     if (_subject.Count >= 1)
                     {
                         cmd.CommandText = "UPDATE [Students] set " + "Subject1 = '" + this._subject[0].Name + "'" +
                             "where [Username] = '" + this._studentID + "'";
-                        
-                    } else cmd.CommandText = "UPDATE [Students] set Subject1 = NULL " +
+
+                    }
+                    else cmd.CommandText = "UPDATE [Students] set Subject1 = NULL " +
                             "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
 
@@ -180,19 +198,6 @@ namespace IOOP_Assignment
                     else cmd.CommandText = "UPDATE [Students] set Subject3 = NULL " +
                             "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
-
-
-
-                }
-
-                using (SqlCommand cmd = con.CreateCommand())
-                {
-                    cmd.CommandText = "UPDATE [PaymentInfo] set " +
-                        "Amount = '" + this._feeTotal + "'," +
-                        "PaidAmount = '" + this._feePaid + "'" +
-                        "where [Username] = '" + this._studentID + "'";
-                    cmd.ExecuteNonQuery();
-                    //MessageBox.Show(_feeTotal.ToString());
                 }
             }
         }
