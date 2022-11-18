@@ -79,7 +79,7 @@ namespace IOOP_Assignment
             }
             //MessageBox.Show(String.Join(",", subjects));
             student.SetSubjects(subjects);
-            student.SaveData();
+            student.SaveSubject();
             Close();
         }
     }
