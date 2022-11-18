@@ -57,7 +57,7 @@ namespace IOOP_Assignment
                 subToChange=cmbSubToChange.Text;
                 subToChoose=cmbSubToChoose.Text;
                 reason=txtReason.Text;
-                if (subToChoose == cmbSubToChange.Items[0] || subToChoose == cmbSubToChange.Items[1] || subToChoose == cmbSubToChange.Items[2] )
+                if (subToChoose == cmbSubToChange.Items[0] || subToChoose == cmbSubToChange.Items[1] || subToChoose == cmbSubToChange.Items[2] || subToChoose == null || subToChange==null || subToChange ==null && subToChoose==null )
                 {
                     MessageBox.Show("Subject to be changed should not be the same as subject to be choosen.");
                 }

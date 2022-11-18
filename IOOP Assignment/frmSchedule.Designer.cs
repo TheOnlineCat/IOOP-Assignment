@@ -53,7 +53,6 @@
             this.lblETC.Size = new System.Drawing.Size(52, 31);
             this.lblETC.TabIndex = 0;
             this.lblETC.Text = "ETC";
-            this.lblETC.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblStu
             // 

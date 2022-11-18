@@ -16,10 +16,6 @@ namespace IOOP_Assignment
     public partial class frmEdit : Form
     {
         Student student;
-        public frmEdit()
-        {
-            InitializeComponent();
-        }
 
         public frmEdit(Student student)
         {
