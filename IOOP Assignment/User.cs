@@ -28,7 +28,6 @@ namespace IOOP_Assignment
         public User(string a)
         {
             username = a;
-            getPassword();
         }
 
         public string ShowUsername_Name(string username)
