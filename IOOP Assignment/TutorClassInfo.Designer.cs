@@ -162,7 +162,7 @@
             // 
             // txtSubject
             // 
-            this.txtSubject.HeaderText = "Subject";
+            this.txtSubject.HeaderText = "Subject Name";
             this.txtSubject.MinimumWidth = 6;
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.ReadOnly = true;

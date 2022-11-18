@@ -15,7 +15,7 @@ namespace IOOP_Assignment
         public List<string> day = new List<string>();
         public List<TimeOnly> startTime = new List<TimeOnly>();
         public List<TimeOnly> endTime = new List<TimeOnly>();
-        public List<decimal> charges = new List<decimal>();
+        //public List<decimal> charges = new List<decimal>();
 
         public Schedule(string username)
         {
@@ -35,7 +35,7 @@ namespace IOOP_Assignment
                     SqlDataReader data = cmd.ExecuteReader();
                     while (data.Read())
                     {
-                        subject.Add(data["Subject"].ToString());
+                        subject.Add(data["SubjectName"].ToString());
                         day.Add(data["Day"].ToString());
                         startTime.Add(TimeOnly.FromDateTime(Convert.ToDateTime(data["StartTime"].ToString())));
                         endTime.Add(TimeOnly.FromDateTime(Convert.ToDateTime(data["EndTime"].ToString())));
