@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Reflection;
 
 namespace IOOP_Assignment
 {
@@ -18,6 +19,7 @@ namespace IOOP_Assignment
         private string username;
         private string name;
         private Schedule subjects;
+        private Tutor tutor;
 
         public TutorEditClassInfo(string name, string username)
         {
@@ -25,6 +27,7 @@ namespace IOOP_Assignment
             lblName.Text = name;
             this.username = username;
             this.name = name;
+            tutor = new Tutor(username);
             subjects = new Schedule(username);
             loadTable();
         }
@@ -53,6 +56,16 @@ namespace IOOP_Assignment
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            decimal charges;
+            if ( decimal.TryParse(txtCRate.Text.ToString(), out charges) == false)
+            {
+                return;
+            }
+
+            Subject subObj = new Subject(tutor.Subject);
+            subObj.ChargeRate = charges;
+            subObj.SaveSubject();
+
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
             {
                 connection.Open();
@@ -60,18 +73,20 @@ namespace IOOP_Assignment
                 {
                     for (int index = 0; index < gridList.Rows.Count; index++)
                     {
-                        string subject = gridList.Rows[index].Cells[1].Value.ToString();
+                        string subjectname = gridList.Rows[index].Cells[1].Value.ToString();
                         string day = gridList.Rows[index].Cells[2].Value.ToString();
                         string startTime = gridList.Rows[index].Cells[3].Value.ToString();
                         string endTime = gridList.Rows[index].Cells[4].Value.ToString();
-                        decimal.TryParse(gridList.Rows[index].Cells[5].Value.ToString(),out decimal charges);
                         
-                        cmd.CommandText = "INSERT INTO Schedule(Username, Subject, Day, StartTime, EndTime) VALUES ('"+ username +"','" + subject + "','" + day + "','" + startTime + "','" + endTime + "')";
+                        
+                        cmd.CommandText = "INSERT INTO Schedule(Username, Subject, SubjectName, Day, StartTime, EndTime) VALUES ('"+ username + "','" + tutor.Subject + "','" + subjectname + "','" + day + "','" + startTime + "','" + endTime + "')";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Schedule updated successfully");
                     }  
                 }
             }
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
