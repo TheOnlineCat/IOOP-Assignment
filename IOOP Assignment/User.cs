@@ -59,7 +59,7 @@ namespace IOOP_Assignment
                     }
                     else if (userRole == "student")
                     {
-                        frmMain stu = new frmMain();
+                        frmMain stu = new frmMain(name, username);
                         stu.Show();
                         return (stu);
                     }
