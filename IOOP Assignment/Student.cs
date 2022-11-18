@@ -129,7 +129,7 @@ namespace IOOP_Assignment
             foreach (Subject subject in _subject)
             {
                 _feeTotal += subject.ChargeRate;
-                //MessageBox.Show(_feeTotal.ToString());
+                MessageBox.Show(_feeTotal.ToString());
             }
             
         }
@@ -206,7 +206,7 @@ namespace IOOP_Assignment
                         "PaidAmount = '" + this._feePaid + "'" +
                         "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show(_feeTotal.ToString());
+                    //MessageBox.Show(_feeTotal.ToString());
                 }
             }
         }
@@ -279,8 +279,5 @@ namespace IOOP_Assignment
                 }
             }
         }
-
-        
-
     }
 }

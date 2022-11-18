@@ -12,11 +12,17 @@ namespace IOOP_Assignment
 {
     public partial class frmViewStatus : Form
     {
+        Student student;
+        string ViewRequests;
         public frmViewStatus()
         {
             InitializeComponent();
         }
 
+        public frmViewStatus(Student student)
+        {
+            lblName_StuID.Text = student.Name + "|" + student.StudentID;
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -30,6 +36,18 @@ namespace IOOP_Assignment
          private void frmViewStatus_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void lstDetail_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Requests ViewReq = new Requests();
+            ViewRequests = ViewReq.ViewReq_Status();
+
+        }
+
+        private void lblName_StuID_Click(object sender, EventArgs e)
+        {
+            lblName_StuID.Text = student.Name + "|" + student.StudentID;
         }
     }
 }

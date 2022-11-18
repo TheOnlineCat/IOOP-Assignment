@@ -147,5 +147,15 @@ namespace IOOP_Assignment
                 textBox_Year.ForeColor = Color.Red;
             }
         }
+
+        private void label_Username_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReceptionEditDetail_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

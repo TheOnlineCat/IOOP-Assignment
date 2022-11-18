@@ -156,6 +156,6 @@ namespace IOOP_Assignment
                 loadStudent(StudentID);
                 textBox_Search.Text = StudentID;
             }
-        }               
+        }
     }
 }

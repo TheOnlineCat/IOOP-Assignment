@@ -31,8 +31,6 @@ namespace IOOP_Assignment
             getPassword();
         }
 
-
-
         public string ShowUsername_Name(string username)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString());
@@ -95,7 +93,7 @@ namespace IOOP_Assignment
                     }
                     else if (userRole == "student")
                     {
-                        frmMain stu = new frmMain(name);
+                        frmMain stu = new frmMain();
                         stu.Show();
                         return (stu);
                     }

@@ -82,6 +82,7 @@
             this.lblName_StuID.Size = new System.Drawing.Size(117, 17);
             this.lblName_StuID.TabIndex = 2;
             this.lblName_StuID.Text = "Name | StudentID";
+            this.lblName_StuID.Click += new System.EventHandler(this.lblName_StuID_Click);
             // 
             // grpEdit
             // 
@@ -137,6 +138,7 @@
             this.lstSub.Name = "lstSub";
             this.lstSub.Size = new System.Drawing.Size(150, 84);
             this.lstSub.TabIndex = 13;
+            this.lstSub.SelectedIndexChanged += new System.EventHandler(this.lstSub_SelectedIndexChanged);
             // 
             // lblOutputLvl
             // 
