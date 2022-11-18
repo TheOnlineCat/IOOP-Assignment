@@ -129,7 +129,7 @@ namespace IOOP_Assignment
             foreach (Subject subject in _subject)
             {
                 _feeTotal += subject.ChargeRate;
-                MessageBox.Show(_feeTotal.ToString());
+                //MessageBox.Show(_feeTotal.ToString());
             }
             
         }
@@ -165,15 +165,7 @@ namespace IOOP_Assignment
 
                 }
 
-                using (SqlCommand cmd = con.CreateCommand())
-                {
-                    cmd.CommandText = "UPDATE [PaymentInfo] set " +
-                        "Amount = '" + this._feeTotal + "'," +
-                        "PaidAmount = '" + this._feePaid + "'" +
-                        "where [Username] = '" + this._studentID + "'";
-                    cmd.ExecuteNonQuery();
-                    //MessageBox.Show(_feeTotal.ToString());
-                }
+                
             }
         }
 
@@ -212,6 +204,16 @@ namespace IOOP_Assignment
                     else cmd.CommandText = "UPDATE [Students] set Subject3 = NULL " +
                             "where [Username] = '" + this._studentID + "'";
                     cmd.ExecuteNonQuery();
+                }
+
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE [PaymentInfo] set " +
+                        "Amount = '" + this._feeTotal + "'," +
+                        "PaidAmount = '" + this._feePaid + "'" +
+                        "where [Username] = '" + this._studentID + "'";
+                    cmd.ExecuteNonQuery();
+                    //MessageBox.Show(_feeTotal.ToString());
                 }
             }
         }

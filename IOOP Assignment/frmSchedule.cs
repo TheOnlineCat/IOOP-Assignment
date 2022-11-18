@@ -2,11 +2,14 @@ namespace IOOP_Assignment
 {
     public partial class frmSchedule : Form
     {
-        Student student;
-        public frmSchedule(Student student)
+        public frmSchedule()
         {
             InitializeComponent();
-            this.student = student;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void frmSchedule_Load(object sender, EventArgs e)
