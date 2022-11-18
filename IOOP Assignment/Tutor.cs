@@ -14,7 +14,10 @@ namespace IOOP_Assignment
         private string username;
         private string subject;
         private int level;
-    
+
+        public string Subject { get { return subject; } }
+        public int Level { get { return level; } }
+
         public Tutor(string u) : base(u)    
         {
             username = u;
