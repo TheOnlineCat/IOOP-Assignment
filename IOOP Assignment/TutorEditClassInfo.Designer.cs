@@ -48,16 +48,6 @@
             this.picTutor = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-            this.txtTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCRate = new System.Windows.Forms.TextBox();
-            this.lblCRate = new System.Windows.Forms.Label();
-=======
->>>>>>> 85c2d9637cebf398ab1d66c68c06c631c3a45526
             ((System.ComponentModel.ISupportInitialize)(this.gridList)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
@@ -134,41 +124,6 @@
             this.gridList.RowTemplate.Height = 25;
             this.gridList.Size = new System.Drawing.Size(618, 290);
             this.gridList.TabIndex = 12;
-            // 
-            // txtTutor
-            // 
-            this.txtTutor.HeaderText = "Tutor";
-            this.txtTutor.MinimumWidth = 6;
-            this.txtTutor.Name = "txtTutor";
-            this.txtTutor.ReadOnly = true;
-            // 
-            // txtSubject
-            // 
-<<<<<<< HEAD
-            this.txtSubject.HeaderText = "Subject";
-=======
-            this.txtSubject.HeaderText = "Subject Name";
->>>>>>> 85c2d9637cebf398ab1d66c68c06c631c3a45526
-            this.txtSubject.MinimumWidth = 6;
-            this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Width = 125;
-            // 
-            // txtDay
-            // 
-            this.txtDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtDay.HeaderText = "Day";
-            this.txtDay.MinimumWidth = 6;
-            this.txtDay.Name = "txtDay";
-            // 
-            // StartTime
-            // 
-            this.StartTime.HeaderText = "StartTime";
-            this.StartTime.Name = "StartTime";
-            // 
-            // EndTime
-            // 
-            this.EndTime.HeaderText = "EndTime";
-            this.EndTime.Name = "EndTime";
             // 
             // groupBox1
             // 
@@ -257,7 +212,6 @@
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-<<<<<<< HEAD
             // txtTutor
             // 
             this.txtTutor.HeaderText = "Tutor";
@@ -267,7 +221,7 @@
             // 
             // txtSubject
             // 
-            this.txtSubject.HeaderText = "Subject";
+            this.txtSubject.HeaderText = "Subject Name";
             this.txtSubject.MinimumWidth = 6;
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Width = 125;
@@ -289,24 +243,6 @@
             this.EndTime.HeaderText = "EndTime";
             this.EndTime.Name = "EndTime";
             // 
-            // txtCRate
-            // 
-            this.txtCRate.Location = new System.Drawing.Point(506, 326);
-            this.txtCRate.Name = "txtCRate";
-            this.txtCRate.Size = new System.Drawing.Size(100, 23);
-            this.txtCRate.TabIndex = 19;
-            // 
-            // lblCRate
-            // 
-            this.lblCRate.AutoSize = true;
-            this.lblCRate.Location = new System.Drawing.Point(429, 329);
-            this.lblCRate.Name = "lblCRate";
-            this.lblCRate.Size = new System.Drawing.Size(71, 15);
-            this.lblCRate.TabIndex = 20;
-            this.lblCRate.Text = "Charge Rate";
-            // 
-=======
->>>>>>> 85c2d9637cebf398ab1d66c68c06c631c3a45526
             // TutorEditClassInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
