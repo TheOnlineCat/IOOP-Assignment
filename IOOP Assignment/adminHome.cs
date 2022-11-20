@@ -41,7 +41,7 @@ namespace IOOP_Assignment
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form f1 = new addTutor();
+            Form f1 = new addStaff();
             f1.Show();
 
         }
