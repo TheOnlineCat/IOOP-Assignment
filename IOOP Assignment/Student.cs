@@ -135,7 +135,7 @@ namespace IOOP_Assignment
         }
 
         
-/*        public Student(string name, string studentID, string level, string iC, string address, string email, string contactNum, string sub1, string sub2, string sub3) : this(name, studentID)
+        /*public Student(string name, string studentID, string level, string iC, string address, string email, string contactNum, string sub1, string sub2, string sub3) : this(name, studentID)
         {
             this.level = level;
             this.IC = IC;
