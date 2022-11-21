@@ -138,7 +138,6 @@
             this.lstSub.Name = "lstSub";
             this.lstSub.Size = new System.Drawing.Size(150, 84);
             this.lstSub.TabIndex = 13;
-            this.lstSub.SelectedIndexChanged += new System.EventHandler(this.lstSub_SelectedIndexChanged);
             // 
             // lblOutputLvl
             // 

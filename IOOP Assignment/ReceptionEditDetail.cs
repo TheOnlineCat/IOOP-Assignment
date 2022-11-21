@@ -152,7 +152,7 @@ namespace IOOP_Assignment
         {
 
         }
-
+        //d
         private void ReceptionEditDetail_Load(object sender, EventArgs e)
         {
 
