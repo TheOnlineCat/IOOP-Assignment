@@ -166,5 +166,10 @@ namespace IOOP_Assignment
             EditProfile formEditProfile = new EditProfile(Name,username);
             formEditProfile.ShowDialog();
         }
+
+        private void ReceptionHomepage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
