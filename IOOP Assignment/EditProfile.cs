@@ -39,11 +39,6 @@ namespace IOOP_Assignment
             grpPass.Visible = true;
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
@@ -69,6 +64,7 @@ namespace IOOP_Assignment
                         MessageBox.Show("Password do not match");
                         return;
                     }
+                MessageBox.Show("Profile updated successfully");
                 }
             }
         }

@@ -98,7 +98,7 @@ namespace IOOP_Assignment
                     }
                     else if (userRole == "reception")
                     {
-                        ReceptionHomepage recepForm = new ReceptionHomepage(name);
+                        ReceptionHomepage recepForm = new ReceptionHomepage(name, username);
                         recepForm.Show();
                         return (recepForm);
                     }

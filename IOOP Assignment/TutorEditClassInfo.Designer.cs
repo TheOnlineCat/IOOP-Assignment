@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TutorEditClassInfo));
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTutor = new System.Windows.Forms.Label();
             this.lblLogo = new System.Windows.Forms.Label();
@@ -53,22 +52,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Location = new System.Drawing.Point(524, 71);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(106, 25);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Update Profile";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblName.ForeColor = System.Drawing.Color.Black;
-            this.lblName.Location = new System.Drawing.Point(507, 46);
+            this.lblName.Location = new System.Drawing.Point(486, 46);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(54, 15);
             this.lblName.TabIndex = 7;
@@ -79,7 +68,7 @@
             this.lblTutor.AutoSize = true;
             this.lblTutor.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTutor.ForeColor = System.Drawing.Color.Black;
-            this.lblTutor.Location = new System.Drawing.Point(490, 9);
+            this.lblTutor.Location = new System.Drawing.Point(484, 9);
             this.lblTutor.Name = "lblTutor";
             this.lblTutor.Size = new System.Drawing.Size(86, 37);
             this.lblTutor.TabIndex = 6;
@@ -125,6 +114,36 @@
             this.gridList.Size = new System.Drawing.Size(618, 290);
             this.gridList.TabIndex = 12;
             // 
+            // txtTutor
+            // 
+            this.txtTutor.HeaderText = "Tutor";
+            this.txtTutor.MinimumWidth = 6;
+            this.txtTutor.Name = "txtTutor";
+            this.txtTutor.ReadOnly = true;
+            // 
+            // txtSubject
+            // 
+            this.txtSubject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtSubject.HeaderText = "Subject Name";
+            this.txtSubject.MinimumWidth = 6;
+            this.txtSubject.Name = "txtSubject";
+            // 
+            // txtDay
+            // 
+            this.txtDay.HeaderText = "Day";
+            this.txtDay.MinimumWidth = 6;
+            this.txtDay.Name = "txtDay";
+            // 
+            // StartTime
+            // 
+            this.StartTime.HeaderText = "StartTime";
+            this.StartTime.Name = "StartTime";
+            // 
+            // EndTime
+            // 
+            this.EndTime.HeaderText = "EndTime";
+            this.EndTime.Name = "EndTime";
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -140,8 +159,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Information";
             // 
-<<<<<<< HEAD
-=======
             // lblCRate
             // 
             this.lblCRate.AutoSize = true;
@@ -158,7 +175,6 @@
             this.txtCRate.Size = new System.Drawing.Size(100, 23);
             this.txtCRate.TabIndex = 19;
             // 
->>>>>>> 85c2d9637cebf398ab1d66c68c06c631c3a45526
             // btnDeleteRow
             // 
             this.btnDeleteRow.Location = new System.Drawing.Point(109, 326);
@@ -212,37 +228,6 @@
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // txtTutor
-            // 
-            this.txtTutor.HeaderText = "Tutor";
-            this.txtTutor.MinimumWidth = 6;
-            this.txtTutor.Name = "txtTutor";
-            this.txtTutor.ReadOnly = true;
-            // 
-            // txtSubject
-            // 
-            this.txtSubject.HeaderText = "Subject Name";
-            this.txtSubject.MinimumWidth = 6;
-            this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Width = 125;
-            // 
-            // txtDay
-            // 
-            this.txtDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtDay.HeaderText = "Day";
-            this.txtDay.MinimumWidth = 6;
-            this.txtDay.Name = "txtDay";
-            // 
-            // StartTime
-            // 
-            this.StartTime.HeaderText = "StartTime";
-            this.StartTime.Name = "StartTime";
-            // 
-            // EndTime
-            // 
-            this.EndTime.HeaderText = "EndTime";
-            this.EndTime.Name = "EndTime";
-            // 
             // TutorEditClassInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -254,7 +239,6 @@
             this.Controls.Add(this.picTutor);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTutor);
             this.Controls.Add(this.lblLogo);
@@ -270,8 +254,6 @@
         }
 
         #endregion
-
-        private Button btnUpdate;
         private Label lblName;
         private Label lblTutor;
         private Label lblLogo;

@@ -73,7 +73,7 @@ namespace IOOP_Assignment
                 con.Open();
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    cmd.CommandText = "UPDATE Subject SET " +
+                    cmd.CommandText = "UPDATE Subjects SET " +
                         "ChargeRate = '" + _chargeRate.ToString() + "'," +
                         "StudentNumber = '" + _studentNum.ToString() + "'" +
                         "WHERE Subject = '" + _name + "'";
