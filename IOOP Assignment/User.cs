@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -88,7 +89,9 @@ namespace IOOP_Assignment
                     string name = cmd3.ExecuteScalar().ToString();
                     if (userRole == "admin")
                     {
-
+                        adminHome adm= new adminHome(name);
+                        adm.Show();
+                        return (adm);
                     }
                     else if (userRole == "student")
                     {
@@ -112,5 +115,29 @@ namespace IOOP_Assignment
                 return null;
             }
         }
+
+        public static ArrayList ViewAllUser()
+        {
+            ArrayList staff = new ArrayList();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
+            {
+                
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "Select Username from [User] where role='reception' or role='tutor'";
+                    SqlDataReader rd = cmd.ExecuteReader();
+                    while (rd.Read())
+                    {
+                        staff.Add(rd["Username"].ToString());
+                    }
+                    rd.Close();
+                }
+            }
+            return staff;
+
+        }
+        
+        
     }
 }

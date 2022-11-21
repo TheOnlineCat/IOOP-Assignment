@@ -16,33 +16,34 @@ namespace IOOP_Assignment
         public adminHome()
         {
             InitializeComponent();
-            groupBoxStaff.Hide();
-            groupBoxReport.Hide();
         }
 
-        private void btnEditStaff_Click(object sender, EventArgs e)
+        public adminHome(string Name)
         {
-            groupBoxStaff.Show();
-            groupBoxReport.Hide();
-
+            InitializeComponent();
+            lblName.Text = Name;
         }
 
-        private void btnViewReport_Click(object sender, EventArgs e)
+        private void adminHome_Load(object sender, EventArgs e)
         {
-            groupBoxReport.Show();
-            groupBoxStaff.Hide();
-        }
-
-        private void listBoxStaff_Load(object sender, EventArgs e)
-        {
-            //arraylist allows you to create dynamic size array
             ArrayList name = new ArrayList();
-            //call static method--> className.method(..)
-            name = staff.ViewAll();
+            name = User.ViewAllUser();
             foreach (var item in name)
             {
-                listBoxStaff.Items.Add(item);
+                listBoxStaff.Items.Add(item);   
             }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form f1 = new addStaff();
+            f1.Show();
+
         }
     }
 }
