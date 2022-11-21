@@ -29,6 +29,11 @@ namespace IOOP_Assignment
             loadData();    
         }
 
+        public Schedule()
+        {
+
+        }
+
         public void loadData()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
@@ -61,5 +66,29 @@ namespace IOOP_Assignment
             subjectName.Clear();
         }
 
+
+        public void loadSub(string subject)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
+            {
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Schedule where Subject = '" + subject + "'";
+                    //MessageBox.Show(cmd.ExecuteScalar().ToString());
+                    SqlDataReader data = cmd.ExecuteReader();
+                    while (data.Read())
+                    {
+                        this.subject.Add(data["Subject"].ToString());
+                        day.Add(data["Day"].ToString());
+                        startTime.Add(TimeOnly.FromDateTime(Convert.ToDateTime(data["StartTime"].ToString())));
+                        endTime.Add(TimeOnly.FromDateTime(Convert.ToDateTime(data["EndTime"].ToString())));
+                        subjectName.Add(data["SubjectName"].ToString());
+                        //charges.Add(Convert.ToDecimal(data["Charges"]));
+                    }
+                    data.Close();
+                }
+            }
+        }
     }
 }
