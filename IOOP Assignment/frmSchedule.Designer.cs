@@ -34,8 +34,8 @@
             this.lblSch = new System.Windows.Forms.Label();
             this.picStu = new System.Windows.Forms.PictureBox();
             this.grdSch = new System.Windows.Forms.DataGridView();
-            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picStu)).BeginInit();
@@ -56,7 +56,7 @@
             // 
             this.lblStu.AutoSize = true;
             this.lblStu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblStu.Location = new System.Drawing.Point(883, 14);
+            this.lblStu.Location = new System.Drawing.Point(401, 12);
             this.lblStu.Name = "lblStu";
             this.lblStu.Size = new System.Drawing.Size(86, 28);
             this.lblStu.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.lblName_StuID.AutoSize = true;
             this.lblName_StuID.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblName_StuID.Location = new System.Drawing.Point(866, 42);
+            this.lblName_StuID.Location = new System.Drawing.Point(384, 40);
             this.lblName_StuID.Name = "lblName_StuID";
             this.lblName_StuID.Size = new System.Drawing.Size(117, 17);
             this.lblName_StuID.TabIndex = 2;
@@ -85,7 +85,7 @@
             // picStu
             // 
             this.picStu.Image = global::IOOP_Assignment.Properties.Resources.student;
-            this.picStu.Location = new System.Drawing.Point(989, 9);
+            this.picStu.Location = new System.Drawing.Point(507, 12);
             this.picStu.Name = "picStu";
             this.picStu.Size = new System.Drawing.Size(67, 62);
             this.picStu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -94,39 +94,44 @@
             // 
             // grdSch
             // 
+            this.grdSch.AllowUserToAddRows = false;
             this.grdSch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Subject,
             this.Day,
+            this.Subject,
             this.dataGridViewTextBoxColumn1,
             this.EndTime});
             this.grdSch.Location = new System.Drawing.Point(12, 134);
             this.grdSch.Name = "grdSch";
+            this.grdSch.ReadOnly = true;
             this.grdSch.RowHeadersWidth = 51;
             this.grdSch.RowTemplate.Height = 29;
-            this.grdSch.Size = new System.Drawing.Size(557, 304);
+            this.grdSch.Size = new System.Drawing.Size(562, 304);
             this.grdSch.TabIndex = 5;
             this.grdSch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdSch_CellContentClick);
-            // 
-            // Subject
-            // 
-            this.Subject.HeaderText = "Subject";
-            this.Subject.MinimumWidth = 6;
-            this.Subject.Name = "Subject";
-            this.Subject.Width = 125;
             // 
             // Day
             // 
             this.Day.HeaderText = "Day";
             this.Day.MinimumWidth = 6;
             this.Day.Name = "Day";
+            this.Day.ReadOnly = true;
             this.Day.Width = 125;
+            // 
+            // Subject
+            // 
+            this.Subject.HeaderText = "Subject Title";
+            this.Subject.MinimumWidth = 6;
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            this.Subject.Width = 125;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Start Time";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // EndTime
@@ -134,6 +139,7 @@
             this.EndTime.HeaderText = "End Time";
             this.EndTime.MinimumWidth = 6;
             this.EndTime.Name = "EndTime";
+            this.EndTime.ReadOnly = true;
             this.EndTime.Width = 125;
             // 
             // frmSchedule
@@ -141,7 +147,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1068, 450);
+            this.ClientSize = new System.Drawing.Size(592, 450);
             this.Controls.Add(this.grdSch);
             this.Controls.Add(this.picStu);
             this.Controls.Add(this.lblSch);
@@ -166,8 +172,8 @@
         private Label lblSch;
         private PictureBox picStu;
         private DataGridView grdSch;
-        private DataGridViewTextBoxColumn Subject;
         private DataGridViewTextBoxColumn Day;
+        private DataGridViewTextBoxColumn Subject;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn EndTime;
     }

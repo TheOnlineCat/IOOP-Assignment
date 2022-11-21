@@ -29,6 +29,11 @@ namespace IOOP_Assignment
             loadData();    
         }
 
+        public Schedule()
+        {
+
+        }
+
         public void loadData()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
