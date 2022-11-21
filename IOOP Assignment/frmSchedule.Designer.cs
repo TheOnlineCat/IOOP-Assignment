@@ -34,12 +34,10 @@
             this.lblSch = new System.Windows.Forms.Label();
             this.picStu = new System.Windows.Forms.PictureBox();
             this.grdSch = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picStu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdSch)).BeginInit();
             this.SuspendLayout();
@@ -98,60 +96,45 @@
             // 
             this.grdSch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.Subject,
+            this.Day,
+            this.dataGridViewTextBoxColumn1,
+            this.EndTime});
             this.grdSch.Location = new System.Drawing.Point(12, 134);
             this.grdSch.Name = "grdSch";
             this.grdSch.RowHeadersWidth = 51;
             this.grdSch.RowTemplate.Height = 29;
-            this.grdSch.Size = new System.Drawing.Size(1044, 304);
+            this.grdSch.Size = new System.Drawing.Size(557, 304);
             this.grdSch.TabIndex = 5;
+            this.grdSch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdSch_CellContentClick);
             // 
-            // Column1
+            // Subject
             // 
-            this.Column1.HeaderText = "Day/Time";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.Subject.HeaderText = "Subject";
+            this.Subject.MinimumWidth = 6;
+            this.Subject.Name = "Subject";
+            this.Subject.Width = 125;
             // 
-            // Column2
+            // Day
             // 
-            this.Column2.HeaderText = "3:00pm-4:30pm";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.Day.HeaderText = "Day";
+            this.Day.MinimumWidth = 6;
+            this.Day.Name = "Day";
+            this.Day.Width = 125;
             // 
-            // Column3
+            // dataGridViewTextBoxColumn1
             // 
-            this.Column3.HeaderText = "4:30pm-6:00pm";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Start Time";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
-            // Column4
+            // EndTime
             // 
-            this.Column4.HeaderText = "6:00pm-7:30pm";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "7:30pm-9:00pm";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "9:00pm-10:30pm";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
+            this.EndTime.HeaderText = "End Time";
+            this.EndTime.MinimumWidth = 6;
+            this.EndTime.Name = "EndTime";
+            this.EndTime.Width = 125;
             // 
             // frmSchedule
             // 
@@ -183,11 +166,9 @@
         private Label lblSch;
         private PictureBox picStu;
         private DataGridView grdSch;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Subject;
+        private DataGridViewTextBoxColumn Day;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn EndTime;
     }
 }
