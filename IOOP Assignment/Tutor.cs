@@ -25,7 +25,7 @@ namespace IOOP_Assignment
             level = getLevel();
         }
 
-        private string getSubject()
+        private string getSubject() //to get what subject the tutor is teaching
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
             {
@@ -39,7 +39,7 @@ namespace IOOP_Assignment
             }
         }
 
-        private int getLevel()
+        private int getLevel() //to get what level the tutor is teaching 
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
             {
@@ -53,7 +53,7 @@ namespace IOOP_Assignment
             }
         }
 
-        public ArrayList viewAll()
+        public ArrayList viewAll() //A method that shows all the students enrolled into the particular tutor's class
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
             {

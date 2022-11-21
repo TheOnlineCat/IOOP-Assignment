@@ -43,7 +43,8 @@
             this.txtDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCharges = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCRate = new System.Windows.Forms.Label();
+            this.txtCRate = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picTutor)).BeginInit();
             this.grpClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridClass)).BeginInit();
@@ -65,7 +66,7 @@
             this.lblTutor.AutoSize = true;
             this.lblTutor.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTutor.ForeColor = System.Drawing.Color.Black;
-            this.lblTutor.Location = new System.Drawing.Point(490, 7);
+            this.lblTutor.Location = new System.Drawing.Point(481, 8);
             this.lblTutor.Name = "lblTutor";
             this.lblTutor.Size = new System.Drawing.Size(86, 37);
             this.lblTutor.TabIndex = 1;
@@ -76,7 +77,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblName.ForeColor = System.Drawing.Color.Black;
-            this.lblName.Location = new System.Drawing.Point(509, 39);
+            this.lblName.Location = new System.Drawing.Point(489, 39);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(54, 15);
             this.lblName.TabIndex = 2;
@@ -107,7 +108,7 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Location = new System.Drawing.Point(509, 57);
+            this.btnUpdate.Location = new System.Drawing.Point(499, 57);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(114, 25);
             this.btnUpdate.TabIndex = 4;
@@ -136,6 +137,7 @@
             // 
             // gridClass
             // 
+            this.gridClass.AllowUserToAddRows = false;
             this.gridClass.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gridClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridClass.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -143,8 +145,7 @@
             this.txtSubject,
             this.txtDay,
             this.StartTime,
-            this.EndTime,
-            this.txtCharges});
+            this.EndTime});
             this.gridClass.Location = new System.Drawing.Point(0, 22);
             this.gridClass.Name = "gridClass";
             this.gridClass.ReadOnly = true;
@@ -162,15 +163,14 @@
             // 
             // txtSubject
             // 
+            this.txtSubject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.txtSubject.HeaderText = "Subject Name";
             this.txtSubject.MinimumWidth = 6;
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.ReadOnly = true;
-            this.txtSubject.Width = 125;
             // 
             // txtDay
             // 
-            this.txtDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.txtDay.HeaderText = "Day";
             this.txtDay.MinimumWidth = 6;
             this.txtDay.Name = "txtDay";
@@ -188,13 +188,21 @@
             this.EndTime.Name = "EndTime";
             this.EndTime.ReadOnly = true;
             // 
-            // txtCharges
+            // lblCRate
             // 
-            this.txtCharges.HeaderText = "Charges";
-            this.txtCharges.MinimumWidth = 6;
-            this.txtCharges.Name = "txtCharges";
-            this.txtCharges.ReadOnly = true;
-            this.txtCharges.Width = 60;
+            this.lblCRate.AutoSize = true;
+            this.lblCRate.Location = new System.Drawing.Point(204, 411);
+            this.lblCRate.Name = "lblCRate";
+            this.lblCRate.Size = new System.Drawing.Size(132, 15);
+            this.lblCRate.TabIndex = 21;
+            this.lblCRate.Text = "Charge Rate Of Subject:";
+            // 
+            // txtCRate
+            // 
+            this.txtCRate.Location = new System.Drawing.Point(336, 407);
+            this.txtCRate.Name = "txtCRate";
+            this.txtCRate.Size = new System.Drawing.Size(100, 23);
+            this.txtCRate.TabIndex = 22;
             // 
             // TutorClassInfo
             // 
@@ -202,6 +210,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(642, 454);
+            this.Controls.Add(this.txtCRate);
+            this.Controls.Add(this.lblCRate);
             this.Controls.Add(this.grpClass);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCInfo);
@@ -231,11 +241,12 @@
         private PictureBox picTutor;
         private GroupBox grpClass;
         private DataGridView gridClass;
+        private Label lblCRate;
         private DataGridViewTextBoxColumn txtTutor;
         private DataGridViewTextBoxColumn txtSubject;
         private DataGridViewTextBoxColumn txtDay;
         private DataGridViewTextBoxColumn StartTime;
         private DataGridViewTextBoxColumn EndTime;
-        private DataGridViewTextBoxColumn txtCharges;
+        private TextBox txtCRate;
     }
 }

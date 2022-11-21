@@ -14,7 +14,7 @@ namespace IOOP_Assignment
     public partial class TutorStudentList : Form
     {
         private Tutor tutor;
-        public TutorStudentList(string username)
+        public TutorStudentList(string username) //parameters passed by User.cs to ge the username of tutors
         {
             InitializeComponent();
             lblName.Text = username;
@@ -22,7 +22,7 @@ namespace IOOP_Assignment
             updateGrid();
         }
 
-        private void updateGrid()
+        private void updateGrid() //to display the students enrolled in the particular tutor's class
         {
             ArrayList usernames = new ArrayList();
             gridList.Rows.Clear();
@@ -31,8 +31,7 @@ namespace IOOP_Assignment
             {
                 Student student = new Student(username);        
                 gridList.Rows.Add(student.Name);
-            }
-            
+            }   
         }
 
         private void btnBack_Click(object sender, EventArgs e)
