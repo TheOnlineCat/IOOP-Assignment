@@ -152,7 +152,6 @@
             this.txtName.Size = new System.Drawing.Size(224, 23);
             this.txtName.TabIndex = 30;
             this.txtName.Text = "$NAME$";
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lblUsername
             // 
@@ -178,9 +177,9 @@
             this.txtCPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtCPassword.Location = new System.Drawing.Point(98, 74);
             this.txtCPassword.Name = "txtCPassword";
+            this.txtCPassword.PlaceholderText = "Confirm Password";
             this.txtCPassword.Size = new System.Drawing.Size(224, 23);
             this.txtCPassword.TabIndex = 33;
-            this.txtCPassword.Text = "Confirm Password";
             // 
             // lblCPassword
             // 
@@ -197,9 +196,9 @@
             this.txtPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtPassword.Location = new System.Drawing.Point(98, 26);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PlaceholderText = "Enter New Password";
             this.txtPassword.Size = new System.Drawing.Size(224, 23);
             this.txtPassword.TabIndex = 32;
-            this.txtPassword.Text = "Enter New Password";
             // 
             // lblPassword
             // 
@@ -226,9 +225,9 @@
             this.txtCurrPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtCurrPassword.Location = new System.Drawing.Point(71, 137);
             this.txtCurrPassword.Name = "txtCurrPassword";
+            this.txtCurrPassword.PlaceholderText = "Enter Current password to save changes";
             this.txtCurrPassword.Size = new System.Drawing.Size(224, 23);
             this.txtCurrPassword.TabIndex = 34;
-            this.txtCurrPassword.Text = "Enter Current password to save changes";
             // 
             // btnConfirm
             // 

@@ -26,10 +26,10 @@ namespace IOOP_Assignment
         public Schedule(string username)
         {
             this.username = username;
-            loadTable();    
+            loadData();    
         }
 
-        public void loadTable()
+        public void loadData()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbETC"].ToString()))
             {
@@ -51,6 +51,14 @@ namespace IOOP_Assignment
                     data.Close();
                 }
             }
+        }
+        public void clearData()
+        {
+            subject.Clear();
+            day.Clear();
+            startTime.Clear();  
+            endTime.Clear();    
+            subjectName.Clear();
         }
 
     }
